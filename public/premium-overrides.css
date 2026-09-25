@@ -1,14 +1,1 @@
-/* Pixel-final landing polish: tuned to match a premium reference more closely */
-.landing-page .hero-grid{align-items:center;gap:34px}
-.landing-page .hero-copy{max-width:590px}
-.landing-page .hero-copy>p{max-width:520px;color:#58667d}
-.landing-page .eyebrow{font-size:.7rem;letter-spacing:.13em}
-.landing-page .hero h1{font-size:clamp(2.9rem,5.15vw,5.1rem);letter-spacing:-.08em;line-height:.99}
-.landing-page .hero-logo{width:min(430px,100%);max-width:100%}
-.landing-page .logo-showcase{display:flex;align-items:center;justify-content:center;width:min(440px,100%)}
-.landing-page .floating-card{min-height:56px;padding:11px 14px;border-radius:14px}
-.landing-page .top-card{top:7%;right:1%}.landing-page .bottom-card{bottom:9%;left:2%}
-.landing-page .section-heading p{color:#61708a;max-width:610px}
-.landing-page .footer p{color:#5e6e83}
-@media(max-width:850px){.landing-page .hero-grid{gap:18px}.landing-page .hero-visual{min-height:356px}.landing-page .hero-copy>p{max-width:100%}.landing-page .logo-showcase{width:min(380px,90vw)}}
-@media(max-width:560px){.landing-page .hero-visual{min-height:290px}.landing-page .logo-showcase{width:min(300px,80vw)}.landing-page .floating-card{display:none}.landing-page .hero-copy p{font-size:.96rem}}
+.landing-page .hero{min-height:610px;padding:48px 0 58px}.landing-page .hero h1{letter-spacing:-.075em;line-height:.99}.landing-page .hero-copy>p{color:#58667d;max-width:500px}.landing-page .hero-actions .button{min-height:52px;padding:15px 22px}.landing-page .button-yellow{box-shadow:0 10px 24px rgba(255,207,25,.28)}.landing-page .hero-logo{width:min(410px,100%)}.landing-page .section{padding:72px 0}.landing-page .section-heading p{color:#5d6d82}@media(max-width:560px){.landing-page .hero{padding:40px 0 48px}.landing-page .floating-card{display:none}}
