@@ -1,433 +1,75 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>EL PROF — Cours particuliers de français</title>
-  <meta
-    name="description"
-    content="EL PROF accompagne les élèves en français avec des cours, exercices, quiz et préparation aux examens."
-  >
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EL PROF accompagne les élèves avec des cours de français, des exercices et des quiz.">
+  <title>EL PROF — Le français plus simple</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body class="landing-page">
-
-  <!-- Header premium -->
-  <header class="premium-header">
-    <div class="container premium-nav">
-
-      <a href="/" class="brand-lockup" aria-label="EL PROF - Accueil">
-        <img
-          src="/logo.png"
-          alt="Logo EL PROF"
-          class="brand-logo"
-        >
-
-        <span class="brand-name">
-          EL <strong>PROF</strong>
-        </span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="EL PROF - Accueil">
+        <img src="/logo.png" alt="Logo EL PROF" class="brand-logo">
+        <span>EL <strong>PROF</strong></span>
       </a>
-
-      <nav class="desktop-navigation" aria-label="Navigation principale">
-        <a href="#cours">Nos cours</a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#cours">Cours</a>
         <a href="#niveaux">Niveaux</a>
         <a href="#offres">Offres</a>
-        <a href="#temoignages">Témoignages</a>
-        <a href="/connexion.html" class="login-link">Connexion</a>
-        <a href="/inscription.html" class="premium-button small-button">
-          Commencer
-        </a>
+        <a href="#temoignages">Avis</a>
+        <a href="/connexion.html">Connexion</a>
+        <a class="button button-yellow" href="/inscription.html">Commencer</a>
       </nav>
-
-      <button
-        class="mobile-menu-button"
-        id="mobileMenuButton"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     </div>
-
-    <nav class="mobile-navigation" id="mobileNavigation">
-      <a href="#cours">Nos cours</a>
-      <a href="#niveaux">Niveaux</a>
-      <a href="#offres">Offres</a>
-      <a href="#temoignages">Témoignages</a>
-      <a href="/connexion.html">Connexion</a>
-      <a href="/inscription.html" class="premium-button">Commencer</a>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#cours">Cours</a><a href="#niveaux">Niveaux</a><a href="#offres">Offres</a><a href="#temoignages">Avis</a><a href="/connexion.html">Connexion</a><a class="button button-yellow" href="/inscription.html">Commencer</a>
     </nav>
   </header>
 
   <main>
-
-    <!-- Hero -->
-    <section class="premium-hero">
-      <div class="hero-decoration decoration-one"></div>
-      <div class="hero-decoration decoration-two"></div>
-
-      <div class="container hero-layout">
-        <div class="hero-content">
-          <span class="hero-label">
-            🇹🇳 La plateforme des élèves ambitieux
-          </span>
-
-          <h1>
-            Le français plus simple,
-            <span>plus proche de toi.</span>
-          </h1>
-
-          <p class="hero-description">
-            Apprends la grammaire, la conjugaison, la compréhension et
-            l'expression écrite avec une méthode claire, moderne et motivante.
-          </p>
-
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">🇹🇳 La plateforme des élèves ambitieux</span>
+          <h1>Le français plus simple,<br><em>plus proche de toi.</em></h1>
+          <p>Grammaire, conjugaison, compréhension, expression écrite et préparation aux examens dans un parcours clair et motivant.</p>
           <div class="hero-actions">
-            <a href="/inscription.html" class="premium-button large-button">
-              Commencer gratuitement
-              <span>→</span>
-            </a>
-
-            <a href="#cours" class="outline-button large-button">
-              Découvrir les cours
-            </a>
+            <a class="button button-yellow button-large" href="/inscription.html">Commencer gratuitement <span>→</span></a>
+            <a class="button button-outline button-large" href="#cours">Découvrir les cours</a>
           </div>
-
-          <div class="hero-benefits">
-            <span>✓ Cours structurés</span>
-            <span>✓ Exercices pratiques</span>
-            <span>✓ Suivi de progression</span>
-          </div>
+          <div class="benefits"><span>✓ Cours structurés</span><span>✓ Exercices pratiques</span><span>✓ Suivi de progression</span></div>
         </div>
-
         <div class="hero-visual">
-          <div class="hero-logo-card">
-            <div class="hero-logo-glow"></div>
-
-            <img
-              src="/logo.png"
-              alt="EL PROF - Cours particuliers en français"
-              class="hero-logo-image"
-            >
-
-            <div class="hero-floating-card floating-card-top">
-              <span class="floating-icon">⭐</span>
-              <div>
-                <strong>+1200 XP</strong>
-                <small>à gagner</small>
-              </div>
-            </div>
-
-            <div class="hero-floating-card floating-card-bottom">
-              <span class="floating-icon">🏆</span>
-              <div>
-                <strong>Progresse</strong>
-                <small>à ton rythme</small>
-              </div>
-            </div>
+          <div class="logo-showcase">
+            <div class="glow"></div>
+            <img src="/logo.png" alt="EL PROF - Cours particuliers en français" class="hero-logo">
+            <div class="floating-card top-card">⭐ <span><b>+1200 XP</b><small>à gagner</small></span></div>
+            <div class="floating-card bottom-card">🏆 <span><b>Progresse</b><small>à ton rythme</small></span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Chiffres -->
-    <section class="trust-section">
-      <div class="container trust-grid">
-        <div class="trust-item">
-          <strong>4+</strong>
-          <span>Matières disponibles</span>
-        </div>
+    <section class="trust"><div class="container trust-grid"><div><b>4+</b><span>Matières disponibles</span></div><div><b>100%</b><span>En ligne et accessible</span></div><div><b>24/7</b><span>Apprends quand tu veux</span></div><div><b>∞</b><span>Exercices pour progresser</span></div></div></section>
 
-        <div class="trust-item">
-          <strong>100%</strong>
-          <span>En ligne et accessible</span>
-        </div>
+    <section class="section" id="cours"><div class="container"><div class="section-heading"><span class="eyebrow">APPRENDRE AUTREMENT</span><h2>Tout pour progresser</h2><p>Des contenus simples, organisés et adaptés à ton niveau scolaire.</p></div><div class="subject-grid"><article class="subject blue"><span>📘</span><small>01</small><h3>Grammaire</h3><p>Comprends les règles essentielles et construis des phrases correctes.</p><a href="/inscription.html">Découvrir →</a></article><article class="subject green"><span>🧠</span><small>02</small><h3>Conjugaison</h3><p>Maîtrise les temps, les verbes et les conjugaisons importantes.</p><a href="/inscription.html">Découvrir →</a></article><article class="subject purple"><span>🔎</span><small>03</small><h3>Compréhension</h3><p>Lis, analyse et comprends mieux les textes français.</p><a href="/inscription.html">Découvrir →</a></article><article class="subject yellow"><span>✍️</span><small>04</small><h3>Expression écrite</h3><p>Rédige des textes clairs, structurés et convaincants.</p><a href="/inscription.html">Découvrir →</a></article></div></div></section>
 
-        <div class="trust-item">
-          <strong>24/7</strong>
-          <span>Apprends quand tu veux</span>
-        </div>
+    <section class="section levels-section" id="niveaux"><div class="container"><div class="section-heading"><span class="eyebrow">TON PARCOURS</span><h2>Choisis ton niveau</h2><p>Un parcours adapté à chaque étape de ta scolarité.</p></div><div class="levels"><a href="/inscription.html">7ème<small>Année scolaire</small></a><a href="/inscription.html">8ème<small>Année scolaire</small></a><a href="/inscription.html">9ème<small>Année scolaire</small></a><a class="selected" href="/inscription.html">1ère<small>Année scolaire</small></a><a href="/inscription.html">2ème<small>Année scolaire</small></a><a href="/inscription.html">3ème<small>Année scolaire</small></a><a href="/inscription.html">Bac<small>Préparation examen</small></a></div></div></section>
 
-        <div class="trust-item">
-          <strong>∞</strong>
-          <span>Exercices pour progresser</span>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="offres"><div class="container"><div class="section-heading centered"><span class="eyebrow">NOS FORMULES</span><h2>Une formule pour chaque objectif</h2></div><div class="plans"><article class="plan"><small>POUR COMMENCER</small><h3>EL PROF Essentiel</h3><p>Les bases nécessaires pour commencer à progresser.</p><strong class="price">Gratuit</strong><ul><li>✓ Cours gratuits</li><li>✓ Exercices de base</li><li>✓ Quiz de grammaire</li></ul><a class="button button-outline full" href="/inscription.html">Commencer gratuitement</a></article><article class="plan premium"><b class="popular">LE PLUS POPULAIRE</b><small>POUR ALLER PLUS LOIN</small><h3>EL PROF+</h3><p>L'expérience complète pour progresser rapidement.</p><strong class="price">25 DT <i>/ mois</i></strong><ul><li>✓ Tous les cours</li><li>✓ Exercices illimités</li><li>✓ Suivi de progression</li></ul><a class="button button-yellow full" href="/inscription.html">Découvrir EL PROF+</a></article></div></div></section>
 
-    <!-- Cours -->
-    <section class="premium-section" id="cours">
-      <div class="container">
-        <div class="section-heading centered-heading">
-          <span class="section-label">APPRENDRE AUTREMENT</span>
-          <h2>Tout ce qu'il te faut pour progresser</h2>
-          <p>
-            Des contenus simples, organisés et adaptés à ton niveau scolaire.
-          </p>
-        </div>
+    <section class="section testimonials" id="temoignages"><div class="container"><div class="section-heading centered"><span class="eyebrow">ILS NOUS FONT CONFIANCE</span><h2>Les élèves parlent de leur expérience</h2></div><div class="testimonial-grid"><article><b>★★★★★</b><p>“Les cours sont très clairs et j'ai beaucoup progressé en grammaire.”</p><strong>Lina</strong><small>Élève de 3ème</small></article><article><b>★★★★★</b><p>“J'aime beaucoup les quiz. Je peux m'entraîner depuis mon téléphone.”</p><strong>Mohamed</strong><small>Élève de 2ème</small></article><article><b>★★★★★</b><p>“La plateforme m'aide à organiser mes révisions avant les examens.”</p><strong>Salma</strong><small>Élève Bac</small></article></div></div></section>
 
-        <div class="subject-grid">
-          <article class="subject-card subject-blue">
-            <div class="subject-icon">📘</div>
-            <span class="subject-number">01</span>
-            <h3>Grammaire</h3>
-            <p>
-              Comprends les règles essentielles et construis des phrases correctes.
-            </p>
-            <a href="/inscription.html">Découvrir →</a>
-          </article>
-
-          <article class="subject-card subject-green">
-            <div class="subject-icon">🧠</div>
-            <span class="subject-number">02</span>
-            <h3>Conjugaison</h3>
-            <p>
-              Maîtrise les temps, les verbes et les conjugaisons importantes.
-            </p>
-            <a href="/inscription.html">Découvrir →</a>
-          </article>
-
-          <article class="subject-card subject-purple">
-            <div class="subject-icon">🔎</div>
-            <span class="subject-number">03</span>
-            <h3>Compréhension</h3>
-            <p>
-              Lis, analyse et comprends mieux les textes français.
-            </p>
-            <a href="/inscription.html">Découvrir →</a>
-          </article>
-
-          <article class="subject-card subject-yellow">
-            <div class="subject-icon">✍️</div>
-            <span class="subject-number">04</span>
-            <h3>Expression écrite</h3>
-            <p>
-              Rédige des textes clairs, structurés et convaincants.
-            </p>
-            <a href="/inscription.html">Découvrir →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Niveaux -->
-    <section class="premium-section levels-section" id="niveaux">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">TON PARCOURS</span>
-          <h2>Choisis ton niveau</h2>
-          <p>
-            Un parcours adapté à chaque étape de ta scolarité.
-          </p>
-        </div>
-
-        <div class="levels-grid">
-          <a href="/inscription.html" class="level-card">
-            <span>7ème</span>
-            <small>Année scolaire</small>
-          </a>
-
-          <a href="/inscription.html" class="level-card">
-            <span>8ème</span>
-            <small>Année scolaire</small>
-          </a>
-
-          <a href="/inscription.html" class="level-card">
-            <span>9ème</span>
-            <small>Année scolaire</small>
-          </a>
-
-          <a href="/inscription.html" class="level-card highlighted-level">
-            <span>1ère</span>
-            <small>Année scolaire</small>
-          </a>
-
-          <a href="/inscription.html" class="level-card">
-            <span>2ème</span>
-            <small>Année scolaire</small>
-          </a>
-
-          <a href="/inscription.html" class="level-card">
-            <span>3ème</span>
-            <small>Année scolaire</small>
-          </a>
-
-          <a href="/inscription.html" class="level-card">
-            <span>Bac</span>
-            <small>Préparation examen</small>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Offres -->
-    <section class="premium-section offers-section" id="offres">
-      <div class="container">
-        <div class="section-heading centered-heading">
-          <span class="section-label">NOS FORMULES</span>
-          <h2>Choisis la formule qui te correspond</h2>
-          <p>
-            Commence gratuitement et évolue à ton rythme.
-          </p>
-        </div>
-
-        <div class="offers-grid">
-          <article class="offer-card">
-            <span class="offer-label">POUR COMMENCER</span>
-            <h3>EL PROF Essentiel</h3>
-            <p>Les bases nécessaires pour commencer à progresser.</p>
-
-            <div class="offer-price">
-              <strong>Gratuit</strong>
-            </div>
-
-            <ul>
-              <li>✓ Accès aux cours gratuits</li>
-              <li>✓ Exercices de base</li>
-              <li>✓ Quiz de grammaire</li>
-              <li>✓ Création d'un compte élève</li>
-            </ul>
-
-            <a href="/inscription.html" class="outline-button full-button">
-              Commencer gratuitement
-            </a>
-          </article>
-
-          <article class="offer-card premium-offer">
-            <span class="popular-badge">LE PLUS POPULAIRE</span>
-            <span class="offer-label">POUR ALLER PLUS LOIN</span>
-            <h3>EL PROF+</h3>
-            <p>
-              L'expérience complète pour progresser rapidement et efficacement.
-            </p>
-
-            <div class="offer-price">
-              <strong>25 DT</strong>
-              <small>/ mois</small>
-            </div>
-
-            <ul>
-              <li>✓ Tous les cours</li>
-              <li>✓ Exercices illimités</li>
-              <li>✓ Suivi de progression</li>
-              <li>✓ Quiz et préparation aux examens</li>
-            </ul>
-
-            <a href="/inscription.html" class="premium-button full-button">
-              Découvrir EL PROF+
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Témoignages -->
-    <section class="premium-section testimonials-section" id="temoignages">
-      <div class="container">
-        <div class="section-heading centered-heading">
-          <span class="section-label">ILS NOUS FONT CONFIANCE</span>
-          <h2>Les élèves parlent de leur expérience</h2>
-        </div>
-
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p>
-              “Les cours sont très clairs et j'ai beaucoup progressé en grammaire.”
-            </p>
-            <strong>Lina</strong>
-            <small>Élève de 3ème</small>
-          </article>
-
-          <article class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p>
-              “J'aime beaucoup les quiz. Je peux m'entraîner depuis mon téléphone.”
-            </p>
-            <strong>Mohamed</strong>
-            <small>Élève de 2ème</small>
-          </article>
-
-          <article class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p>
-              “La plateforme m'aide à organiser mes révisions avant les examens.”
-            </p>
-            <strong>Salma</strong>
-            <small>Élève Bac</small>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA final -->
-    <section class="final-cta">
-      <div class="container final-cta-content">
-        <div>
-          <span class="section-label light-label">PRÊT À PROGRESSER ?</span>
-          <h2>Ton parcours commence maintenant.</h2>
-          <p>
-            Rejoins EL PROF et rends le français plus simple, plus proche de toi.
-          </p>
-        </div>
-
-        <a href="/inscription.html" class="premium-button light-button">
-          Créer mon compte
-          <span>→</span>
-        </a>
-      </div>
-    </section>
-
+    <section class="final-cta"><div class="container cta-inner"><div><span class="eyebrow">PRÊT À PROGRESSER ?</span><h2>Ton parcours commence maintenant.</h2><p>Rejoins EL PROF et rends le français plus simple, plus proche de toi.</p></div><a class="button button-yellow button-large" href="/inscription.html">Créer mon compte →</a></div></section>
   </main>
 
-  <footer class="premium-footer">
-    <div class="container footer-content">
-      <a href="/" class="footer-brand">
-        <img src="/logo.png" alt="EL PROF">
-        <span>EL <strong>PROF</strong></span>
-      </a>
-
-      <p>© 2026 EL PROF — Cours particuliers en français.</p>
-
-      <div class="footer-links">
-        <a href="/connexion.html">Connexion</a>
-        <a href="/inscription.html">Inscription</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const mobileMenuButton = document.getElementById("mobileMenuButton");
-    const mobileNavigation = document.getElementById("mobileNavigation");
-
-    mobileMenuButton.addEventListener("click", () => {
-      const isOpen = mobileNavigation.classList.toggle("is-open");
-
-      mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
-      mobileMenuButton.classList.toggle("is-active", isOpen);
-    });
-
-    document.querySelectorAll(".mobile-navigation a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileNavigation.classList.remove("is-open");
-        mobileMenuButton.classList.remove("is-active");
-        mobileMenuButton.setAttribute("aria-expanded", "false");
-      });
-    });
-  </script>
-
+  <footer class="footer"><div class="container footer-inner"><a class="brand" href="/"><img src="/logo.png" alt="Logo EL PROF" class="footer-logo"><span>EL <strong>PROF</strong></span></a><p>© 2026 EL PROF — Cours particuliers en français.</p><div><a href="/connexion.html">Connexion</a> · <a href="/inscription.html">Inscription</a></div></div></footer>
+  <script>const toggle=document.getElementById('menuToggle'),nav=document.getElementById('mobileNav');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));</script>
 </body>
 </html>
