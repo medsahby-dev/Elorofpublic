@@ -1,0 +1,19 @@
+/* Final landing-page premium polish. Load after /style.css on the landing page. */
+.landing-page{--blue:#145eea;--yellow:#ffcf19;--navy:#071b3a;--muted:#61708a}
+.landing-page .hero{min-height:clamp(620px,calc(100vh - 78px),760px);padding:54px 0 68px}
+.landing-page .hero-grid{gap:42px}
+.landing-page .hero-copy{max-width:620px}
+.landing-page .hero h1{font-family:Inter,Arial,sans-serif;font-weight:900;font-size:clamp(3rem,5.4vw,5.25rem);line-height:.99;letter-spacing:-.075em}
+.landing-page .hero-copy>p{font-size:1.02rem;line-height:1.72;max-width:525px}
+.landing-page .hero-actions{gap:12px;margin:27px 0 23px}
+.landing-page .hero-actions .button{min-height:52px;padding:15px 22px;font-size:.92rem}
+.landing-page .hero-actions .button-yellow{background:var(--yellow);box-shadow:0 10px 24px rgba(255,207,25,.32)}
+.landing-page .button-outline{border-color:rgba(20,94,234,.42);color:var(--blue);background:rgba(255,255,255,.5)}
+.landing-page .hero-visual{min-height:440px;display:grid;place-items:center}
+.landing-page .hero-logo{width:min(438px,100%)}
+.landing-page .floating-card{font-size:1.05rem;padding:11px 14px;border-radius:14px;box-shadow:0 16px 34px rgba(7,27,58,.14)}
+.landing-page .top-card{top:8%;right:-1%}.landing-page .bottom-card{bottom:9%;left:-2%}
+.landing-page .trust{padding:27px 0}.landing-page .section{padding:78px 0}.landing-page .section-heading{margin-bottom:28px}.landing-page .section-heading h2{font-weight:900}
+.landing-page .final-cta{padding:76px 0}.landing-page .footer{padding:25px 0}
+@media(max-width:850px){.landing-page .hero{padding:56px 0 64px}.landing-page .hero-grid{gap:24px}.landing-page .hero-visual{min-height:380px}.landing-page .hero-logo{width:min(390px,86vw)}.landing-page .section{padding:66px 0}}
+@media(max-width:560px){.landing-page .hero{padding:42px 0 50px}.landing-page .hero h1{font-size:clamp(2.7rem,13vw,4rem);letter-spacing:-.07em}.landing-page .hero-copy>p{font-size:.98rem}.landing-page .hero-visual{min-height:300px}.landing-page .hero-logo{width:min(310px,82vw)}.landing-page .hero-actions{margin-top:23px}.landing-page .hero-actions .button{min-height:50px}.landing-page .section{padding:56px 0}.landing-page .final-cta{padding:58px 0}}
