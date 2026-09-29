@@ -406,3 +406,13 @@ body{background:var(--ux-bg)}
 .ep-logo-word{font-size:18px!important;letter-spacing:-.7px!important}
 .ep-logo-word b{color:#276fff!important}
 @media(max-width:700px){.ep-logo-image{width:40px!important;height:40px!important}.ep-logo-word{font-size:17px!important}}
+
+/* DEPLOYMENT POLISH — loading / empty / resilient states */
+.empty-state{border:1px dashed #d9e2ee!important;border-radius:18px!important;background:linear-gradient(135deg,#fbfcfe,#f7f9fc)!important;color:#71809a!important;padding:24px!important;text-align:center!important}
+.student-shell .empty-state{max-width:720px;margin:48px auto}
+.loading-skeleton{position:relative;overflow:hidden;background:#edf1f6;border-radius:10px}
+.loading-skeleton:after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);animation:ep-shimmer 1.4s infinite}
+@keyframes ep-shimmer{100%{transform:translateX(100%)}}
+button:disabled,.btn:disabled{cursor:not-allowed!important;opacity:.58!important;transform:none!important}
+img{max-width:100%}
+@media(prefers-reduced-motion:reduce){.loading-skeleton:after{animation:none}}
