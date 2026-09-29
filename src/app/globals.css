@@ -391,3 +391,10 @@ body{background:var(--ux-bg)}
 .live-status{border-radius:999px!important;font-size:9px!important;letter-spacing:1px!important;font-weight:900!important}
 .live-time{font-weight:900!important;color:#071c49!important}
 @media(max-width:700px){.student-hero{border-radius:22px!important}.student-xp-card{margin-top:12px}.student-course-card{border-radius:22px!important}.quiz-card,.quiz-result{border-radius:22px!important}.live-card{border-radius:18px!important}}
+
+/* V2 UX — progression command layer */
+.student-stat span{display:block;margin-top:5px;font-size:9px;color:#8a96a8;letter-spacing:.2px}
+.progress-command{display:flex;justify-content:space-between;gap:18px;align-items:center;margin:-4px -2px 26px;padding:22px;border-radius:20px;background:linear-gradient(135deg,#f7faff,#fff);border:1px solid #e2e9f2}
+.progress-command h2{margin:5px 0 4px!important;letter-spacing:-.7px}
+.progress-command p{margin:0;color:#738199;font-size:12px}
+@media(max-width:600px){.progress-command{align-items:flex-start;flex-direction:column}.progress-command .btn{width:100%}}
