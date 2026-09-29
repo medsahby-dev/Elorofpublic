@@ -18,7 +18,7 @@ export default function Home(){
  return <main>
   <section className="v62-hero" aria-label="EL PROF — Le français plus simple, plus proche de toi">
     <Image
-      src="/reference/hero-v2.webp"
+      src="/reference/hero-v2.svg"
       alt="EL PROF — Le français plus simple, plus proche de toi"
       fill
       priority
