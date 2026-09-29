@@ -26,7 +26,7 @@ export default function Home(){
       <div className="v53-benefits"><span>◉ <b>Cours vidéo<br/>de qualité</b></span><i/><span>◉ <b>Classes<br/>en direct</b></span><i/><span>◉ <b>Quiz interactifs<br/>avec correction</b></span><i/><span>● <b>Suivi personnalisé<br/>des progrès</b></span></div>
     </div>
     <div className="v53-hero-visual">
-      <div className="v53-student"><Image src="/reference/hero-student.webp" alt="Élève utilisant EL PROF" fill sizes="(max-width:900px) 100vw, 58vw" priority/></div>
+      <div className="v53-student"><Image src="/reference/hero-student.svg" alt="Élève utilisant EL PROF" fill sizes="(max-width:900px) 100vw, 58vw" priority/></div>
       <div className="v53-blue-glow"/>
       <div className="v53-logo-ring"><Image src="/elprof-logo.webp" alt="EL PROF" fill sizes="390px" priority/></div>
       <div className="v53-speech">Apprendre<br/><b>Réussir</b><br/>Grandir <span>↗</span></div>
