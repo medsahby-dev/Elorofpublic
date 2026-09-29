@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { courses, levels } from "@/lib/data";
@@ -25,7 +26,7 @@ export default function Home(){
    </div>
    <div className="hero-premium-art">
     <div className="ep-orbit"/>
-    <div className="ep-brand-card"><div className="hero-logo-stage"><BrandLogo compact /><div className="hero-logo-glow"/><span className="hero-logo-orbit orbit-1"/><span className="hero-logo-orbit orbit-2"/></div><div className="ep-brand-tagline">L&apos;IDENTITÉ EL PROF</div><strong>Le français,<br/><span>autrement.</span></strong><p>Le français plus simple, plus proche de toi. Une plateforme conçue autour de l'élève et de son parcours.</p></div>
+    <div className="ep-brand-card"><div className="hero-logo-stage"><Image src="/elprof-logo.webp" alt="EL PROF — cours particuliers en français" width={360} height={360} priority className="official-logo-hero" /><div className="hero-logo-glow"/><span className="hero-logo-orbit orbit-1"/><span className="hero-logo-orbit orbit-2"/></div><div className="ep-brand-tagline">L&apos;IDENTITÉ EL PROF</div><strong>Le français,<br/><span>autrement.</span></strong><p>Le français plus simple, plus proche de toi. Une plateforme conçue autour de l'élève et de son parcours.</p></div>
     <div className="ep-float a"><small>PARCOURS</small><b>7 niveaux</b></div>
     <div className="ep-float b"><small>APPRENTISSAGE</small><b>24 / 7</b></div>
     <div className="ep-float c"><b>+ Cours · Quiz · Progression</b></div>
