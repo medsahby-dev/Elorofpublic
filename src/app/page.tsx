@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { courses, levels } from "@/lib/data";
 
@@ -49,7 +50,7 @@ export default function Home(){
 
   <section className="premium-section">
    <div className="parent-showcase"><div><span className="eyebrow" style={{color:"#9fc1ff"}}>PREMIUM FAMILLE</span><h2>L'élève apprend.<br/>Le parent accompagne.</h2><p>Un espace dédié permet aux parents de suivre les indicateurs essentiels sans entrer dans le travail quotidien de l'élève.</p><div className="parent-points"><div className="parent-point"><span>01</span>Progression des parcours</div><div className="parent-point"><span>02</span>Résultats et moyennes aux quiz</div><div className="parent-point"><span>03</span>Activité et régularité</div><div className="parent-point"><span>04</span>Rapports et objectifs</div></div></div>
-    <div className="parent-ui"><div className="parent-ui-top"><div><small>ESPACE PARENT</small><b>Suivi de votre enfant</b></div><span className="status">ACTIF</span></div><div className="parent-child"><div className="parent-child-head"><b>Élève · Parcours français</b><span>EN PROGRESSION</span></div><div className="parent-bars"><div className="parent-bar"><span>Grammaire</span><i style={{"--w":"82%"} as React.CSSProperties}/><b>82%</b></div><div className="parent-bar"><span>Expression</span><i style={{"--w":"68%"} as React.CSSProperties}/><b>68%</b></div><div className="parent-bar"><span>Quiz</span><i style={{"--w":"91%"} as React.CSSProperties}/><b>91%</b></div></div></div><div className="parent-child"><div className="parent-child-head"><b>Cette semaine</b><span>+12%</span></div><small>4 leçons · 3 quiz · progression régulière</small></div></div>
+    <div className="parent-ui"><div className="parent-ui-top"><div><small>ESPACE PARENT</small><b>Suivi de votre enfant</b></div><span className="status">ACTIF</span></div><div className="parent-child"><div className="parent-child-head"><b>Élève · Parcours français</b><span>EN PROGRESSION</span></div><div className="parent-bars"><div className="parent-bar"><span>Grammaire</span><i style={{"--w":"82%"} as CSSProperties}/><b>82%</b></div><div className="parent-bar"><span>Expression</span><i style={{"--w":"68%"} as CSSProperties}/><b>68%</b></div><div className="parent-bar"><span>Quiz</span><i style={{"--w":"91%"} as CSSProperties}/><b>91%</b></div></div></div><div className="parent-child"><div className="parent-child-head"><b>Cette semaine</b><span>+12%</span></div><small>4 leçons · 3 quiz · progression régulière</small></div></div>
    </div>
   </section>
 
