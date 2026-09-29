@@ -226,3 +226,127 @@ html{scroll-behavior:smooth}
 .price-card.plan-2 .eyebrow{color:#a06d00}
 .price-card.plan-3 .eyebrow{color:#7c3aed}
 @media(max-width:650px){.price-photo{height:175px}}
+
+
+/* V4.7 — premium pricing / price visibility */
+.pricing-grid{gap:22px;max-width:1220px}
+.price-card{
+  border-radius:30px;
+  padding:22px 28px 28px;
+  border:1px solid rgba(13,39,79,.10);
+  box-shadow:0 18px 55px rgba(7,31,82,.075);
+}
+.price-card.plan-1{--plan-accent:#2563eb}
+.price-card.plan-2{--plan-accent:#ffd21c}
+.price-card.plan-3{--plan-accent:#7c3aed}
+.price-card.plan-1:after,.price-card.plan-2:after,.price-card.plan-3:after{
+  content:"";position:absolute;left:0;right:0;top:0;height:5px;
+  background:var(--plan-accent);z-index:4;
+}
+.price-card.plan-1:after{background:linear-gradient(90deg,#2563eb,#38bdf8)}
+.price-card.plan-2:after{background:linear-gradient(90deg,#ffd21c,#ffea70)}
+.price-card.plan-3:after{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.price-card.plan-1{background:linear-gradient(180deg,#fff 0%,#f7fbff 100%)}
+.price-card.plan-3{background:linear-gradient(180deg,#fff 0%,#fbf9ff 100%)}
+.price-card.featured{
+  background:linear-gradient(155deg,#04183f 0%,#0a2f70 58%,#0b428e 100%);
+  border:1px solid rgba(255,255,255,.10);
+  padding:22px 28px 30px;
+  transform:translateY(-14px);
+}
+.price-card.featured:before{background:radial-gradient(circle,rgba(255,210,28,.22),transparent 68%)}
+.price-card .price-photo{
+  height:178px;
+  margin:-22px -28px 20px;
+  border-radius:30px 30px 22px 22px;
+  box-shadow:inset 0 -90px 90px rgba(4,24,63,.48);
+}
+.price-card.featured .price-photo{height:188px}
+.price-card .eyebrow{font-size:10px;letter-spacing:1.5px}
+.price-card h3{font-size:27px;letter-spacing:-1px;margin:9px 0 7px}
+.price-card>p{min-height:48px;margin-bottom:2px}
+.price-block{
+  position:relative;
+  margin:16px 0 19px;
+  padding:16px 18px 15px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#f4f8ff,#fff);
+  border:1px solid #dce8f8;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 25px rgba(7,31,82,.055);
+}
+.price-card.plan-1 .price-block{background:linear-gradient(135deg,#edf5ff,#fff);border-color:#cfe0fb}
+.price-card.plan-2 .price-block{background:linear-gradient(135deg,rgba(255,210,28,.16),rgba(255,255,255,.08));border-color:rgba(255,210,28,.30)}
+.price-card.plan-3 .price-block{background:linear-gradient(135deg,#f4efff,#fff);border-color:#e1d5fb}
+.price-label{
+  display:block;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#71819a;
+  margin-bottom:3px;
+}
+.price-card.plan-1 .price-label{color:#2563eb}
+.price-card.plan-2 .price-label{color:#ffd21c}
+.price-card.plan-3 .price-label{color:#7c3aed}
+.price-card .price{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  margin:0;
+  line-height:.9;
+  letter-spacing:-3px;
+}
+.price-card .price strong{
+  font-size:clamp(52px,5vw,68px);
+  font-weight:950;
+}
+.price-card .price small{
+  font-size:14px;
+  font-weight:850;
+  letter-spacing:-.2px;
+  color:#66758d;
+}
+.price-card.plan-2 .price{color:#fff}
+.price-card.plan-2 .price small{color:#d3e0f3}
+.price-card.plan-2 .price-block{color:#fff}
+.price-card .price-features{margin-top:7px}
+.price-card .price-features li{font-size:13px;line-height:1.35}
+.price-card .full{
+  min-height:50px;
+  border-radius:15px;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:-.1px;
+}
+.price-card.plan-1 .full{background:#0b2f70;color:#fff}
+.price-card.plan-1 .full:hover{background:#164a9d}
+.price-card.plan-3 .full{background:#6d28d9;color:#fff}
+.price-card.plan-3 .full:hover{background:#5b21b6}
+.price-card.featured .full{
+  background:var(--ep-yellow);
+  color:#071b43;
+  box-shadow:0 12px 30px rgba(255,210,28,.20);
+}
+.price-card.featured .full:hover{background:#ffe45a}
+.price-badge{
+  top:18px;
+  right:18px;
+  z-index:8;
+  padding:8px 12px;
+  font-size:9px;
+  letter-spacing:.7px;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+.price-card.featured .price-badge{color:#071b43}
+@media(max-width:1000px){
+  .price-card.featured{transform:none}
+}
+@media(max-width:650px){
+  .price-card{padding:20px 22px 24px}
+  .price-card.featured{padding:20px 22px 25px}
+  .price-card .price-photo{margin:-20px -22px 18px;height:172px}
+  .price-card.featured .price-photo{height:178px}
+  .price-block{padding:14px 16px;margin:14px 0 17px}
+  .price-card .price strong{font-size:54px}
+}
