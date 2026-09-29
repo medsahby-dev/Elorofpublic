@@ -20,6 +20,12 @@ export default function AdminIA(){
   try{const r=await fetch("/api/v1/admin/ai-quiz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({level,activity,theme,courseDraftId:draft.id,studentContent:draft.studentContent,questionCount:10,difficulty:"moyenne"})});const j=await r.json();if(!r.ok)throw new Error(j?.error?.message||"Quiz impossible");setQuiz(j.data);}
   catch(e:any){setError(e.message||"Erreur")}finally{setQuizLoading(false)}
  }
+ async function quizAction(action:string){
+  if(!quiz?.id)return;
+  const r=await fetch("/api/v1/admin/ai-quiz-action",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:quiz.id,action})});
+  const j=await r.json();if(!r.ok){setError(j?.error?.message||"Action impossible");return;}
+  setQuiz({...quiz,status:action==="publish"?"published":"validated"});
+ }
  async function action(action:string){
   if(!draft?.id)return;
   const r=await fetch("/api/v1/admin/ai-course-action",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:draft.id,action})});
@@ -72,7 +78,7 @@ export default function AdminIA(){
    <div className="panel-head"><h2>4. Quiz élève</h2><span>{quiz.status.toUpperCase()}</span></div>
    <div className="ai-draft"><h3>{quiz.title}</h3><p>{quiz.questions.length} questions · difficulté {quiz.difficulty}</p>
     {quiz.questions.map((q,i)=><div className="quiz-admin-question" key={i}><b>{i+1}. {q.question}</b>{q.options.map((o,j)=><div key={j} className={j===q.correctIndex?"quiz-correct":"quiz-option"}>{String.fromCharCode(65+j)}. {o}</div>)}<small>Correction : {q.explanation}</small></div>)}
-    <div className="admin-alert">Le quiz reste un brouillon tant qu’il n’est pas validé par l’administrateur.</div>
+    <div className="admin-alert">Le quiz reste un brouillon tant qu’il n’est pas validé par l’administrateur.</div><div className="panel-actions">{quiz.status==="draft"&&<button className="btn btn-light" type="button" onClick={()=>quizAction("validate")}>✓ Valider le quiz</button>}{quiz.status==="validated"&&<button className="btn btn-yellow" type="button" onClick={()=>quizAction("publish")}>🚀 Publier le quiz</button>}</div>
    </div>
   </section>}
  </main>
