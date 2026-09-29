@@ -34,7 +34,7 @@ export default function Home(){
     </div>
     <div className="v51-speech">Apprendre<br/><b>Réussir</b><br/>Grandir <span>↗</span></div>
     <div className="v51-stat-card"><div className="v51-stat-icon">▥</div><div><strong>+95%</strong><small>de réussite</small></div><div className="v51-avatars">● ● ● ●</div><b>+10 000</b><small>élèves nous font confiance</small></div>
-   </div>   </div>
+   </div>
   </section>
 
   <section className="premium-section reveal-section" id="niveaux">
