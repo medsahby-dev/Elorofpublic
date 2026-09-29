@@ -319,3 +319,34 @@ body{background:var(--ux-bg)}
 .family-link input{border-radius:12px!important;border:1px solid #dce4ee!important;background:#fff!important;padding:11px 13px!important;min-width:220px}
 @media(max-width:760px){.parent-kpis{grid-template-columns:repeat(2,1fr)!important}.parent-head{gap:18px!important}.parent-plan{width:100%}}
 @media(max-width:480px){.parent-kpis{grid-template-columns:1fr 1fr!important}.family-link form{flex-direction:column}.family-link input{width:100%;min-width:0}.family-link .btn{width:100%}}
+
+/* PRODUCT POLISH — AUTH / CATALOGUE / MOBILE */
+.auth-page{background:radial-gradient(circle at 75% 18%,rgba(39,111,255,.28),transparent 28%),linear-gradient(135deg,#06183b 0%,#08285f 55%,#0c397d 100%)!important}
+.auth-brand{position:relative;overflow:hidden}
+.auth-brand:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-250px;bottom:-220px}
+.auth-card{box-shadow:0 35px 90px rgba(0,0,0,.22)!important;border-radius:28px!important;border:1px solid rgba(255,255,255,.6)!important}
+.auth-switch{background:#f2f5f9!important;border-radius:12px!important;padding:4px!important}
+.auth-switch button{border-radius:9px!important}
+.auth-card input{transition:.18s!important}
+.auth-card input:focus{border-color:#276fff!important;box-shadow:0 0 0 4px rgba(39,111,255,.1)!important}
+.auth-card .btn{box-shadow:0 12px 25px rgba(255,210,28,.18)!important}
+.form-message{border-radius:12px!important;padding:11px 13px!important;background:#fff4f3!important;border:1px solid #ffd7d3!important;color:#a43d32!important}
+
+/* CATALOGUE */
+.page-hero{position:relative;overflow:hidden;border-radius:28px!important;background:linear-gradient(135deg,#071c49,#123d82)!important;color:#fff!important;box-shadow:0 24px 65px rgba(6,27,70,.14)!important}
+.page-hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-220px}
+.page-hero p{color:rgba(255,255,255,.72)!important}
+.filter-row{position:sticky;top:76px;z-index:8;background:rgba(247,249,252,.82);backdrop-filter:blur(16px);padding:10px 0;border-bottom:1px solid rgba(228,233,241,.8)}
+.filter{transition:.18s!important;border-radius:999px!important}
+.filter:hover{transform:translateY(-1px)}
+.course-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important;border-radius:22px!important}
+.course-card:hover{transform:translateY(-6px)!important;box-shadow:0 24px 60px rgba(6,27,70,.11)!important;border-color:#d8e3f4!important}
+.course-card .course-icon{box-shadow:0 10px 25px rgba(39,111,255,.12)}
+.course-card .btn{margin-top:6px}
+
+/* MOBILE NAV */
+.mobile-nav{backdrop-filter:blur(22px)!important;background:rgba(255,255,255,.9)!important;border:1px solid rgba(220,227,237,.9)!important;box-shadow:0 18px 50px rgba(6,27,70,.14)!important}
+.mobile-nav a{transition:.18s!important}
+.mobile-nav a.active{background:#071c49!important;color:#fff!important;box-shadow:0 7px 18px rgba(6,27,70,.16)!important}
+.mobile-nav a.active span{transform:translateY(-1px);display:block}
+@media(max-width:700px){.page-hero{border-radius:22px!important}.filter-row{top:62px;overflow:auto;white-space:nowrap}.filter{flex:0 0 auto}}
