@@ -350,3 +350,44 @@ body{background:var(--ux-bg)}
 .mobile-nav a.active{background:#071c49!important;color:#fff!important;box-shadow:0 7px 18px rgba(6,27,70,.16)!important}
 .mobile-nav a.active span{transform:translateY(-1px);display:block}
 @media(max-width:700px){.page-hero{border-radius:22px!important}.filter-row{top:62px;overflow:auto;white-space:nowrap}.filter{flex:0 0 auto}}
+
+/* EXPERIENCE POLISH — student / course / quiz / live */
+.student-shell,.quiz-page{min-height:calc(100vh - 76px)}
+.student-hero{position:relative;overflow:hidden;border-radius:28px!important;background:linear-gradient(135deg,#071c49,#123f88)!important;color:#fff!important;box-shadow:0 24px 65px rgba(6,27,70,.14)!important}
+.student-hero:after{content:"";position:absolute;width:330px;height:330px;border:1px solid rgba(255,255,255,.11);border-radius:50%;right:-90px;top:-210px}
+.student-xp-card{position:relative;z-index:1;background:rgba(255,255,255,.1)!important;border:1px solid rgba(255,255,255,.16)!important;backdrop-filter:blur(14px);border-radius:18px!important}
+.student-stat{transition:.2s!important;border-radius:20px!important}
+.student-stat:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(6,27,70,.07)}
+.resume-card{border-radius:20px!important;border:1px solid #e3e9f2!important;background:linear-gradient(135deg,#fff,#f8faff)!important;box-shadow:0 12px 35px rgba(6,27,70,.05)!important}
+.activity-item{transition:.18s!important;border-radius:14px!important}
+.activity-item:hover{background:#f7f9fd!important;transform:translateX(3px)}
+.badge-item{border-radius:17px!important;border:1px solid #e5eaf2!important;transition:.2s!important}
+.badge-item:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(6,27,70,.07)}
+.certificate-item{border-radius:15px!important;transition:.18s!important}
+.certificate-item:hover{background:#f7f9fd!important}
+
+/* COURSE DETAIL */
+.student-course-layout{max-width:920px!important;margin:24px auto!important}
+.student-course-card{border-radius:28px!important;box-shadow:0 18px 55px rgba(6,27,70,.07)!important;border:1px solid #e4eaf2!important}
+.student-course-card section{border-bottom:1px solid #edf1f5!important;padding-bottom:22px!important}
+.student-course-card h2{letter-spacing:-.5px!important}
+.student-lesson{font-size:16px!important;line-height:1.9!important;background:#f8faff!important;border-left:4px solid #276fff!important;border-radius:0 16px 16px 0!important;padding:20px 22px!important}
+.student-tip{border-radius:18px!important;background:linear-gradient(135deg,#fffbea,#fff)!important;border:1px solid #f4e4a2!important}
+
+/* QUIZ */
+.quiz-head{max-width:900px!important;margin:0 auto 18px!important}
+.quiz-progress{height:7px!important;background:#e7ecf3!important;border-radius:99px!important;overflow:hidden}
+.quiz-progress span{display:block!important;height:100%!important;background:linear-gradient(90deg,#276fff,#63a0ff)!important;border-radius:99px!important}
+.quiz-card{max-width:900px!important;border-radius:28px!important;box-shadow:0 22px 65px rgba(6,27,70,.09)!important;border:1px solid #e4eaf2!important}
+.choice{border-radius:15px!important;border:1px solid #e1e7ef!important;transition:.18s!important}
+.choice:hover{border-color:#9ebcff!important;transform:translateX(3px);background:#f8faff!important}
+.choice.selected{background:#071c49!important;color:#fff!important;border-color:#071c49!important;box-shadow:0 10px 25px rgba(6,27,70,.12)!important}
+.quiz-result{border-radius:28px!important;box-shadow:0 22px 65px rgba(6,27,70,.09)!important;border:1px solid #e4eaf2!important}
+
+/* LIVE */
+.live-info{border-radius:20px!important;background:linear-gradient(135deg,#edf4ff,#fff)!important;border:1px solid #dbe7fb!important;box-shadow:0 12px 30px rgba(6,27,70,.04)!important}
+.live-card{border-radius:22px!important;transition:.22s!important;border:1px solid #e3e9f1!important;box-shadow:0 12px 35px rgba(6,27,70,.05)!important}
+.live-card:hover{transform:translateY(-5px)!important;box-shadow:0 22px 55px rgba(6,27,70,.1)!important}
+.live-status{border-radius:999px!important;font-size:9px!important;letter-spacing:1px!important;font-weight:900!important}
+.live-time{font-weight:900!important;color:#071c49!important}
+@media(max-width:700px){.student-hero{border-radius:22px!important}.student-xp-card{margin-top:12px}.student-course-card{border-radius:22px!important}.quiz-card,.quiz-result{border-radius:22px!important}.live-card{border-radius:18px!important}}
