@@ -14,6 +14,16 @@ export async function POST(request:Request){
    await audit(user!.id,"ai_course_validated","ai_course",id,{});
   }else if(action==="publish"){
    if(current.rows[0].status!=="validated")return Response.json({success:false,error:{code:"VALIDATION_REQUIRED",message:"Le cours doit être validé par l’administrateur avant publication."}},{status:409});
+   const source=await db.query("SELECT * FROM ai_course_drafts WHERE id=$1",[id]);
+   const d=source.rows[0];
+   const slugBase=String(d.title).toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,90)||"cours-ia";
+   const slug=slugBase+"-"+id;
+   const content=JSON.stringify(d.course_content||{});
+   const description=String((d.course_content||{}).introduction||"Cours de français créé avec Prof IA et validé par l'administrateur.");
+   await db.query(
+    "INSERT INTO courses(slug,title,description,level,category,access,lessons,duration,published,ai_draft_id,student_content,ai_generated,published_by,published_at) VALUES($1,$2,$3,$4,$5,'free',1,$6,true,$7,$8::jsonb,true,$9,NOW()) ON CONFLICT(ai_draft_id) DO UPDATE SET published=true,student_content=EXCLUDED.student_content,published_by=EXCLUDED.published_by,published_at=NOW(),updated_at=NOW()",
+    [slug,d.title,description,d.level_label,d.activity,String(d.duration)+" min",id,content,user!.id]
+   );
    await db.query("UPDATE ai_course_drafts SET status='published',published_by=$2,published_at=NOW(),updated_at=NOW() WHERE id=$1",[id,user!.id]);
    await audit(user!.id,"ai_course_published","ai_course",id,{});
   }else if(action==="save"){
