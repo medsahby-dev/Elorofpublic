@@ -1225,3 +1225,23 @@ body{background:#fff;color:var(--ep-ink)}
  .v5-trust{grid-template-columns:1fr!important;margin:0 5% 10px!important}
  .v5-trust>div{border-right:0!important;border-bottom:1px solid #e3ebf6!important}
 }
+
+/* =========================================================
+   EL PROF V6.1 — SELF-AUTHORED SVG ASSET SYSTEM
+   ========================================================= */
+.v53-hero-visual{isolation:isolate}
+.v53-hero-visual:before{content:"";position:absolute;inset:0;z-index:1;background:url("/reference/hero-orbit.svg") center/cover no-repeat;opacity:.9;pointer-events:none}
+.v53-student{z-index:2!important}.v53-blue-glow{z-index:3!important}.v53-logo-ring{z-index:6!important}.v53-speech{z-index:8!important}.v53-proof{z-index:9!important}
+#niveaux .premium-level:before{background-image:var(--ep-level-image)!important;background-position:center top!important;background-repeat:no-repeat!important;background-size:cover!important}
+#niveaux .premium-level.level-1{--ep-level-image:url("/reference/level-7.svg")}
+#niveaux .premium-level.level-2{--ep-level-image:url("/reference/level-8.svg")}
+#niveaux .premium-level.level-3{--ep-level-image:url("/reference/level-9.svg")}
+#niveaux .premium-level.level-4{--ep-level-image:url("/reference/level-1.svg")}
+#niveaux .premium-level.level-5{--ep-level-image:url("/reference/level-2.svg")}
+#niveaux .premium-level.level-6{--ep-level-image:url("/reference/level-3.svg")}
+#niveaux .premium-level.level-7{--ep-level-image:url("/reference/level-bac.svg")}
+#offres .price-photo{background-image:var(--ep-price-image)!important;background-size:cover!important;background-position:center!important}
+#offres .price-card.plan-1 .price-photo{--ep-price-image:url("/reference/price-essential.svg")}
+#offres .price-card.plan-2 .price-photo{--ep-price-image:url("/reference/price-plus.svg")}
+#offres .price-card.plan-3 .price-photo{--ep-price-image:url("/reference/price-family.svg")}
+#offres .price-photo .photo-shade{background:linear-gradient(180deg,rgba(6,29,73,.03),rgba(6,29,73,.18))!important}
