@@ -1084,3 +1084,144 @@ body{background:var(--v5-bg)}
  #niveaux .premium-levels{grid-template-columns:repeat(2,1fr)!important}
  #offres .pricing-grid{grid-template-columns:1fr!important}#offres .price-card.plan-2{transform:none!important}
 }
+
+
+/* =========================================================
+   EL PROF V6 — MASTER WEB REFINEMENT
+   Reference-led, clean, photographic, premium.
+   ========================================================= */
+:root{
+  --ep-navy:#061d49;--ep-blue:#075df5;--ep-yellow:#ffd21c;
+  --ep-ink:#09265d;--ep-muted:#60718d;--ep-bg:#f7faff;
+}
+body{background:#fff;color:var(--ep-ink)}
+.site-header{
+  height:76px!important;padding:0 max(5%,calc((100vw - 1240px)/2))!important;
+  background:rgba(255,255,255,.96)!important;border-bottom:1px solid #e8eef7!important;
+  box-shadow:0 4px 24px rgba(5,29,73,.045)!important;backdrop-filter:blur(18px);
+  position:sticky!important;top:0;z-index:100!important;
+}
+.site-header nav{gap:26px!important}
+.site-header nav a{font-size:11px!important;font-weight:800!important;color:#29456f!important}
+.site-header nav a:hover{color:var(--ep-blue)!important}
+.header-actions{gap:14px!important}
+.login-link{font-size:11px!important;font-weight:800!important;color:var(--ep-ink)!important}
+.header-actions .btn{min-height:40px!important;padding:0 18px!important;border-radius:999px!important;font-size:10px!important;box-shadow:0 7px 18px rgba(255,210,28,.18)}
+.ep-logo-word{font-size:20px!important;letter-spacing:-1px!important}.ep-logo-image img{width:48px!important;height:48px!important}
+
+.v53-hero{min-height:570px!important;padding:0 max(5%,calc((100vw - 1240px)/2))!important}
+.v53-hero-inner{max-width:1240px!important;min-height:570px!important}
+.v53-hero-copy{padding:76px 0 32px!important}
+.v53-hero h1{font-size:clamp(57px,6.1vw,82px)!important;letter-spacing:-4.8px!important}
+.v53-hero-copy>p{font-size:14px!important;max-width:500px!important}
+.v53-actions{margin:26px 0 23px!important}
+.v53-btn-primary{min-width:205px;justify-content:center}
+.v53-hero-visual{min-height:570px!important}
+.v53-student{width:70%!important;right:-4%!important}
+.v53-logo-ring{width:min(390px,39vw)!important;left:3%!important}
+.v53-blue-glow{left:0!important;width:470px!important;height:470px!important}
+.v53-speech{right:4%!important;top:9%!important}
+.v53-proof{right:2%!important;bottom:7%!important;width:310px!important}
+.v53-benefits{max-width:560px!important}
+
+#niveaux{
+  padding:64px max(5%,calc((100vw - 1240px)/2)) 68px!important;
+  background:#fff!important;
+}
+#niveaux .v52-section-heading{max-width:1240px!important;margin-bottom:26px!important}
+.v52-section-heading h2,.v52-offers-heading h2{font-size:34px!important;letter-spacing:-1.8px!important}
+.v52-section-heading>p,.v52-offers-heading>p{font-size:13px!important}
+#niveaux .premium-levels{max-width:1240px!important;grid-template-columns:repeat(7,1fr)!important;gap:14px!important}
+#niveaux .premium-level{
+  height:190px!important;min-height:190px!important;border-radius:22px!important;
+  box-shadow:0 12px 30px rgba(8,40,91,.09)!important;
+  transition:transform .28s ease,box-shadow .28s ease!important;
+}
+#niveaux .premium-level:hover{transform:translateY(-7px)!important;box-shadow:0 20px 42px rgba(8,40,91,.16)!important}
+#niveaux .premium-level:before{inset:0 0 58px!important}
+#niveaux .premium-level .level-orb{font-size:42px!important;top:12px!important;left:13px!important}
+#niveaux .premium-level strong{font-size:14px!important}
+#niveaux .premium-level small{font-size:10px!important;max-width:145px!important}
+#niveaux .premium-level .level-arrow{width:32px!important;height:32px!important;bottom:11px!important;right:11px!important}
+
+#offres{
+  padding:68px max(5%,calc((100vw - 1240px)/2)) 76px!important;
+  background:#f7faff!important;border-top:1px solid #edf2f9!important;
+}
+#offres .v52-offers-heading{max-width:1240px!important;margin-bottom:34px!important}
+#offres .pricing-grid{max-width:1240px!important;gap:24px!important}
+#offres .price-card{
+  min-height:535px!important;border-radius:26px!important;padding:0 24px 24px!important;
+  box-shadow:0 14px 40px rgba(6,29,73,.09)!important;
+  transition:transform .3s ease,box-shadow .3s ease!important;
+}
+#offres .price-card:hover{transform:translateY(-5px)!important;box-shadow:0 22px 52px rgba(6,29,73,.15)!important}
+#offres .price-card.plan-2:hover{transform:translateY(-14px)!important}
+#offres .price-card .price-photo{height:172px!important;margin:0 -24px 18px!important;border-radius:26px 26px 18px 18px!important}
+#offres .price-card.plan-2 .price-photo{height:182px!important}
+#offres .price-card h3{font-size:23px!important;letter-spacing:-.5px!important}
+#offres .price-card>p{font-size:12px!important;line-height:1.45!important}
+#offres .price-block{padding:12px 15px!important;margin:15px 0!important;border-radius:15px!important}
+#offres .price-card .price strong{font-size:62px!important}
+#offres .price-features{gap:8px!important}
+#offres .price-features li{font-size:11.5px!important}
+#offres .price-card .full{min-height:46px!important;font-size:12px!important}
+#offres .price-badge{font-size:10px!important;padding:9px 19px!important;letter-spacing:.5px!important}
+
+.premium-section{
+  padding:78px max(5%,calc((100vw - 1240px)/2))!important;
+}
+.premium-heading{max-width:780px!important}
+.premium-heading h2{font-size:40px!important;letter-spacing:-2px!important}
+.premium-heading p{font-size:14px!important;line-height:1.6!important}
+.premium-story{max-width:1240px!important;gap:24px!important}
+.story-panel{border-radius:26px!important;padding:34px!important}
+.story-panel h3{font-size:28px!important;letter-spacing:-1px!important}
+.parent-showcase{max-width:1240px!important;border-radius:32px!important;padding:58px!important}
+.parent-showcase h2{font-size:44px!important;letter-spacing:-2px!important}
+.final-cta{max-width:1240px!important;border-radius:30px!important;padding:54px!important}
+
+.v5-trust{
+  display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:1px!important;
+  max-width:1240px!important;padding:0!important;border:1px solid #e3ebf6!important;
+  border-radius:20px!important;overflow:hidden!important;margin:0 auto 10px!important;
+}
+.v5-trust>div{padding:22px!important;background:#fff!important;border-right:1px solid #e3ebf6!important}
+.v5-trust>div:last-child{border-right:0!important}
+.v5-trust-icon{font-size:18px!important}
+
+.course-grid{max-width:1240px!important}
+.course-card{border-radius:22px!important;transition:transform .25s ease,box-shadow .25s ease!important}
+.course-card:hover{transform:translateY(-5px)!important;box-shadow:0 18px 40px rgba(6,29,73,.11)!important}
+
+@media(max-width:1050px){
+ .site-header nav{display:none!important}
+ .v53-hero{min-height:auto!important}.v53-hero-inner{min-height:auto!important}
+ .v53-hero-copy{padding-top:60px!important}
+ .v53-hero-visual{min-height:500px!important}
+ #niveaux .premium-levels{grid-template-columns:repeat(4,1fr)!important}
+ #offres .pricing-grid{grid-template-columns:1fr!important;max-width:620px!important;margin:auto}
+ #offres .price-card.plan-2{transform:none!important}
+ .v5-trust{grid-template-columns:repeat(2,1fr)!important;margin-left:5%;margin-right:5%}
+}
+@media(max-width:650px){
+ .site-header{height:66px!important}
+ .ep-logo-image img{width:42px!important;height:42px!important}.ep-logo-word{font-size:17px!important}
+ .header-actions .btn,.login-link{display:none!important}
+ .v53-hero{padding:0 5%!important}.v53-hero-copy{padding-top:42px!important}
+ .v53-hero h1{font-size:48px!important;line-height:.94!important}
+ .v53-hero-visual{min-height:380px!important}
+ .v53-logo-ring{width:225px!important}
+ .v53-proof{width:230px!important}
+ #niveaux{padding:48px 5%!important}
+ #niveaux .premium-levels{grid-template-columns:repeat(2,1fr)!important}
+ #offres{padding:48px 5%!important}
+ .v52-offers-heading{display:block!important}.v52-billing{margin-top:14px!important}
+ .premium-section{padding:54px 5%!important}
+ .premium-heading h2{font-size:31px!important}
+ .parent-showcase{padding:30px!important;border-radius:24px!important}
+ .parent-showcase h2{font-size:34px!important}
+ .final-cta{padding:32px!important;border-radius:24px!important}
+ .v5-trust{grid-template-columns:1fr!important;margin:0 5% 10px!important}
+ .v5-trust>div{border-right:0!important;border-bottom:1px solid #e3ebf6!important}
+}
