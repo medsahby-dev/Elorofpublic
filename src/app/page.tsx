@@ -19,10 +19,10 @@ export default function Home(){
   <section className="hero-premium">
    <div className="hero-premium-copy">
     <div className="hero-kicker"><i/> PLATEFORME ÉDUCATIVE TUNISIENNE · ÉDITION PREMIUM</div>
-    <h1>Apprendre le français.<br/><em>Réussir autrement.</em></h1>
-    <p>Une expérience pédagogique moderne pour apprendre, pratiquer et progresser du 7ème au Bac — avec des parcours structurés, des quiz et un suivi qui donne du sens aux progrès.</p>
-    <div className="hero-actions"><Link href="/connexion?signup=1" className="btn btn-yellow btn-large">Commencer gratuitement →</Link><Link href="#offres" className="btn btn-outline btn-large">Voir les offres</Link></div>
-    <div className="hero-proof"><span>✓ <b>Parcours structurés</b></span><span>✓ <b>Suivi de progression</b></span><span>✓ <b>Accessible 24/7</b></span></div>
+    <h1>Le français<br/>plus simple,<br/><em>plus proche de toi !</em></h1>
+    <p>Des cours interactifs, des quiz, des classes en direct et un suivi personnalisé pour progresser du 7ème au Bac avec confiance.</p>
+    <div className="hero-actions"><Link href="/connexion?signup=1" className="btn btn-yellow btn-large">Commencer gratuitement →</Link><Link href="#apropos" className="btn btn-outline btn-large">▶ Voir la méthode</Link></div>
+    <div className="hero-proof"><span>◉ <b>Cours vidéo de qualité</b></span><span>◉ <b>Classes en direct</b></span><span>◉ <b>Quiz interactifs</b></span><span>◉ <b>Suivi personnalisé</b></span></div>
    </div>
    <div className="hero-premium-art">
     <div className="ep-orbit"/>
@@ -48,6 +48,14 @@ export default function Home(){
   <section className="pricing-wrap reveal-section" id="offres">
    <div className="premium-heading"><span className="eyebrow">CHOISIR SON EXPÉRIENCE</span><h2>Trois offres. Une même exigence pédagogique.</h2><p>Commence gratuitement, passe à PLUS lorsque tu veux aller plus loin, ou choisis PREMIUM FAMILLE pour intégrer le suivi parental.</p></div>
    <div className="pricing-grid stagger-grid">{plans.map((p,i)=><article className={"price-card plan-"+(i+1)+(p.featured?" featured":"")} key={p.name}>{p.featured&&<span className="price-badge">LE PLUS CHOISI</span>}<div className={"price-photo photo-"+(i+1)} aria-hidden="true"><span className="photo-shade"/><span className="photo-kicker">{i===0?"COMMENCE À TON RYTHME":i===1?"ACCÉLÈRE TA RÉUSSITE":"APPRENDS EN FAMILLE"}</span></div><span className="eyebrow">{p.name}</span><h3>{p.name==="PREMIUM FAMILLE"?"L'élève + sa famille":p.name==="PLUS"?"Le parcours complet":"Pour commencer"}</h3><p>{p.description}</p><div className="price-block"><span className="price-label">{p.price==="0"?"ACCÈS GRATUIT":"ABONNEMENT"}</span><div className="price"><strong>{p.price}</strong><small>{p.suffix}</small></div></div><ul className="price-features">{p.features.map(f=><li key={f}>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"btn "+(p.featured||p.name==="PLUS"?"btn-yellow":"btn-light")+" full"}>{p.cta} →</Link></article>)}</div>
+  </section>
+
+
+  <section className="v5-trust" aria-label="Les engagements EL PROF">
+    <div><span className="v5-trust-icon">🏆</span><b>Des résultats concrets</b><small>du 7ème au Bac</small></div>
+    <div><span className="v5-trust-icon">👨‍👩‍👦</span><b>Une vraie relation</b><small>élève · parent · professeur</small></div>
+    <div><span className="v5-trust-icon">✦</span><b>Une méthode structurée</b><small>simple et progressive</small></div>
+    <div><span className="v5-trust-icon">♥</span><b>Une équipe passionnée</b><small>toujours à tes côtés</small></div>
   </section>
 
   <section className="premium-section">
