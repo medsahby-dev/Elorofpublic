@@ -24,13 +24,17 @@ export default function Home(){
     <div className="hero-actions"><Link href="/connexion?signup=1" className="btn btn-yellow btn-large">Commencer gratuitement →</Link><Link href="#apropos" className="btn btn-outline btn-large">▶ Voir la méthode</Link></div>
     <div className="hero-proof"><span>◉ <b>Cours vidéo de qualité</b></span><span>◉ <b>Classes en direct</b></span><span>◉ <b>Quiz interactifs</b></span><span>◉ <b>Suivi personnalisé</b></span></div>
    </div>
-   <div className="hero-premium-art">
-    <div className="ep-orbit"/>
-    <div className="ep-brand-card"><div className="hero-logo-stage"><Image src="/elprof-logo.webp" alt="EL PROF — cours particuliers en français" width={360} height={360} priority className="official-logo-hero" /><div className="hero-logo-glow"/><span className="hero-logo-orbit orbit-1"/><span className="hero-logo-orbit orbit-2"/></div><div className="ep-brand-tagline">L&apos;IDENTITÉ EL PROF</div><strong>Le français,<br/><span>autrement.</span></strong><p>Le français plus simple, plus proche de toi. Une plateforme conçue autour de l'élève et de son parcours.</p></div>
-    <div className="ep-float a"><small>PARCOURS</small><b>7 niveaux</b></div>
-    <div className="ep-float b"><small>APPRENTISSAGE</small><b>24 / 7</b></div>
-    <div className="ep-float c"><b>+ Cours · Quiz · Progression</b></div>
-   </div>
+   <div className="hero-premium-art v51-hero-art">
+    <div className="v51-photo-wrap">
+      <Image src="https://images.pexels.com/photos/8199167/pexels-photo-8199167.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Élève utilisant EL PROF" fill sizes="(max-width: 900px) 100vw, 48vw" className="v51-student-photo" priority />
+      <div className="v51-photo-gradient" />
+    </div>
+    <div className="v51-logo-wrap">
+      <Image src="/elprof-logo.webp" alt="EL PROF" width={390} height={390} className="v51-official-logo" priority />
+    </div>
+    <div className="v51-speech">Apprendre<br/><b>Réussir</b><br/>Grandir <span>↗</span></div>
+    <div className="v51-stat-card"><div className="v51-stat-icon">▥</div><div><strong>+95%</strong><small>de réussite</small></div><div className="v51-avatars">● ● ● ●</div><b>+10 000</b><small>élèves nous font confiance</small></div>
+   </div>   </div>
   </section>
 
   <section className="premium-section reveal-section" id="niveaux">
