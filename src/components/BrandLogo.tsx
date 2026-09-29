@@ -6,7 +6,7 @@ export default function BrandLogo({ compact = false }: { compact?: boolean }) {
     <Link href="/" className={"ep-logo" + (compact ? " ep-logo-compact" : "")} aria-label="EL PROF — accueil">
       <span className="ep-logo-symbol ep-logo-image" aria-hidden="true">
         <Image
-          src="/elprof-logo.webp"
+          src="/favicon.svg"
           alt=""
           width={64}
           height={64}
