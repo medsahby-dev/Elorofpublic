@@ -26,10 +26,10 @@ export async function GET(request: Request) {
         FROM users WHERE created_at >= CURRENT_DATE-INTERVAL '13 days'
         GROUP BY 1 ORDER BY 1`),
       db.query(`SELECT c.id,c.title,c.slug,c.status,c.published,c.lessons,c.updated_at,
-        COALESCE(u.first_name||' '||u.last_name,'—') AS teacher_name,
+        '—' AS teacher_name,
         COALESCE((SELECT COUNT(*) FROM enrollments e WHERE e.course_id=c.id),0)::int AS students,
         COALESCE((SELECT ROUND(AVG(cp.progress))::int FROM course_progress cp WHERE cp.course_id=c.id),0)::int AS avg_progress
-        FROM courses c LEFT JOIN users u ON u.id=c.teacher_id
+        FROM courses c
         ORDER BY c.updated_at DESC LIMIT 12`),
       db.query(`SELECT a.id,a.action,a.entity_type,a.entity_id,a.created_at,
         COALESCE(u.first_name||' '||u.last_name,u.email,'Système') AS actor
