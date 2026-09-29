@@ -264,3 +264,19 @@ body{background:var(--ux-bg)}
 .teacher-course-row:hover{background:#f8faff!important;border-color:#e1eafa;transform:translateX(3px)}
 .teacher-course-row .status{font-size:9px!important;letter-spacing:.8px;text-transform:uppercase;font-weight:900;padding:6px 9px;border-radius:99px;background:#eef4ff;color:var(--ux-blue)}
 @media(max-width:650px){.teacher-head-actions{width:100%}.teacher-head-actions .btn{flex:1}.teacher-hero-strip{padding:22px}.teacher-hero-strip b{font-size:20px}.teacher-orb{display:none}}
+
+/* AI COURSE CREATOR — premium workspace */
+.admin-page{max-width:1240px!important}
+.admin-head{align-items:flex-end!important}
+.admin-head h1{letter-spacing:-1.8px!important}
+.admin-form-grid{gap:14px!important}
+.admin-panel{border-radius:24px!important;box-shadow:var(--ux-shadow)!important}
+.ai-draft{border-radius:20px!important;background:#fbfcfe!important;border:1px solid #e5ebf3!important;padding:24px!important}
+.admin-title-input{font-size:26px!important;font-weight:900!important;letter-spacing:-1px!important;border:0!important;background:transparent!important;padding:5px 0!important}
+.student-preview{margin:22px 0;padding:25px!important;border-radius:20px!important;background:#fff!important;border:1px solid #e6ebf3!important;box-shadow:0 12px 35px rgba(6,27,70,.06)}
+.student-preview h3{font-size:11px!important;letter-spacing:1.2px;text-transform:uppercase;color:var(--ux-blue)}
+.student-preview textarea{min-height:120px!important;border-radius:13px!important;border:1px solid #e2e8f0!important;background:#fbfcfe!important;line-height:1.7!important}
+.quiz-admin-question{border:1px solid #e5ebf2!important;border-radius:16px!important;padding:17px!important;margin:10px 0!important;background:#fff!important}
+.quiz-admin-question .quiz-correct{border-radius:9px!important;background:#edf8f2!important;border:1px solid #ccebdd!important;padding:8px 10px!important}
+.quiz-admin-question .quiz-option{padding:8px 10px!important;color:#64748b}
+@media(max-width:650px){.admin-head{align-items:flex-start!important}.admin-title-input{font-size:21px!important}.student-preview{padding:17px!important}}
