@@ -42,7 +42,7 @@ export default function Home(){
       </div>
       <div className="hero-float hero-float-a"><small>PROGRESSION</small><b>+24%</b><span>ce mois-ci</span></div>
       <div className="hero-float hero-float-b"><span className="float-icon">✦</span><div><b>Quiz validé</b><small>Score 92%</small></div></div>
-      <div className="hero-logo-card" aria-label="Logo EL PROF"><img src="/elprof-logo.webp" alt="EL PROF — Le français plus simple, plus proche de toi" /></div>
+      <div className="hero-logo-card" aria-label="Logo EL PROF"><img src="/favicon.svg" alt="EL PROF — Le français plus simple, plus proche de toi" /></div>
     </div>
     <div className="hero-bottom-note"><span>SCROLL POUR DÉCOUVRIR</span><i/></div>
   </section>
