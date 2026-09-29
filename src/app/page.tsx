@@ -52,7 +52,7 @@ export default function Home(){
     <div className="story-panel dark"><span className="eyebrow" style={{color:"#ffd21c"}}>UNE PÉDAGOGIE CLAIRE</span><h3>Apprendre n'est pas accumuler du contenu.</h3><p>EL PROF organise l'apprentissage autour d'objectifs, de pratique et de progression visible.</p><div className="story-list"><div className="story-item"><i>01</i><div><b>Comprendre</b><p>Des notions expliquées avec clarté.</p></div></div><div className="story-item"><i>02</i><div><b>Pratiquer</b><p>Des exercices pour transformer la notion en compétence.</p></div></div><div className="story-item"><i>03</i><div><b>Progresser</b><p>Un suivi pour voir les acquis et les prochaines étapes.</p></div></div></div></div>
     <div className="story-panel"><span className="eyebrow">L'EXPÉRIENCE EL PROF</span><h3>Une interface pensée comme un véritable produit EdTech.</h3><p>Une navigation claire, des parcours structurés, des espaces dédiés et une identité visuelle cohérente sur ordinateur comme sur mobile.</p><div className="story-list"><div className="story-item"><i>✓</i><div><b>Espace élève</b><p>Cours, activité, quiz, badges et certificats.</p></div></div><div className="story-item"><i>✓</i><div><b>Espace professeur</b><p>Création et pilotage des parcours pédagogiques.</p></div></div><div className="story-item"><i>✓</i><div><b>Espace parent</b><p>Une vision simple de la progression familiale avec PREMIUM FAMILLE.</p></div></div></div></div>
    </div>
-
+  </section>
 
   <section className="v5-trust" aria-label="Les engagements EL PROF">
     <div><span className="v5-trust-icon">🏆</span><b>Des résultats concrets</b><small>du 7ème au Bac</small></div>
