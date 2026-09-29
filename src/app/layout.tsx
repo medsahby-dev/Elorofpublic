@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
+import BrandLogo from "@/components/BrandLogo";
 
 export const metadata: Metadata = {
   title: "EL PROF — Le français plus simple, plus proche de toi",
@@ -16,10 +17,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a className="skip-link" href="#main-content">Aller au contenu</a>
         <header className="site-header">
-          <Link href="/" className="brand" aria-label="EL PROF accueil">
-            <span className="brand-mark">EP</span><span>EL <b>PROF</b></span>
-          </Link>
-          <nav>
+          <BrandLogo />
+          <nav aria-label="Navigation principale">
             <Link href="/cours">Cours</Link>
             <Link href="/#offres">Offres</Link>
             <Link href="/classes">Classes en direct</Link>
@@ -36,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MobileNav />
         <footer className="footer" id="contact">
           <div>
-            <div className="brand footer-brand"><span className="brand-mark">EP</span><span>EL <b>PROF</b></span></div>
+            <BrandLogo />
             <p>Le français plus simple, plus proche de toi.</p>
           </div>
           <div><strong>Explorer</strong><Link href="/cours">Cours</Link><Link href="/classes">Classes en direct</Link><Link href="/#offres">Offres</Link><Link href="/connexion">Connexion</Link></div>
