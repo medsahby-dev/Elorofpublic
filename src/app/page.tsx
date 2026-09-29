@@ -16,23 +16,25 @@ const plans = [
 
 export default function Home(){
  return <main>
-  <section className="v53-hero">
-   <div className="v53-hero-inner">
-    <div className="v53-hero-copy">
-      <div className="v53-kicker"><span/> PLATEFORME ÉDUCATIVE TUNISIENNE · ÉDITION PREMIUM</div>
-      <h1>Le français<br/>plus simple,<br/><em>plus proche<br/>de toi !</em></h1>
+  <section className="v62-hero" aria-label="EL PROF — Le français plus simple, plus proche de toi">
+    <Image
+      src="/reference/hero-v2.webp"
+      alt="EL PROF — Le français plus simple, plus proche de toi"
+      fill
+      priority
+      sizes="100vw"
+      className="v62-hero-image"
+    />
+    <div className="v62-hotspots" aria-hidden="false">
+      <Link href="/connexion?signup=1" className="v62-hotspot v62-hotspot-primary" aria-label="Commencer maintenant" />
+      <Link href="#apropos" className="v62-hotspot v62-hotspot-video" aria-label="Voir la vidéo" />
+    </div>
+    <div className="sr-only">
+      <h1>Le français plus simple, plus proche de toi !</h1>
       <p>Des cours interactifs, des vidéos, des quiz, des classes en direct et un suivi personnalisé pour progresser du 7ème au Bac avec confiance.</p>
-      <div className="v53-actions"><Link href="/connexion?signup=1" className="v53-btn v53-btn-primary">Commencer maintenant <b>→</b></Link><Link href="#apropos" className="v53-btn v53-btn-video"><span>▶</span> Voir la vidéo</Link></div>
-      <div className="v53-benefits"><span>◉ <b>Cours vidéo<br/>de qualité</b></span><i/><span>◉ <b>Classes<br/>en direct</b></span><i/><span>◉ <b>Quiz interactifs<br/>avec correction</b></span><i/><span>● <b>Suivi personnalisé<br/>des progrès</b></span></div>
+      <Link href="/connexion?signup=1">Commencer maintenant</Link>
+      <Link href="#apropos">Voir la vidéo</Link>
     </div>
-    <div className="v53-hero-visual">
-      <div className="v53-student"><Image src="/reference/hero-student.svg" alt="Élève utilisant EL PROF" fill sizes="(max-width:900px) 100vw, 58vw" priority/></div>
-      <div className="v53-blue-glow"/>
-      <div className="v53-logo-ring"><Image src="/elprof-logo.webp" alt="EL PROF" fill sizes="390px" priority/></div>
-      <div className="v53-speech">Apprendre<br/><b>Réussir</b><br/>Grandir <span>↗</span></div>
-      <div className="v53-proof"><div className="v53-proof-icon">▥</div><div><strong>+95%</strong><small>de réussite</small></div><div className="v53-proof-divider"/><div className="v53-avatars">● ● ● ●</div><div><strong>+10 000</strong><small>élèves nous font confiance</small></div></div>
-    </div>
-   </div>
   </section>
 
   <section className="premium-section reveal-section" id="niveaux">
