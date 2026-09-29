@@ -209,3 +209,20 @@ html{scroll-behavior:smooth}
  .story-panel,.story-item,.parent-point,.course-card,.course-icon,.price-card,.premium-level,.final-cta .btn{transition:none!important}
  .price-badge{animation:none!important}
 }
+
+/* V4.6 — photographic pricing cards */
+.price-photo{position:relative;height:190px;margin:-8px -4px 18px;border-radius:24px;overflow:hidden;background-size:cover;background-position:center;isolation:isolate;box-shadow:inset 0 -70px 80px rgba(5,18,42,.42);transition:transform .7s var(--ep-ease),filter .5s ease}
+.price-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,31,82,.02) 30%,rgba(7,31,82,.72) 100%);z-index:0}
+.price-photo.photo-1{background-image:url("https://images.pexels.com/photos/37444772/pexels-photo-37444772.jpeg?auto=compress&cs=tinysrgb&w=1200")}
+.price-photo.photo-2{background-image:url("https://images.pexels.com/photos/37831090/pexels-photo-37831090.jpeg?auto=compress&cs=tinysrgb&w=1200");background-position:center 42%}
+.price-photo.photo-3{background-image:url("https://images.pexels.com/photos/9240630/pexels-photo-9240630.jpeg?auto=compress&cs=tinysrgb&w=1200");background-position:center 48%}
+.price-photo .photo-shade{position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,.22),transparent 55%);z-index:1}
+.price-card.plan-2 .price-photo .photo-shade{background:linear-gradient(135deg,rgba(255,210,28,.16),transparent 58%)}
+.price-card.plan-3 .price-photo .photo-shade{background:linear-gradient(135deg,rgba(124,58,237,.22),transparent 58%)}
+.photo-kicker{position:absolute;z-index:2;left:18px;bottom:16px;color:#fff;font-size:11px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.price-card:hover .price-photo{transform:scale(1.025)}
+.price-card .price-illustration{display:none!important}
+.price-card.plan-1 .eyebrow{color:#2563eb}
+.price-card.plan-2 .eyebrow{color:#a06d00}
+.price-card.plan-3 .eyebrow{color:#7c3aed}
+@media(max-width:650px){.price-photo{height:175px}}
