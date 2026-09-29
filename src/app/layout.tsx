@@ -9,6 +9,7 @@ import BrandLogo from "@/components/BrandLogo";
 export const metadata: Metadata = {
   title: "EL PROF — Le français plus simple, plus proche de toi",
   description: "EL PROF, plateforme éducative tunisienne pour apprendre, pratiquer et progresser en français.",
+  icons: { icon: "/elprof-logo.webp", apple: "/elprof-logo.webp" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
