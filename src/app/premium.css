@@ -160,3 +160,52 @@ html[data-theme="dark"] .footer .ep-logo{color:#fff}
 .price-card .price-features li:before{color:var(--plan-accent)!important}
 .price-card .full{position:relative;z-index:2}
 @media(max-width:650px){.premium-level{min-height:104px!important;padding-left:66px!important}.premium-level .level-orb{left:17px}.price-illustration{height:132px}.price-illustration svg{width:195px;height:132px}}
+
+/* V4.5 — Premium Experience / scroll motion */
+html{scroll-behavior:smooth}
+.reveal-section{position:relative;isolation:isolate}
+.reveal-section:after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(42,92,164,.10),transparent);pointer-events:none}
+.premium-heading h2,.premium-heading p{transition:transform .7s var(--ep-ease),opacity .7s ease}
+.premium-heading:hover h2{transform:translateY(-2px)}
+.stagger-grid>.premium-level,.stagger-grid>.price-card,.stagger-grid>.course-card{will-change:transform}
+.stagger-grid>.premium-level:nth-child(1),.stagger-grid>.price-card:nth-child(1),.stagger-grid>.course-card:nth-child(1){animation-delay:.04s}
+.stagger-grid>.premium-level:nth-child(2),.stagger-grid>.price-card:nth-child(2),.stagger-grid>.course-card:nth-child(2){animation-delay:.10s}
+.stagger-grid>.premium-level:nth-child(3),.stagger-grid>.price-card:nth-child(3),.stagger-grid>.course-card:nth-child(3){animation-delay:.16s}
+.stagger-grid>.premium-level:nth-child(4),.stagger-grid>.course-card:nth-child(4){animation-delay:.22s}
+.stagger-grid>.premium-level:nth-child(5),.stagger-grid>.course-card:nth-child(5){animation-delay:.28s}
+.stagger-grid>.premium-level:nth-child(6),.stagger-grid>.course-card:nth-child(6){animation-delay:.34s}
+.stagger-grid>.premium-level:nth-child(7){animation-delay:.40s}
+.story-panel{transition:transform .55s var(--ep-ease),box-shadow .55s var(--ep-ease)}
+.story-panel:hover{transform:translateY(-6px);box-shadow:0 28px 70px rgba(7,31,82,.12)}
+.story-item{transition:transform .35s var(--ep-ease),background .35s ease}
+.story-item:hover{transform:translateX(5px)}
+.story-item i{transition:transform .35s var(--ep-ease),background .35s ease}
+.story-item:hover i{transform:scale(1.08) rotate(-3deg)}
+.parent-point{transition:transform .35s var(--ep-ease),background .35s ease}
+.parent-point:hover{transform:translateX(6px);background:rgba(255,255,255,.08)}
+.parent-point span{transition:transform .35s var(--ep-ease)}
+.parent-point:hover span{transform:scale(1.08)}
+.course-card{position:relative;overflow:hidden;transition:transform .5s var(--ep-ease),box-shadow .5s var(--ep-ease),border-color .35s ease}
+.course-card:before{content:"";position:absolute;width:180px;height:180px;right:-90px;bottom:-90px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.10),transparent 68%);transition:transform .7s var(--ep-ease)}
+.course-card:hover{transform:translateY(-10px)!important;box-shadow:0 30px 70px rgba(7,31,82,.13)!important}
+.course-card:hover:before{transform:scale(1.7)}
+.course-icon{transition:transform .4s var(--ep-ease),box-shadow .4s var(--ep-ease)}
+.course-card:hover .course-icon{transform:rotate(-4deg) scale(1.08);box-shadow:0 12px 25px rgba(7,31,82,.16)}
+.course-meta span{transition:transform .3s var(--ep-ease)}
+.course-card:hover .course-meta span{transform:translateX(2px)}
+.price-badge{animation:epBadgePulse 3s ease-in-out infinite}
+@keyframes epBadgePulse{0%,100%{box-shadow:0 0 0 rgba(255,210,28,0)}50%{box-shadow:0 0 0 7px rgba(255,210,28,.08)}}
+.final-cta{box-shadow:0 25px 80px rgba(7,31,82,.18)}
+.final-cta .btn{transition:transform .4s var(--ep-ease),box-shadow .4s var(--ep-ease)}
+.final-cta .btn:hover{transform:translateY(-4px) scale(1.015)}
+.hero-proof span{transition:transform .35s var(--ep-ease),opacity .35s ease}
+.hero-proof span:hover{transform:translateY(-3px);opacity:1}
+@media(max-width:650px){
+ .story-panel:hover,.course-card:hover,.price-card:not(.featured):hover{transform:translateY(-4px)!important}
+ .premium-level:hover{transform:translateY(-4px) scale(1.01)!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .story-panel,.story-item,.parent-point,.course-card,.course-icon,.price-card,.premium-level,.final-cta .btn{transition:none!important}
+ .price-badge{animation:none!important}
+}
