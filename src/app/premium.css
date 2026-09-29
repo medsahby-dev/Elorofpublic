@@ -1312,3 +1312,17 @@ body{background:#fff;color:var(--ep-ink)}
   .v62-hotspot-primary{left:4%;top:72%;width:35%;height:10%}
   .v62-hotspot-video{left:40%;top:72%;width:28%;height:10%}
 }
+
+/* V6.3 — render nested hero assets as real HTML images.
+   This avoids external <image> references inside the background SVG being dropped by browsers/Next image rendering. */
+.v62-visuals{position:absolute;inset:0;z-index:4;pointer-events:none}
+.v62-logo-overlay{position:absolute!important;left:45.5%;top:12.8%;width:clamp(190px,17vw,285px)!important;height:auto!important;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,20,55,.28))}
+.v62-student-overlay{position:absolute!important;left:68.2%;top:11.2%;width:clamp(260px,21.5vw,360px)!important;height:auto!important;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,20,55,.28))}
+@media(max-width:900px){
+  .v62-logo-overlay{left:44%;top:12%;width:22vw!important;min-width:150px!important}
+  .v62-student-overlay{left:67%;top:10%;width:25vw!important;min-width:190px!important}
+}
+@media(max-width:650px){
+  .v62-logo-overlay{left:43%;top:10%;width:24vw!important;min-width:120px!important}
+  .v62-student-overlay{left:65%;top:9%;width:29vw!important;min-width:150px!important}
+}
