@@ -398,3 +398,11 @@ body{background:var(--ux-bg)}
 .progress-command h2{margin:5px 0 4px!important;letter-spacing:-.7px}
 .progress-command p{margin:0;color:#738199;font-size:12px}
 @media(max-width:600px){.progress-command{align-items:flex-start;flex-direction:column}.progress-command .btn{width:100%}}
+
+/* BRAND SYSTEM — EL PROF */
+.ep-logo{gap:10px!important}
+.ep-logo-image{width:44px!important;height:44px!important;border-radius:14px!important;overflow:hidden!important;background:#071c49!important;box-shadow:0 8px 22px rgba(6,27,70,.16)!important;display:grid!important;place-items:center!important}
+.ep-logo-image img{width:100%!important;height:100%!important;object-fit:cover!important}
+.ep-logo-word{font-size:18px!important;letter-spacing:-.7px!important}
+.ep-logo-word b{color:#276fff!important}
+@media(max-width:700px){.ep-logo-image{width:40px!important;height:40px!important}.ep-logo-word{font-size:17px!important}}
