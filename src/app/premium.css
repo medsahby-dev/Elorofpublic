@@ -49,3 +49,10 @@ body{background:#f7f9fc;color:var(--ep-ink)}
 html[data-theme="dark"] .ep-logo{color:#eef4ff}
 html[data-theme="dark"] .footer .ep-logo{color:#fff}
 @media(max-width:800px){.site-header .ep-logo{margin-right:0}.ep-logo-symbol{width:40px;height:40px}.ep-logo-word{font-size:18px}}
+
+.ep-brand-card .ep-logo{color:#fff;margin:0 0 42px}
+.ep-brand-card .ep-logo-word{font-size:22px}.ep-brand-card .ep-logo-word b{color:var(--ep-yellow)}
+.ep-brand-card .ep-logo-symbol{width:58px;height:58px}
+.ep-brand-tagline{font-size:9px;letter-spacing:1.6px;font-weight:900;color:#9fc1ff;margin-bottom:10px}
+.ep-brand-card>strong{display:block;font-size:39px;line-height:1.02;letter-spacing:-1.8px;margin:0}
+.ep-brand-card>strong span{color:var(--ep-yellow)}
