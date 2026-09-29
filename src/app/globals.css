@@ -165,3 +165,47 @@ body{background:var(--ux-bg)}
  .page{padding:48px 5% 80px!important}
  .auth-page{padding:30px 5%!important}
 }
+
+
+/* ULTRA PREMIUM — product dashboard refinement */
+.student-shell{min-height:calc(100vh - 82px)!important;padding:56px 0 110px!important}
+.student-container{max-width:1320px!important}
+.student-hero{display:flex!important;justify-content:space-between!important;align-items:flex-end!important;gap:30px!important;margin-bottom:24px!important}
+.student-hero .eyebrow,.teacher-head .eyebrow,.admin-head .eyebrow{color:var(--ux-blue)!important}
+.student-grid{gap:15px!important}
+.student-panel{padding:25px!important}
+.student-stat{padding:22px!important;position:relative;overflow:hidden}
+.student-stat:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-60px;top:-60px;background:rgba(39,111,255,.06)}
+.student-stat small{font-size:10px!important;text-transform:uppercase;letter-spacing:.8px;font-weight:800;color:#8794a8!important}
+.student-stat strong{font-size:34px!important}
+.resume-card{padding:22px!important}
+.resume-top h3{font-size:22px!important;letter-spacing:-.8px}
+.resume-actions{margin-top:18px!important}
+.activity-list{gap:7px!important}.activity-item{padding:13px 14px!important}.activity-icon{width:36px!important;height:36px!important;border-radius:10px!important}
+.certificate-item{padding:13px!important}.cert-icon{width:37px!important;height:37px!important}
+.student-link{font-size:11px!important;font-weight:900!important;color:var(--ux-blue)!important}
+
+.admin-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:15px;margin:18px 0}
+.admin-panel{overflow:hidden}
+.admin-panel .panel-head h2{letter-spacing:-.5px}
+.admin-search{width:230px;max-width:45%;border:1px solid var(--ux-line);background:#f9fbfd;border-radius:10px;padding:10px 12px;font-size:12px;outline:none}
+.admin-search:focus{border-color:#9eb9e6;box-shadow:0 0 0 3px rgba(39,111,255,.08)}
+.admin-table{margin-top:12px}.admin-table-row{display:grid;grid-template-columns:1fr 135px 80px;gap:15px;align-items:center;padding:13px 5px;border-top:1px solid var(--ux-line);font-size:12px}.admin-table-row small{display:block;color:var(--ux-muted);font-size:10px;margin-top:3px}.admin-table-row select{border:1px solid var(--ux-line);border-radius:9px;padding:8px;background:#fff;font-size:11px}.admin-table-row>span{text-align:right;color:var(--ux-muted);font-size:10px}
+.kpi-list{display:grid;gap:8px;margin-top:8px}.kpi-list div{display:flex;justify-content:space-between;align-items:center;padding:13px;background:#f8fafd;border-radius:11px}.kpi-list span{font-size:11px;color:var(--ux-muted)}.kpi-list b{font-size:18px}
+.mini-chart{height:175px;display:flex;align-items:end;gap:9px;padding:18px 5px 0}.bar-wrap{height:100%;flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:6px}.bar{width:min(22px,70%);min-height:8px;background:linear-gradient(180deg,#276fff,#78b0ff);border-radius:7px 7px 2px 2px}.bar-wrap small{font-size:8px;color:#9aa6b8}
+.admin-alert{background:#fff5f4;border:1px solid #ffd8d3;color:#a73b31;padding:12px 15px;border-radius:12px;margin:15px 0;font-size:12px}
+.teacher-page{min-height:calc(100vh - 82px)}.teacher-stats>div{position:relative;overflow:hidden}.teacher-stats>div:after{content:"";position:absolute;right:-25px;bottom:-35px;width:90px;height:90px;border-radius:50%;background:rgba(39,111,255,.05)}
+.teacher-course-row .status{font-size:9px!important;letter-spacing:.4px;text-transform:uppercase}
+
+@media(max-width:800px){
+ .student-hero{display:block!important}.student-xp-card{margin-top:16px}
+ .admin-grid{grid-template-columns:1fr}.admin-search{max-width:100%;width:100%;margin-top:10px}.panel-head{align-items:flex-start!important;flex-direction:column!important}
+ .admin-table-row{grid-template-columns:1fr 105px}.admin-table-row>span{display:none}
+}
+@media(max-width:560px){
+ .student-shell{padding:38px 0 80px!important}.student-container{padding:0 5%!important}
+ .student-stats{grid-template-columns:1fr 1fr!important}.student-stat strong{font-size:28px!important}
+ .student-grid{grid-template-columns:1fr!important}
+ .admin-stats{grid-template-columns:1fr 1fr!important}
+ .admin-table-row{grid-template-columns:1fr 95px}
+}
