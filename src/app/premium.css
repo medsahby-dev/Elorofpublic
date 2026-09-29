@@ -98,3 +98,8 @@ html[data-theme="dark"] .footer .ep-logo{color:#fff}
 @keyframes epDashboardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes epGlow{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
 @media(prefers-reduced-motion:reduce){.hero-premium-copy,.hero-premium-art,.ep-brand-card,.premium-level,.price-card,.course-card,.parent-showcase{animation:none!important}.ep-orbit,.ep-float,.ep-orbit:after,.parent-ui,.final-cta:before{animation:none!important}.hero-actions .btn-yellow:after,.final-cta .btn-yellow:after{display:none}}
+
+.hero-official-logo{display:block;width:220px;height:220px;object-fit:cover;border-radius:50%;margin:0 auto 24px;box-shadow:0 18px 45px rgba(0,0,0,.24);animation:epLogoFloat 5.5s ease-in-out infinite}
+.ep-brand-card .ep-logo{display:none}
+@keyframes epLogoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(.5deg)}}
+@media(max-width:650px){.hero-official-logo{width:180px;height:180px}}
