@@ -1245,3 +1245,70 @@ body{background:#fff;color:var(--ep-ink)}
 #offres .price-card.plan-2 .price-photo{--ep-price-image:url("/reference/price-plus.svg")}
 #offres .price-card.plan-3 .price-photo{--ep-price-image:url("/reference/price-family.svg")}
 #offres .price-photo .photo-shade{background:linear-gradient(180deg,rgba(6,29,73,.03),rgba(6,29,73,.18))!important}
+
+
+/* =========================================================
+   EL PROF V6.2 — REFERENCE HERO
+   The supplied reference image is the hero composition.
+   HTML hotspots remain interactive and accessible.
+   ========================================================= */
+.v62-hero{
+  position:relative;
+  width:100%;
+  min-height:clamp(560px,56.3vw,760px);
+  overflow:hidden;
+  background:#061b46;
+}
+.v62-hero-image{
+  object-fit:cover;
+  object-position:center center;
+}
+.v62-hotspots{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  pointer-events:none;
+}
+.v62-hotspot{
+  position:absolute;
+  display:block;
+  pointer-events:auto;
+  border-radius:999px;
+  outline:none;
+}
+.v62-hotspot-primary{
+  left:3.7%;
+  top:73.2%;
+  width:20.5%;
+  height:8%;
+}
+.v62-hotspot-video{
+  left:25.5%;
+  top:73.2%;
+  width:15.5%;
+  height:8%;
+}
+.v62-hotspot:focus-visible{
+  box-shadow:0 0 0 4px rgba(255,210,28,.95);
+}
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+@media(max-width:900px){
+  .v62-hero{min-height:auto;aspect-ratio:1672/941}
+  .v62-hotspot-primary{left:4%;top:73%;width:28%;height:9%}
+  .v62-hotspot-video{left:34%;top:73%;width:22%;height:9%}
+}
+@media(max-width:650px){
+  .v62-hero{min-height:auto;aspect-ratio:1672/941}
+  .v62-hotspot-primary{left:4%;top:72%;width:35%;height:10%}
+  .v62-hotspot-video{left:40%;top:72%;width:28%;height:10%}
+}
