@@ -5,7 +5,7 @@ import { courses, levels } from "@/lib/data";
 import BrandLogo from "@/components/BrandLogo";
 
 const levelMeta: Record<string,string> = {
-  "7ème":"Fondations","8ème":"Consolider","9ème":"Maîtriser","1ère":"Progresser","2ème":"Approfondir","3ème":"Performer","Bac":"Réussir"
+  "7ème":"Consolider les bases","8ème":"Gagner en autonomie","9ème":"Se préparer au lycée","1ère":"Construire ses compétences","2ème":"Approfondir et réussir","3ème":"Vers l’excellence","Bac":"Objectif réussite"
 };
 
 const plans = [
@@ -38,21 +38,22 @@ export default function Home(){
   </section>
 
   <section className="premium-section reveal-section" id="niveaux">
-   <div className="premium-heading"><span className="eyebrow">UN PARCOURS POUR CHAQUE ÉTAPE</span><h2>Du 7ème au Bac, une progression lisible.</h2><p>Chaque niveau possède sa logique d'apprentissage, ses objectifs et ses contenus. L'élève sait où il va et ce qu'il doit travailler.</p></div>
+   <div className="v52-section-heading"><div><h2>Nos niveaux</h2><span className="v52-yellow-underline"/></div><p>Un parcours complet du 7ème au Bac</p><span className="v52-heading-action">Choisis ton niveau et commence dès aujourd’hui ! <b>←</b><b>→</b></span></div>
    <div className="premium-levels stagger-grid">{levels.map((level,i)=><Link href={"/cours?level="+encodeURIComponent(level)} className={"premium-level level-"+(i+1)} key={level}><span className="level-orb" aria-hidden="true">{i+1}</span><div><strong>{level}</strong><small>{levelMeta[level]}</small></div><span className="level-arrow" aria-hidden="true">↗</span></Link>)}</div>
   </section>
 
-  <section className="premium-section reveal-section" id="apropos">
+    </section>
+
+  <section className="pricing-wrap reveal-section" id="offres">
+   <div className="v52-offers-heading"><div><h2>Nos offres</h2><span className="v52-yellow-underline"/></div><p>Des formules adaptées à tous les besoins</p><div className="v52-billing"><b>Mensuel</b><span>Annuel</span><i>-20%</i></div><div className="v52-save-note">Économisez<br/>jusqu’à 20% !<br/><b>↘</b></div></div>
+   <div className="pricing-grid stagger-grid">{plans.map((p,i)=><article className={"price-card plan-"+(i+1)+(p.featured?" featured":"")} key={p.name}>{p.featured&&<span className="price-badge">LE PLUS CHOISI</span>}<div className={"price-photo photo-"+(i+1)} aria-hidden="true"><span className="photo-shade"/><span className="photo-kicker">{i===0?"COMMENCE À TON RYTHME":i===1?"ACCÉLÈRE TA RÉUSSITE":"APPRENDS EN FAMILLE"}</span></div><span className="eyebrow">{p.name}</span><h3>{p.name==="PREMIUM FAMILLE"?"L'élève + sa famille":p.name==="PLUS"?"Le parcours complet":"Pour commencer"}</h3><p>{p.description}</p><div className="price-block"><span className="price-label">{p.price==="0"?"ACCÈS GRATUIT":"ABONNEMENT"}</span><div className="price"><strong>{p.price}</strong><small>{p.suffix}</small></div></div><ul className="price-features">{p.features.map(f=><li key={f}>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"btn "+(p.featured||p.name==="PLUS"?"btn-yellow":"btn-light")+" full"}>{p.cta} →</Link></article>)}</div>
+  </section>
+
+<section className="premium-section reveal-section" id="apropos">
    <div className="premium-story">
     <div className="story-panel dark"><span className="eyebrow" style={{color:"#ffd21c"}}>UNE PÉDAGOGIE CLAIRE</span><h3>Apprendre n'est pas accumuler du contenu.</h3><p>EL PROF organise l'apprentissage autour d'objectifs, de pratique et de progression visible.</p><div className="story-list"><div className="story-item"><i>01</i><div><b>Comprendre</b><p>Des notions expliquées avec clarté.</p></div></div><div className="story-item"><i>02</i><div><b>Pratiquer</b><p>Des exercices pour transformer la notion en compétence.</p></div></div><div className="story-item"><i>03</i><div><b>Progresser</b><p>Un suivi pour voir les acquis et les prochaines étapes.</p></div></div></div></div>
     <div className="story-panel"><span className="eyebrow">L'EXPÉRIENCE EL PROF</span><h3>Une interface pensée comme un véritable produit EdTech.</h3><p>Une navigation claire, des parcours structurés, des espaces dédiés et une identité visuelle cohérente sur ordinateur comme sur mobile.</p><div className="story-list"><div className="story-item"><i>✓</i><div><b>Espace élève</b><p>Cours, activité, quiz, badges et certificats.</p></div></div><div className="story-item"><i>✓</i><div><b>Espace professeur</b><p>Création et pilotage des parcours pédagogiques.</p></div></div><div className="story-item"><i>✓</i><div><b>Espace parent</b><p>Une vision simple de la progression familiale avec PREMIUM FAMILLE.</p></div></div></div></div>
    </div>
-  </section>
-
-  <section className="pricing-wrap reveal-section" id="offres">
-   <div className="premium-heading"><span className="eyebrow">CHOISIR SON EXPÉRIENCE</span><h2>Trois offres. Une même exigence pédagogique.</h2><p>Commence gratuitement, passe à PLUS lorsque tu veux aller plus loin, ou choisis PREMIUM FAMILLE pour intégrer le suivi parental.</p></div>
-   <div className="pricing-grid stagger-grid">{plans.map((p,i)=><article className={"price-card plan-"+(i+1)+(p.featured?" featured":"")} key={p.name}>{p.featured&&<span className="price-badge">LE PLUS CHOISI</span>}<div className={"price-photo photo-"+(i+1)} aria-hidden="true"><span className="photo-shade"/><span className="photo-kicker">{i===0?"COMMENCE À TON RYTHME":i===1?"ACCÉLÈRE TA RÉUSSITE":"APPRENDS EN FAMILLE"}</span></div><span className="eyebrow">{p.name}</span><h3>{p.name==="PREMIUM FAMILLE"?"L'élève + sa famille":p.name==="PLUS"?"Le parcours complet":"Pour commencer"}</h3><p>{p.description}</p><div className="price-block"><span className="price-label">{p.price==="0"?"ACCÈS GRATUIT":"ABONNEMENT"}</span><div className="price"><strong>{p.price}</strong><small>{p.suffix}</small></div></div><ul className="price-features">{p.features.map(f=><li key={f}>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"btn "+(p.featured||p.name==="PLUS"?"btn-yellow":"btn-light")+" full"}>{p.cta} →</Link></article>)}</div>
-  </section>
 
 
   <section className="v5-trust" aria-label="Les engagements EL PROF">
