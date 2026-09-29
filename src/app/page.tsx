@@ -25,6 +25,10 @@ export default function Home(){
       sizes="100vw"
       className="v62-hero-image"
     />
+    <div className="v62-visuals" aria-hidden="true">
+      <Image src="/elprof-logo.webp" alt="" width={285} height={285} className="v62-logo-overlay" />
+      <Image src="/reference/hero-student.svg" alt="" width={360} height={540} className="v62-student-overlay" />
+    </div>
     <div className="v62-hotspots" aria-hidden="false">
       <Link href="/connexion?signup=1" className="v62-hotspot v62-hotspot-primary" aria-label="Commencer maintenant" />
       <Link href="#apropos" className="v62-hotspot v62-hotspot-video" aria-label="Voir la vidéo" />
