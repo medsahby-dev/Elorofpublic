@@ -1,0 +1,111 @@
+/* EL PROF V1.3 — Brand Color System
+   Navy → White → Blue → Yellow, with controlled violet/cyan accents.
+   Loaded after premium.css so internal pages inherit one visual language.
+*/
+:root{
+  --ep3-navy:#071A3D;
+  --ep3-navy-2:#0B2F6B;
+  --ep3-blue:#1769FF;
+  --ep3-yellow:#FFC928;
+  --ep3-purple:#7257FF;
+  --ep3-cyan:#20C7E8;
+  --ep3-orange:#FF8A3D;
+  --ep3-bg:#F5F8FC;
+  --ep3-surface:#FFFFFF;
+  --ep3-line:#E2E9F3;
+  --ep3-ink:#0B1830;
+  --ep3-muted:#64748B;
+}
+
+/* Global surfaces */
+body{background:var(--ep3-bg);color:var(--ep3-ink)}
+.page,.quiz-page,.admin-page{background:transparent}
+.section{background:transparent}
+
+/* Course catalogue */
+.course-card,.lesson-sidebar,.lesson-content,.quiz-card,.quiz-result,
+.admin-panel,.admin-stats div,.admin-row,.auth-card,.dash-cards a,
+.goal-card,.current-course,.parent-panel,.parent-kpi{
+  border-color:var(--ep3-line);
+}
+.course-card{box-shadow:0 14px 34px rgba(7,26,61,.06);transition:transform .2s,box-shadow .2s,border-color .2s}
+.course-card:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(7,26,61,.10);border-color:#c9d8ee}
+.course-icon.blue{background:#E8F1FF;color:var(--ep3-blue)}
+.course-icon.purple{background:#EEEAFE;color:var(--ep3-purple)}
+.course-icon.green{background:#E5F8F0;color:#15966A}
+.course-icon.red{background:#FFEAE3;color:#E45A2A}
+.course-icon.yellow{background:#FFF4C7;color:#A87500}
+.course-level{color:var(--ep3-blue)}
+.filter.active{background:var(--ep3-navy)}
+.filter:hover{border-color:#b9cae2;color:var(--ep3-blue)}
+
+/* Course detail */
+.course-detail-head{
+  background:linear-gradient(135deg,var(--ep3-navy),var(--ep3-navy-2));
+  box-shadow:0 20px 50px rgba(7,26,61,.12)
+}
+.course-cover{background:linear-gradient(145deg,var(--ep3-yellow),#FFE47A)}
+.lesson-link.selected{background:#EAF2FF;color:var(--ep3-blue)}
+.lesson-link:hover{background:#F1F6FD}
+.progress-line span,.progress span{background:linear-gradient(90deg,var(--ep3-blue),#4B8BFF)}
+.method-box{background:#FFF7D6;border-left-color:var(--ep3-yellow)}
+
+/* Quiz */
+.quiz-progress span{background:var(--ep3-yellow)}
+.choice:hover{border-color:#b8cef2;background:#F6F9FF}
+.choice.selected{border-color:var(--ep3-blue);background:#EEF4FF}
+.result-xp{background:#FFF3BE;color:#6B5200}
+.quiz-result strong{color:var(--ep3-blue)}
+
+/* Authentication */
+.auth-brand{
+  background:radial-gradient(circle at 85% 15%,rgba(23,105,255,.35),transparent 35%),
+             linear-gradient(145deg,var(--ep3-navy),#0B3B82)
+}
+.auth-card{box-shadow:0 24px 60px rgba(7,26,61,.08)}
+.auth-card input:focus{border-color:var(--ep3-blue);box-shadow:0 0 0 3px rgba(23,105,255,.10)}
+.auth-switch button.active{color:var(--ep3-navy)}
+.back-home,.auth-card small b{color:var(--ep3-blue)}
+
+/* Dashboard */
+.dash-sidebar{background:linear-gradient(180deg,var(--ep3-navy),#092A60)}
+.dash-sidebar nav a.active,.dash-sidebar nav a:hover{background:var(--ep3-yellow);color:var(--ep3-navy)}
+.dash-main{background:var(--ep3-bg)}
+.goal-card{box-shadow:0 12px 30px rgba(7,26,61,.045)}
+.course-avatar{background:#E8F1FF;color:var(--ep3-blue)}
+.target{color:var(--ep3-blue)}
+.xp{border:1px solid var(--ep3-line)}
+.current-course{box-shadow:0 12px 28px rgba(7,26,61,.045)}
+
+/* Admin command center */
+.admin-page{max-width:1280px}
+.admin-head h1{color:var(--ep3-navy)}
+.admin-stats div{box-shadow:0 10px 28px rgba(7,26,61,.045)}
+.admin-stats b{color:var(--ep3-navy)}
+.admin-panel{box-shadow:0 12px 32px rgba(7,26,61,.045)}
+.status{background:#E5F8F0;color:#16845E}
+.admin-row button:hover{color:var(--ep3-blue)}
+
+/* Live classes */
+.live-banner{background:linear-gradient(135deg,var(--ep3-navy),var(--ep3-navy-2))}
+.live-info{background:#EAF4FF;border-color:#D6E7FF}
+.live-status{color:var(--ep3-blue)}
+
+/* Shared premium buttons / links */
+.btn-yellow{background:var(--ep3-yellow);color:var(--ep3-navy)}
+.btn-dark{background:var(--ep3-navy)}
+.btn-light{background:#EAF1FA;color:var(--ep3-navy)}
+.text-link{color:var(--ep3-blue)}
+.text-link:hover{color:var(--ep3-purple)}
+
+/* Controlled category accents — never rainbow-heavy */
+.course-card:nth-child(4n+1) .course-index{color:var(--ep3-blue)}
+.course-card:nth-child(4n+2) .course-index{color:var(--ep3-purple)}
+.course-card:nth-child(4n+3) .course-index{color:var(--ep3-cyan)}
+.course-card:nth-child(4n) .course-index{color:var(--ep3-orange)}
+
+/* Mobile: preserve hierarchy and avoid washed-out blocks */
+@media(max-width:650px){
+  .course-card,.quiz-card,.admin-panel,.auth-card{box-shadow:0 10px 26px rgba(7,26,61,.055)}
+  .page-hero h1,.admin-head h1{letter-spacing:-1.5px}
+}
