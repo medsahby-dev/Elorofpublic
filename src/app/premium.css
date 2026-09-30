@@ -741,3 +741,52 @@ body{background:var(--ep-v13-bg)}
   .live-grid{grid-template-columns:1fr}
   .teacher-page,.parent-page,.admin-page{padding-top:30px}
 }
+
+
+/* V2 surgical QA — spacing, readability, touch targets and mobile continuity */
+.student-course-layout{max-width:1050px;margin:0 auto}
+.student-course-card{background:#fff;border:1px solid var(--v2-line);border-radius:22px;padding:34px;box-shadow:0 12px 35px rgba(9,44,88,.045)}
+.student-course-card section+section{border-top:1px solid #edf2f7;margin-top:26px;padding-top:26px}
+.student-course-card h2{font-size:20px;letter-spacing:-.5px;color:var(--v2-ink);margin-bottom:12px}
+.student-course-card p,.student-lesson{font-size:14px;line-height:1.8;color:#52657f}
+.student-lesson{white-space:pre-line}
+.student-tip{margin-top:25px;padding:18px 20px;border-radius:14px;background:#fff8d9;border:1px solid #ffed9b}
+.student-tip b{color:#9b7700}
+.panel-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.builder-page{max-width:1280px!important}
+.builder-grid{gap:18px}
+.builder-module,.builder-sidebar{background:#fff;border-color:var(--v2-line)!important;border-radius:18px!important;box-shadow:0 8px 25px rgba(9,44,88,.035)}
+.builder-module h3{color:var(--v2-ink)}
+.admin-table{overflow-x:auto}
+.admin-table-row{min-width:650px}
+.parent-panel form{flex-wrap:wrap}
+.parent-panel form input{min-width:180px;border:1px solid #dfe7f1;border-radius:10px;padding:11px 12px}
+.teacher-head-actions,.panel-actions,.builder-actions{display:flex;gap:9px;flex-wrap:wrap}
+.status{white-space:nowrap}
+.course-detail-head{box-shadow:0 18px 45px rgba(7,54,117,.12)}
+.lesson-content{line-height:1.75}
+.lesson-sidebar{position:sticky;top:88px;align-self:start}
+.btn{min-height:42px}
+@media(max-width:900px){
+  .lesson-sidebar{position:static}
+  .student-course-card{padding:25px}
+  .builder-grid{grid-template-columns:1fr}
+  .admin-table-row{min-width:560px}
+}
+@media(max-width:700px){
+  .site-header nav{display:none!important}
+  .site-header .header-actions{display:flex!important;gap:7px!important}
+  .site-header .header-actions .login-link{display:inline-flex!important;font-size:9px!important;padding:8px 10px!important}
+  .site-header .header-actions .btn-yellow{display:inline-flex!important;font-size:9px!important;padding:9px 11px!important}
+  .site-header .ep-logo-symbol{width:38px!important;height:38px!important}
+  .site-header{gap:8px!important}
+  .student-course-card{padding:20px 17px;border-radius:18px}
+  .student-course-card h2{font-size:18px}
+  .student-course-card p,.student-lesson{font-size:13px;line-height:1.75}
+  .course-detail-head{padding:27px 22px!important;display:block!important}
+  .course-detail-head h1{font-size:35px!important}
+  .course-cover{width:110px;height:110px;margin-top:20px}
+  .panel-actions .btn{flex:1;min-width:145px}
+  .teacher-head-actions .btn,.builder-actions .btn{flex:1}
+  .admin-table{margin:0 -5px;padding:0 5px}
+}
