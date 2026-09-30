@@ -109,7 +109,7 @@ export default function Home(){
         <Link href="/cours" className="v2-btn v2-btn-primary">Découvrir les cours <Arrow/></Link>
       </div>
       <div className="v2-teacher-photo">
-        <Image src="/reference/professor.webp" alt="Professeur EL PROF" fill sizes="(max-width: 1050px) 80vw, 420px"/>
+        <Image src="/reference/professor-portrait-v2.webp" alt="Professeur EL PROF" fill sizes="(max-width: 1050px) 80vw, 420px"/>
       </div>
     </section>
 
