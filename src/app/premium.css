@@ -1001,3 +1001,6 @@ body{background:var(--ep-v13-bg)}
 
 /* V3.0 — XP progression */
 .xp-level-mini{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:7px;margin-top:7px;font-size:9px;color:#71839a}.xp-level-mini i{height:5px;min-width:70px;background:#e8eef6;border-radius:99px;overflow:hidden}.xp-level-mini em{display:block;height:100%;background:#1769ff;border-radius:99px}
+
+/* V3.1 — achievement milestones */
+.achievement-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:14px}.achievement-head h2{margin:4px 0 0}.achievement-count{font-size:10px;font-weight:800;color:#71839a;background:#f3f6fa;padding:7px 10px;border-radius:999px}.badge-item{position:relative}.badge-item em{display:block;margin-top:6px;font-size:8px;font-style:normal;font-weight:800;color:#24754c}.badge-item.locked{opacity:.62}
