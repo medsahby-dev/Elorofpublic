@@ -48,8 +48,7 @@ export default function Home(){
     </div>
     <div className="v2-hero-art">
       <div className="v2-asset-frame v2-student-asset">
-        <span>ASSET HERO</span>
-        <small>Photo élève à intégrer</small>
+        <Image src="/reference/hero-v2.webp" alt="Élève EL PROF" fill priority sizes="(max-width: 1050px) 68vw, 380px" />
       </div>
       <div className="v2-art-blob blob-blue"/>
       <div className="v2-art-blob blob-yellow"/>
