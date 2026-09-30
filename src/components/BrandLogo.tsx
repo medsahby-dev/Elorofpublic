@@ -7,14 +7,13 @@ export default function BrandLogo({ compact = false }: { compact?: boolean }) {
       <span className="ep-logo-symbol ep-logo-image" aria-hidden="true">
         <Image
           src="/reference/elprof-logo.webp"
-          alt=""
+          alt="EL PROF"
           width={64}
           height={64}
           priority
           sizes="64px"
         />
       </span>
-      <span className="ep-logo-word">EL <b>PROF</b></span>
     </Link>
   );
 }
