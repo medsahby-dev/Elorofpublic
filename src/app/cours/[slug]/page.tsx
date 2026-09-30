@@ -8,7 +8,7 @@ export default function CourseDetail({params}:{params:{slug:string}}){
  if(loading)return <main className="page"><div className="empty-state">Chargement du cours…</div></main>;
  if(!course)return <main className="page"><div className="empty-state">Cours introuvable.</div></main>;
  const c=course.student_content||{};
- return <main className="page"><div className="page-hero"><span className="eyebrow">{course.level} · {course.category}</span><h1>{course.title}</h1><p>{course.description}</p></div>
+ return <main className="page"><div className="course-detail-head"><div><span className="eyebrow">{course.level} · {course.category}</span><h1>{course.title}</h1><p>{course.description}</p></div><div className="course-detail-meta"><span><b>{course.lessons}</b> leçons</span><span><b>{course.duration}</b></span></div></div>
  <div className="student-course-layout"><article className="student-course-card">
   {c.introduction&&<section><h2>Bienvenue dans ce cours</h2><p>{c.introduction}</p></section>}
   {c.lesson&&<section><h2>📖 La leçon</h2><div className="student-lesson">{c.lesson}</div></section>}
