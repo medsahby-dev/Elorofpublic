@@ -491,3 +491,17 @@ body{background:var(--ep-v13-bg)}
 .v2-final{max-width:1300px;margin:20px auto 60px;padding:38px 5%;border-radius:25px;background:#eef5ff;display:flex;align-items:center;justify-content:space-between;gap:20px}.v2-final>div>span{font-size:9px;font-weight:900;letter-spacing:1.4px;color:#1769ff}.v2-final h2{font-size:32px;letter-spacing:-1.5px;margin:7px 0 0;color:#071a3d}
 @media(max-width:1050px){.v2-hero{grid-template-columns:1fr;padding-top:50px}.v2-hero-copy{text-align:center;margin:auto}.v2-hero p{margin-left:auto;margin-right:auto}.v2-actions,.v2-trust{justify-content:center}.v2-hero-art{margin-top:20px}.v2-benefits{grid-template-columns:1fr 1fr}.v2-subject-grid{grid-template-columns:1fr 1fr}.v2-platform{grid-template-columns:1fr}.v2-platform-copy{text-align:center}.v2-platform-copy p{margin-left:auto;margin-right:auto}.v2-device-stage{max-width:600px;width:100%;margin:auto}.v2-level-grid{grid-template-columns:repeat(4,1fr)}.v2-level-grid a:nth-child(4){border-right:0}.v2-level-grid a:nth-child(n+5){border-top:1px solid #e3eaf3}.v2-teacher{grid-template-columns:1fr;padding-top:60px}.v2-teacher-copy{text-align:center}.v2-teacher-copy p{margin-left:auto;margin-right:auto}.v2-teacher-photo{margin:20px auto 0}.v2-final{margin-left:5%;margin-right:5%}}
 @media(max-width:650px){.v2-hero{padding:42px 20px 55px}.v2-hero h1{font-size:47px!important;letter-spacing:-2.8px!important}.v2-hero p{font-size:14px}.v2-trust{gap:17px}.v2-trust strong{font-size:17px}.v2-hero-art{height:420px}.v2-asset-frame{width:68%;height:340px}.v2-floating-chip{font-size:8px;padding:9px}.chip-a{right:0}.chip-b{right:0}.chip-c{right:3%}.v2-handwrite{left:0;font-size:15px}.v2-handwrite b{font-size:18px}.v2-section{padding:58px 20px}.v2-section-head{display:block}.v2-section-head h2{font-size:34px}.v2-link{margin-top:15px}.v2-benefits,.v2-subject-grid,.v2-price-grid,.v2-testimonial-grid{grid-template-columns:1fr}.v2-subject{min-height:190px}.v2-platform{margin:10px 20px;padding:45px 20px}.v2-platform-copy h2{font-size:39px}.v2-device-stage{height:330px;transform:scale(.86);transform-origin:center top}.laptop{left:0;width:330px}.phone{right:0}.v2-device-note{right:0;top:-2px;font-size:12px}.v2-level-grid{grid-template-columns:1fr 1fr}.v2-level-grid a:nth-child(2n){border-right:0}.v2-level-grid a:nth-child(n+3){border-top:1px solid #e3eaf3}.v2-price.featured{transform:none}.v2-teacher{padding:55px 20px}.v2-teacher-photo{height:300px}.v2-final{display:block;padding:30px 24px;margin-bottom:35px}.v2-final h2{font-size:28px}.v2-final .v2-btn{width:100%;margin-top:20px}}
+
+/* V2 premium finishing pass */
+.v2-hero{min-height:670px}
+.v2-hero-art:before{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(23,105,255,.12);border-radius:50%;right:7%;top:5%;z-index:0}
+.v2-student-asset{box-shadow:0 34px 85px rgba(23,105,255,.16)}
+.v2-level-grid a{position:relative;gap:7px}
+.v2-level-icon{height:42px;display:flex;align-items:center}
+.v2-level-icon img{width:38px;height:38px;object-fit:contain}
+.v2-level-grid strong{margin-top:2px}
+.v2-price{padding-top:32px}
+.v2-plan-icon{position:absolute;right:22px;top:22px;width:50px;height:50px;border-radius:15px;background:#f3f7ff;display:grid;place-items:center}
+.v2-plan-icon img{width:34px;height:34px;object-fit:contain}
+.v2-price.featured .v2-plan-icon{background:#eaf2ff}
+@media(max-width:650px){.v2-hero{min-height:auto}.v2-hero-art:before{width:330px;height:330px;right:50%;transform:translateX(50%);top:7%}.v2-plan-icon{right:18px;top:18px}}
