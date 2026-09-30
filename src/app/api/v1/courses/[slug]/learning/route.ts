@@ -37,7 +37,17 @@ export async function GET(request: Request, { params }: { params: Promise<{ slug
       enrolled = p.rows[0].enrolled;
       progress = p.rows[0].progress;
     }
-    return Response.json({success:true,data:{course,modules:modulesResult.rows,enrolled,progress,user:user?{id:user.id,subscription:user.subscription}:null}});
+    const modules = modulesResult.rows.map((module:any) => ({
+      ...module,
+      lessons: (module.lessons || []).map((lesson:any) => ({
+        ...lesson,
+        // Full lesson content is available to enrolled learners; public visitors only receive previews.
+        content: enrolled || lesson.isPreview ? lesson.content : null,
+        resources: enrolled || lesson.isPreview ? lesson.resources : [],
+        quizzes: enrolled || lesson.isPreview ? lesson.quizzes : [],
+      })),
+    }));
+    return Response.json({success:true,data:{course,modules,enrolled,progress,user:user?{id:user.id,subscription:user.subscription}:null}});
   } catch (error) {
     console.error("course-learning", error);
     return Response.json({success:false,error:{code:"INTERNAL_ERROR",message:"Impossible de charger le parcours."}},{status:500});
