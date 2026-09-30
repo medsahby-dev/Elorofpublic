@@ -15,7 +15,7 @@ const levelCards = [
   {name:"Seconde", sub:"Lycée · Consolider", icon:"level-2.svg", tone:"violet", query:"Seconde"},
   {name:"Première", sub:"Lycée · Vers le Bac", icon:"level-2.svg", tone:"orange", query:"Première"},
   {name:"Terminale", sub:"Lycée · Maîtriser", icon:"level-3.svg", tone:"blue", query:"Terminale"},
-  {name:"Bac Tunisien", sub:"Révision complète", icon:"level-bac.svg", tone:"coral", query:"Bac"},
+  {name:"Bac Tunisien", sub:"Révision complète", icon:"level-bac.svg", tone:"coral", query:"Bac Tunisien"},
   {name:"Adultes", sub:"Formation continue", icon:"level-1.svg", tone:"mint", query:"Adultes"}
 ];
 
