@@ -282,3 +282,51 @@ body{background:var(--ep-v13-bg)}
   .course-card h2{font-size:18px}
   .admin-page{padding-top:35px}
 }
+
+
+/* =========================================================
+   V1.3 — final layout polish
+   ========================================================= */
+.ultra-heading-row>p{
+  max-width:360px;
+  line-height:1.65;
+}
+.ultra-price-card{
+  min-width:0;
+}
+.ultra-price-btn{
+  min-height:46px;
+  white-space:nowrap;
+  text-align:center;
+}
+.price-top span{
+  max-width:70%;
+  line-height:1.35;
+}
+.ultra-price-card>p{
+  min-height:72px;
+}
+@media(max-width:1100px) and (min-width:701px){
+  .ultra-pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .ultra-price-card.featured{transform:none}
+  .ultra-pricing-grid .ultra-price-card:last-child{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .ultra-heading-row>p{max-width:none}
+  .ultra-price-card{padding:26px}
+  .ultra-price-card h3{font-size:30px}
+  .ultra-price-card>p{min-height:0}
+  .ultra-price-btn{white-space:normal}
+  .ultra-proof{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    text-align:left;
+  }
+  .ultra-proof span{
+    padding:12px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:13px;
+    background:rgba(255,255,255,.045);
+  }
+}
