@@ -25,7 +25,13 @@ export default function CoursesPage(){
   const levelParam=params.get("level")||"";
   const [courses,setCourses]=useState<Course[]>([]);
   const [filter,setFilter]=useState("Tous");
+  const [search,setSearch]=useState("");
+  const [level,setLevel]=useState(levelParam);
   const [loading,setLoading]=useState(true);
+
+  useEffect(()=>{
+    setLevel(levelParam);
+  },[levelParam]);
 
   useEffect(()=>{
     fetch("/api/courses")
@@ -34,15 +40,18 @@ export default function CoursesPage(){
       .finally(()=>setLoading(false));
   },[]);
 
+  const levels=useMemo(()=>Array.from(new Set(courses.map(c=>c.level).filter(Boolean))).sort((a,b)=>a.localeCompare(b,"fr")), [courses]);
   const visible=useMemo(()=>{
-    const byCategory=filter==="Tous"?courses:courses.filter(c=>c.category.toLowerCase().includes(filter.toLowerCase()));
-    if(!levelParam) return byCategory;
-    const wanted=levelParam.trim().toLowerCase();
-    return byCategory.filter(c=>{
-      const current=String(c.level||"").trim().toLowerCase();
-      return current===wanted || (wanted==="bac tunisien" && current.includes("bac")) || (wanted==="bac" && current.includes("bac"));
+    const q=search.trim().toLowerCase();
+    const wanted=level.trim().toLowerCase();
+    return courses.filter(c=>{
+      const categoryOk=filter==="Tous"||c.category.toLowerCase().includes(filter.toLowerCase());
+      const levelText=String(c.level||"").trim().toLowerCase();
+      const levelOk=!wanted||levelText===wanted||(wanted==="bac tunisien"&&levelText.includes("bac"))||(wanted==="bac"&&levelText.includes("bac"));
+      const searchOk=!q||[c.title,c.description,c.category,c.level].some(v=>String(v||"").toLowerCase().includes(q));
+      return categoryOk&&levelOk&&searchOk;
     });
-  },[courses,filter,levelParam]);
+  },[courses,filter,level,search]);
 
   return <main className="page courses-v2">
     <div className="page-hero courses-hero">
@@ -54,11 +63,16 @@ export default function CoursesPage(){
       <Link href="/#niveaux" className="btn btn-light">Explorer les niveaux →</Link>
     </div>
 
-    <div className="course-toolbar">
+    <div className="course-toolbar-v2">
+      <div className="course-search-wrap"><span aria-hidden="true">⌕</span><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Rechercher un cours…" aria-label="Rechercher un cours"/></div>
+      <select value={level} onChange={e=>setLevel(e.target.value)} aria-label="Filtrer par niveau">
+        <option value="">Tous les niveaux</option>
+        {levels.map(l=><option value={l} key={l}>{l}</option>)}
+      </select>
       <div className="filter-row">{["Tous","Grammaire","Conjugaison","Compréhension","Expression"].map(f=>
         <button key={f} className={filter===f?"filter active":"filter"} onClick={()=>setFilter(f)}>{f}</button>
       )}</div>
-      <span className="course-count">{loading?"Chargement…":`${visible.length} parcours${levelParam?` · ${levelParam}`:""}`}</span>
+      <span className="course-count">{loading?"Chargement…":visible.length+" parcours"+(level?" · "+level:"")}</span>
     </div>
 
     {loading
