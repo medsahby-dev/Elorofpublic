@@ -6,104 +6,107 @@ const levelMeta: Record<string,string> = {
   "1ère":"Construire ses compétences","2ème":"Approfondir et réussir","3ème":"Vers l’excellence","Bac":"Objectif réussite"
 };
 
+const subjects = [
+  {name:"Grammaire",desc:"Des explications claires et des exercices ciblés",tone:"blue",icon:"book"},
+  {name:"Conjugaison",desc:"Maîtrisez tous les temps en toute simplicité",tone:"coral",icon:"pen"},
+  {name:"Compréhension",desc:"Analysez et comprenez tous types de textes",tone:"mint",icon:"doc"},
+  {name:"Expression écrite",desc:"Entraînez-vous à bien rédiger et argumenter",tone:"violet",icon:"chat"}
+];
+
 const plans = [
-  {name:"ESSENTIEL",price:"0",suffix:"DT",tag:"POUR COMMENCER",description:"Découvre EL PROF et construis tes premières habitudes.",features:["Cours découverte","Exercices essentiels","Quiz de niveau","Profil élève"]},
-  {name:"PLUS",price:"25",suffix:"DT / mois",tag:"LE PARCOURS COMPLET",description:"Tout ce qu’il faut pour apprendre, pratiquer et progresser.",features:["Tous les cours","Exercices et quiz","Suivi de progression","Préparation examens","Ressources premium"],featured:true},
-  {name:"PREMIUM FAMILLE",price:"49",suffix:"DT / mois",tag:"L’ÉLÈVE + LA FAMILLE",description:"L’élève apprend. Le parent accompagne avec une vision claire.",features:["Tout PLUS","Espace Parent","Résultats et moyennes","Activité et régularité","Rapport hebdomadaire","Classes en direct"]}
+  {name:"Essentiel",price:"19",suffix:"DT / mois",desc:"Pour bien commencer",features:["Accès à tous les cours","Exercices interactifs","Suivi de progression"]},
+  {name:"Premium",price:"29",suffix:"DT / mois",desc:"La formule complète",features:["Cours + exercices + examens","Suivi personnalisé","Accès sur tous vos appareils","Support prioritaire"],featured:true},
+  {name:"Annuel",price:"299",suffix:"DT / an",desc:"Le meilleur rapport qualité/prix",features:["Tout la formule Premium","Accès illimité 12 mois","Économisez jusqu'à 37%"]}
 ];
 
 function Arrow(){return <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>}
 function Check(){return <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 3.2 3.2L16 5.8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+function SubjectIcon({type}:{type:string}) {
+  if(type==="pen") return <svg viewBox="0 0 24 24"><path d="m5 19 2.2-5.4L16.8 4l3.2 3.2-9.6 9.6L5 19Z" fill="none" stroke="currentColor" strokeWidth="1.8"/><path d="m14.8 6 3.2 3.2" stroke="currentColor" strokeWidth="1.8"/></svg>;
+  if(type==="doc") return <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" strokeWidth="1.8"/><path d="M15 3v5h4M9 12h6M9 16h6" stroke="currentColor" strokeWidth="1.6"/></svg>;
+  if(type==="chat") return <svg viewBox="0 0 24 24"><path d="M5 5h14v10H9l-4 4V5Z" fill="none" stroke="currentColor" strokeWidth="1.8"/><path d="M9 9h6M9 12h4" stroke="currentColor" strokeWidth="1.6"/></svg>;
+  return <svg viewBox="0 0 24 24"><path d="M5 5h14v13H5z" fill="none" stroke="currentColor" strokeWidth="1.8"/><path d="M8 5v13M8 8h8M8 12h8M8 16h5" stroke="currentColor" strokeWidth="1.6"/></svg>;
+}
 
 export default function Home(){
- return <main className="ultra-home">
-  <section className="ultra-hero">
-    <div className="hero-glow hero-glow-a"/><div className="hero-glow hero-glow-b"/>
-    <div className="hero-gridline"/>
-    <div className="ultra-hero-copy">
-      <div className="ultra-pill"><span/> PLATEFORME ÉDUCATIVE · TUNISIE</div>
-      <h1>Le français,<br/><em>autrement.</em></h1>
-      <p>Une expérience d’apprentissage pensée pour comprendre, pratiquer et progresser — du 7ème au Bac.</p>
-      <div className="ultra-actions">
-        <Link href="/connexion?signup=1" className="ultra-btn ultra-btn-yellow">Commencer maintenant <Arrow/></Link>
-        <Link href="#niveaux" className="ultra-btn ultra-btn-ghost">Explorer les parcours</Link>
+ return <main className="v2-home">
+  <section className="v2-hero">
+    <div className="v2-hero-copy">
+      <div className="v2-kicker">PLATEFORME ÉDUCATIVE · TUNISIE</div>
+      <h1>Apprenez aujourd’hui<br/>et <span>construisez demain</span></h1>
+      <p>Des cours clairs, des exercices interactifs et un accompagnement pour réussir en toute confiance.</p>
+      <div className="v2-actions">
+        <Link href="/cours" className="v2-btn v2-btn-primary">Découvrir les cours <Arrow/></Link>
+        <Link href="#offres" className="v2-btn v2-btn-outline">Voir nos offres</Link>
       </div>
-      <div className="ultra-proof"><span><b>7ème → Bac</b> parcours structurés</span><span><b>Élève · Parent · Professeur</b> un écosystème</span></div>
-    </div>
-    <div className="ultra-hero-visual">
-      <div className="orbit orbit-one"/><div className="orbit orbit-two"/>
-      <div className="hero-card hero-card-main">
-        <div className="hero-card-top"><span className="mini-brand">EP</span><span className="live-dot">PARCOURS ACTIF</span></div>
-        <div className="hero-card-label">TON ESPACE D’APPRENTISSAGE</div>
-        <strong>Français · 9ème</strong>
-        <p>Comprendre les relations entre les personnages</p>
-        <div className="hero-progress"><span style={{width:"78%"}}/></div>
-        <div className="hero-card-meta"><span>78% maîtrisé</span><span>4 / 5 activités</span></div>
+      <div className="v2-trust">
+        <div><strong>10 000+</strong><span>Apprenants</span></div>
+        <div><strong>500+</strong><span>Cours et ressources</span></div>
+        <div><strong>95%</strong><span>Taux de satisfaction</span></div>
       </div>
-      <div className="hero-float hero-float-a"><small>PROGRESSION</small><b>+24%</b><span>ce mois-ci</span></div>
-      <div className="hero-float hero-float-b"><span className="float-icon">✦</span><div><b>Quiz validé</b><small>Score 92%</small></div></div>
-      <div className="hero-logo-card" aria-label="Logo EL PROF"><img src="/favicon.svg" alt="EL PROF — Le français plus simple, plus proche de toi" /></div>
     </div>
-    <div className="hero-bottom-note"><span>SCROLL POUR DÉCOUVRIR</span><i/></div>
-  </section>
-
-  <section className="ultra-section ultra-intro">
-    <div className="section-kicker">UNE MÉTHODE. UNE EXPÉRIENCE.</div>
-    <div className="intro-grid">
-      <h2>Apprendre n’est pas<br/><em>accumuler du contenu.</em></h2>
-      <div><p>EL PROF transforme le cours de français en un parcours clair, progressif et mesurable.</p><Link href="#apropos" className="text-link">Découvrir notre approche <Arrow/></Link></div>
-    </div>
-    <div className="method-cards">
-      <article><span>01</span><h3>Comprendre</h3><p>Des notions expliquées avec précision et simplicité.</p></article>
-      <article><span>02</span><h3>Pratiquer</h3><p>Des exercices conçus pour transformer la notion en compétence.</p></article>
-      <article><span>03</span><h3>Progresser</h3><p>Une progression visible, des objectifs et des repères.</p></article>
-    </div>
-  </section>
-
-  <section className="ultra-section levels-section" id="niveaux">
-    <div className="ultra-heading-row"><div><div className="section-kicker">TON PARCOURS</div><h2>Du 7ème au Bac.</h2></div><p>Choisis ton niveau.<br/>Commence là où tu es.</p></div>
-    <div className="ultra-levels">{levels.map((level,i)=><Link href={"/cours?level="+encodeURIComponent(level)} className="ultra-level" key={level}><span className="level-number">0{i+1}</span><div><b>{level}</b><small>{levelMeta[level]}</small></div><Arrow/></Link>)}</div>
-  </section>
-
-  <section className="ultra-section dark-section" id="apropos">
-    <div className="section-kicker">L’EXPÉRIENCE EL PROF</div>
-    <div className="dark-intro"><h2>Une plateforme qui donne<br/><em>envie d’avancer.</em></h2><p>Chaque écran est pensé pour réduire la friction, mettre l’essentiel au premier plan et rendre la progression visible.</p></div>
-    <div className="experience-grid">
-      <div className="experience-large"><span>ESPACE ÉLÈVE</span><h3>Tout ton parcours.<br/>Au même endroit.</h3><div className="fake-dashboard"><div className="fake-sidebar"/><div className="fake-main"><i/><i/><i/></div></div></div>
-      <div className="experience-small"><span>ESPACE PROFESSEUR</span><h3>Créer.<br/>Piloter.<br/>Faire progresser.</h3><b>Studio pédagogique →</b></div>
-      <div className="experience-small family"><span>PREMIUM FAMILLE</span><h3>L’élève apprend.<br/>Le parent accompagne.</h3><b>Suivi intelligent →</b></div>
-    </div>
-  </section>
-
-  <section className="pricing-wrap ultra-pricing" id="offres">
-    <div className="ultra-section pricing-inner">
-      <div className="ultra-heading-row"><div><div className="section-kicker">DES OFFRES SIMPLES</div><h2>Choisis ton rythme.</h2></div><p>Commence gratuitement.<br/>Passe au niveau supérieur quand tu veux.</p></div>
-      <div className="ultra-pricing-grid">{plans.map((p,i)=><article className={"ultra-price-card "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="popular">LE PLUS CHOISI</div>}<div className="price-top"><span>{p.tag}</span><b>0{i+1}</b></div><h3>{p.name==="PREMIUM FAMILLE" ? <>L’élève +<br/>sa famille</> : p.name==="PLUS" ? <>Le parcours<br/>complet</> : <>Pour<br/>commencer</>}</h3><p>{p.description}</p><div className="price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"ultra-price-btn "+(p.featured?"yellow":"dark")}>{p.price==="0"?"Commencer":"Choisir "+(p.name==="PREMIUM FAMILLE"?"Famille":p.name)} <Arrow/></Link></article>)}</div>
-    </div>
-  </section>
-
-  <section className="ultra-section courses-section">
-    <div className="ultra-heading-row"><div><div className="section-kicker">LES COURS</div><h2>Des contenus qui font progresser.</h2></div><Link href="/cours" className="text-link">Voir tous les cours <Arrow/></Link></div>
-    <div className="ultra-course-grid">{courses.slice(0,6).map((c,i)=><Link href={"/cours/"+c.slug} className="ultra-course" key={c.id}><span className="course-index">0{i+1}</span><span className="course-level-label">{c.level}</span><h3>{c.title}</h3><p>{c.description}</p><div><span>{c.lessons} leçons</span><Arrow/></div></Link>)}</div>
-  </section>
-
-  <section className="ultra-section teacher-story" id="enseignant">
-    <div className="teacher-story-media" role="img" aria-label="Portrait du professeur EL PROF"></div>
-    <div className="teacher-story-copy">
-      <div className="section-kicker">L’HUMAIN DERRIÈRE EL PROF</div>
-      <h2>Apprendre.<br/><em>Transmettre.</em><br/>Réussir ensemble.</h2>
-      <p>Une plateforme éducative pensée par un pédagogue, avec une conviction simple : le numérique doit rendre l’apprentissage plus clair, plus humain et plus motivant.</p>
-      <div className="teacher-story-points">
-        <span><b>01</b> Une pédagogie structurée</span>
-        <span><b>02</b> Des contenus conçus pour les élèves</span>
-        <span><b>03</b> Une progression visible</span>
+    <div className="v2-hero-art">
+      <div className="v2-asset-frame v2-student-asset">
+        <span>ASSET HERO</span>
+        <small>Photo élève à intégrer</small>
       </div>
-      <Link href="/cours" className="text-link">Découvrir l’approche EL PROF <Arrow/></Link>
+      <div className="v2-art-blob blob-blue"/>
+      <div className="v2-art-blob blob-yellow"/>
+      <div className="v2-floating-chip chip-a"><b>↗</b> Cours interactifs</div>
+      <div className="v2-floating-chip chip-b"><b>▥</b> Suivi de progression</div>
+      <div className="v2-floating-chip chip-c"><b>✦</b> Méthodes efficaces</div>
+      <div className="v2-handwrite">Réussir<br/>avec<br/><b>EL PROF</b></div>
     </div>
   </section>
 
-  <section className="ultra-section final-section">
-    <div className="final-card"><div><div className="section-kicker">PRÊT À COMMENCER ?</div><h2>Ton parcours commence ici.</h2><p>Crée ton compte gratuitement et découvre l’expérience EL PROF.</p></div><Link href="/connexion?signup=1" className="ultra-btn ultra-btn-yellow">Créer mon compte <Arrow/></Link></div>
+  <section className="v2-section v2-why">
+    <div className="v2-section-head"><div><span>POURQUOI CHOISIR EL PROF ?</span><h2>Une expérience pensée pour réussir.</h2></div></div>
+    <div className="v2-benefits">
+      {[
+        ["♢","Cours de qualité","Rédigés par des experts et conformes au programme."],
+        ["↗","Exercices interactifs","Entraînez-vous et progressez efficacement."],
+        ["◇","Suivi personnalisé","Suivez vos progrès et identifiez vos points forts."],
+        ["▣","Accessible partout","Sur ordinateur, tablette et mobile."]
+      ].map(([icon,title,desc])=><article key={title}><i>{icon}</i><h3>{title}</h3><p>{desc}</p></article>)}
+    </div>
   </section>
+
+  <section className="v2-section v2-courses" id="cours-principaux">
+    <div className="v2-section-head"><div><span>NOS COURS PRINCIPAUX</span><h2>Apprendre devient plus simple.</h2></div><Link href="/cours" className="v2-link">Voir tous les cours <Arrow/></Link></div>
+    <div className="v2-subject-grid">
+      {subjects.map(s=><Link href="/cours" className={"v2-subject "+s.tone} key={s.name}><i><SubjectIcon type={s.icon}/></i><h3>{s.name}</h3><p>{s.desc}</p><b><Arrow/></b></Link>)}
+    </div>
+  </section>
+
+  <section className="v2-section v2-platform">
+    <div className="v2-platform-copy"><span>UNE PLATEFORME PENSÉE POUR VOTRE RÉUSSITE</span><h2>Votre parcours.<br/><em>Sur tous vos appareils.</em></h2><p>Retrouvez vos cours, vos exercices, vos quiz et votre progression au même endroit.</p><Link href="/connexion?signup=1" className="v2-btn v2-btn-primary">Commencer maintenant <Arrow/></Link></div>
+    <div className="v2-device-stage">
+      <div className="v2-device laptop"><div className="device-top">EL PROF <span>Mes cours</span></div><div className="device-lines"><i/><i/><i/><i/></div></div>
+      <div className="v2-device phone"><div className="phone-head">Mes cours</div><div className="phone-line"/><div className="phone-line"/><div className="phone-line"/></div>
+      <div className="v2-device-note">Apprenez<br/>à votre rythme<br/>sur tous vos appareils ↗</div>
+    </div>
+  </section>
+
+  <section className="v2-section v2-levels" id="niveaux">
+    <div className="v2-section-head"><div><span>UN PARCOURS POUR CHAQUE ÉLÈVE</span><h2>Du 7ème au Bac.</h2></div><p>Choisissez votre niveau et commencez là où vous êtes.</p></div>
+    <div className="v2-level-grid">{levels.map((level,i)=><Link href={"/cours?level="+encodeURIComponent(level)} key={level}><small>0{i+1}</small><strong>{level}</strong><span>{levelMeta[level]}</span><Arrow/></Link>)}</div>
+  </section>
+
+  <section className="v2-section v2-pricing" id="offres">
+    <div className="v2-section-head"><div><span>NOS FORMULES</span><h2>Choisissez la formule qui vous convient.</h2></div></div>
+    <div className="v2-price-grid">{plans.map((p,i)=><article className={"v2-price "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="v2-popular">Le plus populaire</div>}<h3>{p.name}</h3><p>{p.desc}</p><div className="v2-price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"v2-price-btn "+(p.featured?"fill":"outline")}>Choisir cette formule <Arrow/></Link></article>)}</div>
+  </section>
+
+  <section className="v2-section v2-teacher">
+    <div className="v2-teacher-copy"><span>VOTRE RÉUSSITE EST NOTRE MISSION</span><h2>Apprendre.<br/><em>Transmettre.</em><br/>Réussir ensemble.</h2><p>EL PROF vous accompagne avec des contenus de qualité, des outils interactifs et une méthode pensée pour progresser sereinement.</p><Link href="/cours" className="v2-btn v2-btn-white">Découvrir EL PROF <Arrow/></Link></div>
+    <div className="v2-teacher-photo"><span>PHOTO PROFESSEUR</span><small>Asset maître à intégrer</small></div>
+  </section>
+
+  <section className="v2-section v2-testimonials">
+    <div className="v2-section-head"><div><span>ILS PARLENT DE NOUS</span><h2>Une expérience qui compte.</h2></div></div>
+    <div className="v2-testimonial-grid">{["Des cours très clairs et une plateforme simple à utiliser. J’ai vraiment progressé !","EL PROF m’a aidé à mieux comprendre et à prendre confiance en moi.","Une équipe à l’écoute et des ressources de grande qualité. Merci !"].map((quote,i)=><article key={i}><div>★★★★★</div><p>“{quote}”</p><strong>{["Élève de 9ème","Élève de Bac","Étudiante"][i]}</strong></article>)}</div>
+  </section>
+
+  <section className="v2-final"><div><span>PRÊT À COMMENCER ?</span><h2>Construisez votre réussite avec EL PROF.</h2></div><Link href="/connexion?signup=1" className="v2-btn v2-btn-primary">Créer mon compte <Arrow/></Link></div>
  </main>
 }
