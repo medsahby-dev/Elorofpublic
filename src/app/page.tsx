@@ -89,12 +89,12 @@ export default function Home(){
 
   <section className="v2-section v2-levels" id="niveaux">
     <div className="v2-section-head"><div><span>UN PARCOURS POUR CHAQUE ÉLÈVE</span><h2>Du 7ème au Bac.</h2></div><p>Choisissez votre niveau et commencez là où vous êtes.</p></div>
-    <div className="v2-level-grid">{levels.map((level,i)=><Link href={"/cours?level="+encodeURIComponent(level)} key={level}><small>0{i+1}</small><strong>{level}</strong><span>{levelMeta[level]}</span><Arrow/></Link>)}</div>
+    <div className="v2-level-grid">{levels.map((level,i)=><Link href={"/cours?level="+encodeURIComponent(level)} key={level}><div className="v2-level-icon"><Image src={"/reference/"+(level==="Bac"?"level-bac":"level-"+(i+1))+".svg"} alt="" width={38} height={38}/></div><small>0{i+1}</small><strong>{level}</strong><span>{levelMeta[level]}</span><Arrow/></Link>)}</div>
   </section>
 
   <section className="v2-section v2-pricing" id="offres">
     <div className="v2-section-head"><div><span>NOS FORMULES</span><h2>Choisissez la formule qui vous convient.</h2></div></div>
-    <div className="v2-price-grid">{plans.map((p,i)=><article className={"v2-price "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="v2-popular">Le plus populaire</div>}<h3>{p.name}</h3><p>{p.desc}</p><div className="v2-price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"v2-price-btn "+(p.featured?"fill":"outline")}>Choisir cette formule <Arrow/></Link></article>)}</div>
+    <div className="v2-price-grid">{plans.map((p,i)=><article className={"v2-price "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="v2-popular">Le plus populaire</div><div className="v2-plan-icon"><Image src={"/reference/"+(i===0?"price-essential":i===1?"price-plus":"price-family")+".svg"} alt="" width={42} height={42}/></div>}<h3>{p.name}</h3><p>{p.desc}</p><div className="v2-price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"v2-price-btn "+(p.featured?"fill":"outline")}>Choisir cette formule <Arrow/></Link></article>)}</div>
   </section>
 
   <section className="v2-section v2-teacher">
