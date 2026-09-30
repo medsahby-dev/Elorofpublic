@@ -33,16 +33,6 @@ export async function GET(request: Request, { params }: { params: Promise<{ quiz
       title: lessonCourse.rows[0].course_title,
     } : null;
 
-    const questions = await db.query(
-      `SELECT qq.id, qq.question, qq.question_type, qq.explanation, qq.points, qq.position,
-              COALESCE(json_agg(json_build_object('id',qa.id,'answer',qa.answer,'position',qa.position) ORDER BY qa.position) FILTER (WHERE qa.id IS NOT NULL), '[]'::json) AS choices
-       FROM quiz_questions qq
-       LEFT JOIN quiz_answers qa ON qa.question_id=qq.id
-       WHERE qq.quiz_id=$1
-       GROUP BY qq.id
-       ORDER BY qq.position`, [id]
-    );
-
     let enrolled = false;
     let attemptsUsed = 0;
     const user = await getCurrentUser(request);
@@ -53,10 +43,30 @@ export async function GET(request: Request, { params }: { params: Promise<{ quiz
       attemptsUsed = Number(attempts.rows[0]?.count || 0);
     }
 
+    // A quiz may be opened publicly only when it belongs to a lesson explicitly marked as preview.
+    let preview = false;
+    if (q.lesson_id) {
+      const lesson = await db.query(`SELECT is_preview FROM lessons WHERE id=$1 LIMIT 1`, [q.lesson_id]);
+      preview = Boolean(lesson.rows[0]?.is_preview);
+    }
+    if (!enrolled && !preview) {
+      return Response.json({ success: false, error: { code: "NOT_ENROLLED", message: "Inscription au cours requise pour accéder à ce quiz." } }, { status: 403 });
+    }
+
+    const questions = await db.query(
+      `SELECT qq.id, qq.question, qq.question_type, qq.explanation, qq.points, qq.position,
+              COALESCE(json_agg(json_build_object('id',qa.id,'answer',qa.answer,'position',qa.position) ORDER BY qa.position) FILTER (WHERE qa.id IS NOT NULL), '[]'::json) AS choices
+       FROM quiz_questions qq
+       LEFT JOIN quiz_answers qa ON qa.question_id=qq.id
+       WHERE qq.quiz_id=$1
+       GROUP BY qq.id
+       ORDER BY qq.position`, [id]
+    );
+
     return Response.json({
       success: true,
       data: {
-        quiz: { id: q.id, title: q.title, description: q.description, passingScore: Number(q.passing_score), maxAttempts: q.max_attempts, enrolled, attemptsUsed, course },
+        quiz: { id: q.id, title: q.title, description: q.description, passingScore: Number(q.passing_score), maxAttempts: q.max_attempts, enrolled, preview, attemptsUsed, course },
         questions: questions.rows.map((row: any) => ({ ...row, points: Number(row.points) })),
       },
     }, { headers: { "Cache-Control": "no-store" } });
