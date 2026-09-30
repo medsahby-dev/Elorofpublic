@@ -942,3 +942,15 @@ body{background:var(--ep-v13-bg)}
 .live-card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(9,44,88,.08)!important}
 .live-status{font-size:8px!important;font-weight:900!important;letter-spacing:.6px}
 @media(max-width:700px){.teacher-head,.parent-head,.admin-head{padding:23px 20px!important;border-radius:20px!important}.teacher-hero-strip{border-radius:20px;padding:20px}.teacher-orb{display:none}.parent-plan{margin-top:14px}.admin-head .panel-actions,.teacher-head-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.admin-head .panel-actions .btn,.teacher-head-actions .btn{width:100%}}
+
+/* V2.3 — Tunisian pathway grid */
+.v2-level-grid.compact{grid-template-columns:repeat(8,minmax(0,1fr));border-radius:22px;box-shadow:0 14px 38px rgba(9,44,88,.045)}
+.v2-level-grid.compact a{min-height:154px;padding:18px 14px;background:#fff}
+.v2-level-grid.compact a:nth-child(4){border-right:1px solid #e3eaf3}
+.v2-level-grid.compact a:nth-child(n+5){border-top:1px solid #e3eaf3}
+.v2-level-grid.compact a:hover{background:#f7fbff}
+.v2-level-grid.compact .v2-level-icon{width:44px;height:44px;border-radius:14px;padding:6px}
+.v2-level-grid.compact .v2-level-icon.blue{background:#eaf3ff}.v2-level-grid.compact .v2-level-icon.coral{background:#fff0f0}.v2-level-grid.compact .v2-level-icon.mint{background:#e9fbf7}.v2-level-grid.compact .v2-level-icon.violet{background:#f1edff}.v2-level-grid.compact .v2-level-icon.orange{background:#fff4e8}
+.v2-level-grid.compact .v2-level-icon img{width:32px;height:32px}
+@media(max-width:1050px){.v2-level-grid.compact{grid-template-columns:repeat(4,1fr)}.v2-level-grid.compact a:nth-child(4n){border-right:0}.v2-level-grid.compact a:nth-child(n+5){border-top:1px solid #e3eaf3}}
+@media(max-width:650px){.v2-level-grid.compact{grid-template-columns:1fr 1fr}.v2-level-grid.compact a:nth-child(2n){border-right:0}.v2-level-grid.compact a:nth-child(n+3){border-top:1px solid #e3eaf3}.v2-level-grid.compact a{min-height:140px;padding:15px 12px}}
