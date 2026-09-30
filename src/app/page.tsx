@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { levels } from "@/lib/data";
 
 const subjects = [
   {name:"Français", desc:"Cours, exercices, fiches et annales corrigées", tone:"blue", icon:"book"},
