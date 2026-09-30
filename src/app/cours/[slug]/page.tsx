@@ -8,14 +8,15 @@ export default function CourseDetail({params}:{params:{slug:string}}){
  if(loading)return <main className="page"><div className="empty-state">Chargement du cours…</div></main>;
  if(!course)return <main className="page"><div className="empty-state">Cours introuvable.</div></main>;
  const c=course.student_content||{};
+ const sections=[c.introduction?{id:"intro",label:"Bienvenue",icon:"01"}:null,c.lesson?{id:"lesson",label:"La leçon",icon:"02"}:null,(c.keyPoints||[]).length?{id:"points",label:"À retenir",icon:"03"}:null,(c.examples||[]).length?{id:"examples",label:"Exemples",icon:"04"}:null,(c.activities||[]).length?{id:"activities",label:"Activités",icon:"05"}:null,(c.exercises||[]).length?{id:"exercises",label:"Exercices",icon:"06"}:null].filter(Boolean) as {id:string;label:string;icon:string}[];
  return <main className="page"><div className="course-detail-head"><div><span className="eyebrow">{course.level} · {course.category}</span><h1>{course.title}</h1><p>{course.description}</p></div><div className="course-detail-meta"><span><b>{course.lessons}</b> leçons</span><span><b>{course.duration}</b></span></div></div>
- <div className="student-course-layout"><article className="student-course-card">
-  {c.introduction&&<section><h2>Bienvenue dans ce cours</h2><p>{c.introduction}</p></section>}
-  {c.lesson&&<section><h2>📖 La leçon</h2><div className="student-lesson">{c.lesson}</div></section>}
-  {(c.keyPoints||[]).length>0&&<section><h2>🧠 À retenir</h2>{c.keyPoints!.map((x,i)=><p key={i}>✓ {x}</p>)}</section>}
-  {(c.examples||[]).length>0&&<section><h2>💡 Exemples</h2>{c.examples!.map((x,i)=><p key={i}>{x}</p>)}</section>}
-  {(c.activities||[]).length>0&&<section><h2>✏️ Activités</h2>{c.activities!.map((x,i)=><p key={i}>{x}</p>)}</section>}
-  {(c.exercises||[]).length>0&&<section><h2>📝 Exercices</h2>{c.exercises!.map((x,i)=><p key={i}>{x}</p>)}</section>}
+ <div className="lesson-player-layout"><aside className="lesson-outline"><div className="lesson-outline-head"><span className="eyebrow">PARCOURS</span><strong>{course.title}</strong></div><div className="lesson-outline-list">{sections.map((s,i)=><a href={"#"+s.id} key={s.id} className={i===1?"active":""}><span>{s.icon}</span><b>{s.label}</b></a>)}</div><div className="lesson-outline-foot"><small>PROGRESSION</small><strong>À ton rythme</strong><span>{sections.length} étapes disponibles</span></div></aside><div className="student-course-layout"><article className="student-course-card">
+  {c.introduction&&<section id="intro"><h2>Bienvenue dans ce cours</h2><p>{c.introduction}</p></section>}
+  {c.lesson&&<section id="lesson"><h2>📖 La leçon</h2><div className="student-lesson">{c.lesson}</div></section>}
+  {(c.keyPoints||[]).length>0&&<section id="points"><h2>🧠 À retenir</h2>{c.keyPoints!.map((x,i)=><p key={i}>✓ {x}</p>)}</section>}
+  {(c.examples||[]).length>0&&<section id="examples"><h2>💡 Exemples</h2>{c.examples!.map((x,i)=><p key={i}>{x}</p>)}</section>}
+  {(c.activities||[]).length>0&&<section id="activities"><h2>✏️ Activités</h2>{c.activities!.map((x,i)=><p key={i}>{x}</p>)}</section>}
+  {(c.exercises||[]).length>0&&<section id="exercises"><h2>📝 Exercices</h2>{c.exercises!.map((x,i)=><p key={i}>{x}</p>)}</section>}
   {c.tip&&<aside className="student-tip"><b>Astuce</b><p>{c.tip}</p></aside>}
   <div className="panel-actions"><Link className="btn btn-light" href="/cours">← Tous les cours</Link><Link className="btn btn-yellow" href={"/quiz?course="+encodeURIComponent(course.slug)}>🧠 Faire le quiz →</Link></div>
  </article></div></main>;
