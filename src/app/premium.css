@@ -1004,3 +1004,7 @@ body{background:var(--ep-v13-bg)}
 
 /* V3.1 — achievement milestones */
 .achievement-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:14px}.achievement-head h2{margin:4px 0 0}.achievement-count{font-size:10px;font-weight:800;color:#71839a;background:#f3f6fa;padding:7px 10px;border-radius:999px}.badge-item{position:relative}.badge-item em{display:block;margin-top:6px;font-size:8px;font-style:normal;font-weight:800;color:#24754c}.badge-item.locked{opacity:.62}
+
+/* V3.2 — learning roadmap */
+.learning-roadmap{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center;gap:8px;margin:22px 0 8px;padding:18px;border:1px solid var(--v2-line);border-radius:18px;background:#fbfdff}.roadmap-step{text-align:center}.roadmap-step>span{width:30px;height:30px;margin:0 auto 7px;display:grid;place-items:center;border-radius:50%;background:#eef2f7;color:#8291a5;font-size:10px;font-weight:900}.roadmap-step.done>span{background:#1769ff;color:#fff}.roadmap-step b{display:block;font-size:10px;color:var(--v2-ink)}.roadmap-step small{display:block;margin-top:3px;font-size:8px;color:#8a99aa;line-height:1.35}.roadmap-line{height:2px;background:#e7edf4}.roadmap-line.active{background:#8db7ff}
+@media(max-width:700px){.learning-roadmap{grid-template-columns:1fr;gap:0}.roadmap-line{width:2px;height:18px;margin:0 auto}.roadmap-step{padding:5px}.roadmap-line.active{background:#8db7ff}}
