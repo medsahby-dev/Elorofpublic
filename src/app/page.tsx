@@ -78,13 +78,13 @@ export default function Home(){
   <section className="pricing-wrap ultra-pricing" id="offres">
     <div className="ultra-section pricing-inner">
       <div className="ultra-heading-row"><div><div className="section-kicker">DES OFFRES SIMPLES</div><h2>Choisis ton rythme.</h2></div><p>Commence gratuitement.<br/>Passe au niveau supérieur quand tu veux.</p></div>
-      <div className="ultra-pricing-grid">{plans.map((p,i)=><article className={"ultra-price-card "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="popular">LE PLUS CHOISI</div>}<div className="price-top"><span>{p.tag}</span><b>0{i+1}</b></div><h3>{p.name==="PREMIUM FAMILLE" ? <>L’élève +<br/>sa famille</> : p.name==="PLUS" ? <>Le parcours<br/>complet</> : <>Pour<br/>commencer</>}</h3><p>{p.description}</p><div className="price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"ultra-price-btn "+(p.featured?"yellow":"dark")}>{p.price==="0"?"Commencer gratuitement":"Choisir "+p.name} <Arrow/></Link></article>)}</div>
+      <div className="ultra-pricing-grid">{plans.map((p,i)=><article className={"ultra-price-card "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="popular">LE PLUS CHOISI</div>}<div className="price-top"><span>{p.tag}</span><b>0{i+1}</b></div><h3>{p.name==="PREMIUM FAMILLE" ? <>L’élève +<br/>sa famille</> : p.name==="PLUS" ? <>Le parcours<br/>complet</> : <>Pour<br/>commencer</>}</h3><p>{p.description}</p><div className="price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"ultra-price-btn "+(p.featured?"yellow":"dark")}>{p.price==="0"?"Commencer":"Choisir "+(p.name==="PREMIUM FAMILLE"?"Famille":p.name)} <Arrow/></Link></article>)}</div>
     </div>
   </section>
 
   <section className="ultra-section courses-section">
     <div className="ultra-heading-row"><div><div className="section-kicker">LES COURS</div><h2>Des contenus qui font progresser.</h2></div><Link href="/cours" className="text-link">Voir tous les cours <Arrow/></Link></div>
-    <div className="ultra-course-grid">{courses.slice(0,6).map((c,i)=><Link href={"/cours/"+c.id} className="ultra-course" key={c.id}><span className="course-index">0{i+1}</span><span className="course-level-label">{c.level}</span><h3>{c.title}</h3><p>{c.description}</p><div><span>{c.lessons} leçons</span><Arrow/></div></Link>)}</div>
+    <div className="ultra-course-grid">{courses.slice(0,6).map((c,i)=><Link href={"/cours/"+c.slug} className="ultra-course" key={c.id}><span className="course-index">0{i+1}</span><span className="course-level-label">{c.level}</span><h3>{c.title}</h3><p>{c.description}</p><div><span>{c.lessons} leçons</span><Arrow/></div></Link>)}</div>
   </section>
 
   <section className="ultra-section final-section">
