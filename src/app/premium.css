@@ -994,3 +994,7 @@ body{background:var(--ep-v13-bg)}
 
 /* V2.8 — quiz result continuity */
 .quiz-result-panel{margin:20px auto;padding:16px 18px;max-width:560px;border:1px solid var(--v2-line);border-radius:16px;background:#f7f9fc;text-align:left}.quiz-result-panel.passed{background:#f2fbf6;border-color:#ccebd9}.quiz-result-panel b{font-size:12px;color:var(--v2-ink)}.quiz-result-panel p{font-size:11px;line-height:1.6;color:var(--v2-muted);margin:5px 0 0}
+
+/* V2.9 — daily learning command */
+.student-welcome-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 18px;padding:18px 20px;border:1px solid #dce8f8;border-radius:18px;background:linear-gradient(100deg,#f5f9ff,#fff);box-shadow:0 10px 30px rgba(9,44,88,.035)}.student-welcome-strip>div{display:grid;gap:5px}.student-welcome-strip b{font-size:13px;color:var(--v2-ink)}.student-welcome-strip .btn{white-space:nowrap}
+@media(max-width:650px){.student-welcome-strip{display:grid}.student-welcome-strip .btn{width:100%;justify-content:center}}
