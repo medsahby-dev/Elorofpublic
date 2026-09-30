@@ -56,7 +56,11 @@ export default function Home(){
         <div className="v2-hero-slogan left">Le français,<br/>plus simple,<br/>plus proche<br/>de toi !</div>
         <div className="v2-hero-slogan right">Apprendre<br/>Réussir<br/>Grandir</div>
         <div className="v2-asset-frame v2-student-asset">
-          <Image src="/reference/hero-v2.webp" alt="Élève EL PROF" fill priority sizes="(max-width: 1050px) 75vw, 600px"/>
+          <img
+            src="/reference/hero-v2.webp"
+            alt="Élève EL PROF"
+            className="v2-student-image"
+          />
         </div>
         <div className="v2-art-blob blob-blue"/>
         <div className="v2-art-blob blob-yellow"/>
@@ -113,7 +117,11 @@ export default function Home(){
         <Link href="/cours" className="v2-btn v2-btn-primary">Découvrir les cours <Arrow/></Link>
       </div>
       <div className="v2-teacher-photo">
-        <Image src="/reference/professor-portrait-v2.webp" alt="Professeur EL PROF" fill sizes="(max-width: 1050px) 80vw, 420px"/>
+        <img
+          src="/reference/professor-portrait-v2.webp"
+          alt="Professeur EL PROF"
+          className="v2-professor-image"
+        />
       </div>
     </section>
 

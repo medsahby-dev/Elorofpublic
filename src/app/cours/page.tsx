@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 type Course={id:number;slug:string;title:string;level:string;category:string;description:string;lessons:number;duration:string;access:string};
@@ -20,7 +20,7 @@ function coverFor(category:string){
   return coverByCategory[category]||"/reference/course-grammaire.svg";
 }
 
-export default function CoursesPage(){
+function CoursesContent(){
   const params=useSearchParams();
   const levelParam=params.get("level")||"";
   const [courses,setCourses]=useState<Course[]>([]);
@@ -95,4 +95,16 @@ export default function CoursesPage(){
           </article>
         )}</div>}
   </main>;
+}
+
+export default function CoursesPage(){
+  return (
+    <Suspense fallback={
+      <main className="page courses-v2">
+        <div className="empty-state">Chargement des cours…</div>
+      </main>
+    }>
+      <CoursesContent />
+    </Suspense>
+  );
 }
