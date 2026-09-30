@@ -1011,3 +1011,6 @@ body{background:var(--ep-v13-bg)}
 
 /* V3.7 — next focus */
 .dashboard-next-focus{display:flex;align-items:center;gap:14px;margin:18px 0 22px;padding:16px 18px;border:1px solid #d9e7fa;border-radius:18px;background:#f7faff}.dashboard-next-focus .focus-icon{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:12px;background:#1769ff;color:#fff}.dashboard-next-focus>div{flex:1}.dashboard-next-focus small{display:block;font-size:8px;font-weight:900;letter-spacing:.8px;color:#71839a}.dashboard-next-focus b{display:block;margin-top:3px;font-size:12px;color:var(--v2-ink)}.dashboard-next-focus p{margin:4px 0 0;font-size:10px;color:#71839a}.dashboard-next-focus .btn{white-space:nowrap}@media(max-width:650px){.dashboard-next-focus{align-items:flex-start;flex-wrap:wrap}.dashboard-next-focus>div{min-width:calc(100% - 52px)}.dashboard-next-focus .btn{width:100%;justify-content:center}}
+
+/* V3.8 — learning focus hierarchy */
+.dashboard-focus-panel{border-color:#cfe0f7;box-shadow:0 12px 34px rgba(9,44,88,.045)}.dashboard-focus-panel>.resume-card{border-color:#d5e4f7;background:#fff}.dashboard-focus-panel .resume-actions .btn{box-shadow:0 7px 16px rgba(23,105,255,.12)}
