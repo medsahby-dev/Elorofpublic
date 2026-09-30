@@ -888,3 +888,8 @@ body{background:var(--ep-v13-bg)}
  .pricing-bottom{display:block;padding:25px 20px}
  .pricing-bottom .btn{width:100%;margin-top:18px}
 }
+
+/* Auth brand uses the same canonical EL PROF mark as the shell */
+.auth-brand .ep-logo{position:relative;z-index:2;display:inline-flex!important;margin-bottom:28px}
+.auth-brand .ep-logo-symbol{width:60px!important;height:60px!important;border-radius:50%!important;overflow:hidden!important;background:#fff!important;box-shadow:0 14px 35px rgba(0,0,0,.12)!important}
+.auth-brand .ep-logo-symbol img{width:100%!important;height:100%!important;object-fit:cover!important}
