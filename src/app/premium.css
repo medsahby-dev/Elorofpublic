@@ -611,3 +611,9 @@ body{background:var(--ep-v13-bg)}
   .v2-hero{padding:35px 20px 35px}.v2-hero h1{font-size:46px!important;letter-spacing:-2.6px!important}.v2-feature-strip{grid-template-columns:1fr 1fr;text-align:left}.v2-hero-art{height:360px}.v2-asset-frame{height:350px;width:100%}.v2-hero-slogan{font-size:14px}.v2-hero-slogan.left{left:0}.v2-hero-slogan.right{right:0}
   .v2-section{padding:36px 20px}.v2-section-head{display:flex;align-items:end}.v2-section-head h2{font-size:29px}.v2-subject-grid,.v2-level-grid.compact,.v2-price-grid,.v2-testimonial-grid{grid-template-columns:1fr}.v2-stats{grid-template-columns:1fr 1fr;gap:0}.v2-stats>div{padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.13)}.v2-stats>div:nth-child(2){border-right:0}.v2-platform{padding:35px 20px}.v2-device-stage{transform:scale(.78);transform-origin:top center;height:285px}.v2-price{padding-left:75px}.v2-price ul{margin-left:-55px}.v2-price-btn{margin-left:-55px}.v2-toggle{margin-top:15px}.v2-final{display:block;padding:32px 20px}.v2-final .v2-btn{width:100%;margin-top:20px}
 }
+
+/* V2 header: keep the reference navigation clean */
+.site-header .header-actions>button{display:none!important}
+.site-header .ep-logo{display:flex!important;align-items:center!important}
+.site-header .ep-logo-symbol{display:block!important;width:48px!important;height:48px!important;border-radius:50%!important;overflow:hidden!important;box-shadow:none!important}
+.site-header .ep-logo-symbol img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
