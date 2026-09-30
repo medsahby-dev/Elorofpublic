@@ -893,3 +893,25 @@ body{background:var(--ep-v13-bg)}
 .auth-brand .ep-logo{position:relative;z-index:2;display:inline-flex!important;margin-bottom:28px}
 .auth-brand .ep-logo-symbol{width:60px!important;height:60px!important;border-radius:50%!important;overflow:hidden!important;background:#fff!important;box-shadow:0 14px 35px rgba(0,0,0,.12)!important}
 .auth-brand .ep-logo-symbol img{width:100%!important;height:100%!important;object-fit:cover!important}
+
+
+/* =========================================================
+   EL PROF V2.2 — student / learning experience
+   Tunisian student-first UX: clear action, low cognitive load.
+   ========================================================= */
+.student-command-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:14px;margin:0 0 20px}
+.student-command-card{display:flex;align-items:center;gap:13px;min-width:0;background:#fff;border:1px solid #dfe9f5;border-radius:20px;padding:16px;box-shadow:0 10px 28px rgba(9,44,88,.045);transition:.2s}
+.student-command-card:hover{transform:translateY(-2px);box-shadow:0 16px 35px rgba(9,44,88,.08)}
+.student-command-card.primary{background:linear-gradient(135deg,#073675,#1769ff);border:0;color:#fff}
+.command-icon{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:grid;place-items:center;background:#eef5ff;font-size:18px}
+.primary .command-icon{background:rgba(255,255,255,.14)}
+.student-command-card>div{min-width:0;flex:1}.student-command-card small{display:block;font-size:8px;font-weight:900;letter-spacing:1px;color:#6b7f99;margin-bottom:4px}.primary small{color:#cfe0ff}
+.student-command-card b{display:block;font-size:12px;color:#0b2146;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.primary b{color:#fff}
+.student-command-card p{font-size:10px;color:#7b8da3;margin:4px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.primary p{color:#dce9ff}
+.command-arrow{width:31px;height:31px;flex:0 0 31px;border-radius:10px;display:grid;place-items:center;background:#f1f6fd;color:#1769ff;font-weight:900}.primary .command-arrow{background:#ffd21c;color:#0b2146}
+.course-detail-head{max-width:1280px;margin:0 auto 20px;padding:30px 34px;border-radius:26px;background:linear-gradient(135deg,#f3f8ff,#fff);border:1px solid #dfeaf7;display:flex;justify-content:space-between;align-items:flex-end;gap:25px}
+.course-detail-head h1{font-size:clamp(28px,4vw,48px);line-height:1.02;letter-spacing:-1.8px;color:#0b2146;margin:8px 0}.course-detail-head p{max-width:700px;color:#647891;line-height:1.65;font-size:13px;margin:0}
+.course-detail-meta{display:flex;gap:9px;flex-wrap:wrap;white-space:nowrap}.course-detail-meta span{padding:10px 13px;border-radius:999px;background:#fff;border:1px solid #dfe9f5;color:#687c95;font-size:10px;font-weight:800}.course-detail-meta b{color:#1769ff}
+.student-course-card section{scroll-margin-top:90px}.student-course-card section h2{font-size:20px;color:#0b2146}.student-lesson{font-size:15px;line-height:1.8;color:#344b67}.student-course-card .panel-actions{border-top:1px solid #e5edf6;padding-top:20px;margin-top:25px}
+@media(max-width:900px){.student-command-grid{grid-template-columns:1fr 1fr}.student-command-card.primary{grid-column:1/-1}.course-detail-head{align-items:flex-start}}
+@media(max-width:650px){.student-command-grid{grid-template-columns:1fr}.student-command-card.primary{grid-column:auto}.student-command-card{padding:14px}.course-detail-head{display:block;padding:23px 20px;border-radius:20px}.course-detail-meta{margin-top:16px}.course-detail-meta span{white-space:normal}}
