@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type Course={id:number;slug:string;title:string;level:string;category:string;description:string;lessons:number;duration:string;access:string};
 
@@ -20,6 +21,8 @@ function coverFor(category:string){
 }
 
 export default function CoursesPage(){
+  const params=useSearchParams();
+  const levelParam=params.get("level")||"";
   const [courses,setCourses]=useState<Course[]>([]);
   const [filter,setFilter]=useState("Tous");
   const [loading,setLoading]=useState(true);
@@ -31,10 +34,15 @@ export default function CoursesPage(){
       .finally(()=>setLoading(false));
   },[]);
 
-  const visible=useMemo(
-    ()=>filter==="Tous"?courses:courses.filter(c=>c.category.toLowerCase().includes(filter.toLowerCase())),
-    [courses,filter]
-  );
+  const visible=useMemo(()=>{
+    const byCategory=filter==="Tous"?courses:courses.filter(c=>c.category.toLowerCase().includes(filter.toLowerCase()));
+    if(!levelParam) return byCategory;
+    const wanted=levelParam.trim().toLowerCase();
+    return byCategory.filter(c=>{
+      const current=String(c.level||"").trim().toLowerCase();
+      return current===wanted || (wanted==="bac tunisien" && current.includes("bac")) || (wanted==="bac" && current.includes("bac"));
+    });
+  },[courses,filter,levelParam]);
 
   return <main className="page courses-v2">
     <div className="page-hero courses-hero">
@@ -50,7 +58,7 @@ export default function CoursesPage(){
       <div className="filter-row">{["Tous","Grammaire","Conjugaison","Compréhension","Expression"].map(f=>
         <button key={f} className={filter===f?"filter active":"filter"} onClick={()=>setFilter(f)}>{f}</button>
       )}</div>
-      <span className="course-count">{loading?"Chargement…":`${visible.length} parcours`}</span>
+      <span className="course-count">{loading?"Chargement…":`${visible.length} parcours${levelParam?` · ${levelParam}`:""}`}</span>
     </div>
 
     {loading
