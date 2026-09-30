@@ -9,10 +9,14 @@ const subjects = [
 ];
 
 const levelCards = [
-  {name:"Collège", sub:"7ème · 8ème · 9ème", icon:"level-1.svg", tone:"blue"},
-  {name:"Lycée", sub:"Seconde · Première · Terminale", icon:"level-2.svg", tone:"orange"},
-  {name:"Bac Tunisien", sub:"Préparation complète", icon:"level-bac.svg", tone:"coral"},
-  {name:"Adultes", sub:"Cours et formation continue", icon:"level-3.svg", tone:"mint"}
+  {name:"7ème", sub:"Collège · Bases solides", icon:"level-7.svg", tone:"blue", query:"7ème"},
+  {name:"8ème", sub:"Collège · Approfondir", icon:"level-8.svg", tone:"coral", query:"8ème"},
+  {name:"9ème", sub:"Collège · Préparer le lycée", icon:"level-9.svg", tone:"mint", query:"9ème"},
+  {name:"Seconde", sub:"Lycée · Consolider", icon:"level-2.svg", tone:"violet", query:"Seconde"},
+  {name:"Première", sub:"Lycée · Vers le Bac", icon:"level-2.svg", tone:"orange", query:"Première"},
+  {name:"Terminale", sub:"Lycée · Maîtriser", icon:"level-3.svg", tone:"blue", query:"Terminale"},
+  {name:"Bac Tunisien", sub:"Révision complète", icon:"level-bac.svg", tone:"coral", query:"Bac"},
+  {name:"Adultes", sub:"Formation continue", icon:"level-1.svg", tone:"mint", query:"Adultes"}
 ];
 
 const plans = [
@@ -78,7 +82,7 @@ export default function Home(){
     <section className="v2-section v2-levels" id="niveaux">
       <div className="v2-section-head"><div><h2>Pour tous les <span>niveaux</span></h2><p>Un accompagnement adapté à chaque étape de votre parcours.</p></div></div>
       <div className="v2-level-grid compact">
-        {levelCards.map((l,i)=><Link href={"/cours?level="+encodeURIComponent(i===0?"7ème":i===1?"1ère":i===2?"Bac":"Adultes")} key={l.name}><div className={"v2-level-icon "+l.tone}><Image src={"/reference/"+l.icon} alt="" width={38} height={38}/></div><div><strong>{l.name}</strong><span>{l.sub}</span></div><Arrow/></Link>)}
+        {levelCards.map(l=><Link href={"/cours?level="+encodeURIComponent(l.query)} key={l.name}><div className={"v2-level-icon "+l.tone}><Image src={"/reference/"+l.icon} alt="" width={38} height={38}/></div><div><strong>{l.name}</strong><span>{l.sub}</span></div><Arrow/></Link>)}
       </div>
     </section>
 
