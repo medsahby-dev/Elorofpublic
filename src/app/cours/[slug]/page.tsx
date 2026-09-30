@@ -77,7 +77,7 @@ export default function CourseDetail({params}:{params:{slug:string}}){
     {renderContent(selected.content)}
     {selected.quizzes?.length?<div className="lesson-quiz-box"><span>🧠</span><div><b>{selected.quizzes[0].title}</b><p>Teste tes acquis après cette leçon · seuil {selected.quizzes[0].passingScore}%.</p></div><Link className="btn btn-light" href={"/quiz?quiz="+selected.quizzes[0].id}>Faire le quiz →</Link></div>:null}
     <div className="lesson-complete-box">{message&&<p className="lesson-success">{message}</p>}{error&&<p className="lesson-error">{error}</p>}{!data.enrolled&&<p>🔒 Connecte-toi et inscris-toi au cours pour enregistrer ta progression.</p>}<button className="btn btn-yellow" onClick={completeLesson} disabled={busy||selected.completed||!data.enrolled}>{selected.completed?"✓ Leçon terminée":busy?"Enregistrement…":"J’ai terminé cette leçon →"}</button></div>
-    <div className="panel-actions"><Link className="btn btn-light" href="/cours">← Tous les cours</Link>{currentIndex<allLessons.length-1&&<button className="btn btn-dark" onClick={()=>chooseLesson(allLessons[currentIndex+1])}>Leçon suivante →</button>}</div>
+    <div className="panel-actions"><Link className="btn btn-light" href="/cours">← Tous les cours</Link>{currentIndex>0&&<button className="btn btn-light" onClick={()=>chooseLesson(allLessons[currentIndex-1])}>← Précédente</button>}{currentIndex<allLessons.length-1?<button className="btn btn-dark" onClick={()=>chooseLesson(allLessons[currentIndex+1])}>Leçon suivante →</button>:selected.completed?<span className="lesson-end-note">✓ Parcours terminé</span>:null}</div>
     </>:<div className="empty-state">Aucune leçon disponible dans ce parcours.</div>}
    </article></div>
   </div>
