@@ -23,10 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <nav aria-label="Navigation principale">
             <Link href="/">Accueil</Link>
             <Link href="/cours">Cours</Link>
-            <Link href="/#niveaux">Niveaux</Link>
+            <Link href="/niveaux">Niveaux</Link>
             
-            <Link href="/#offres">Tarifs</Link>
-            <Link href="/#plateforme">À propos</Link>
+            <Link href="/tarifs">Tarifs</Link>
+            <Link href="/#a-propos">À propos</Link>
             <Link href="/#contact">Contact</Link>
           </nav>
           <div className="header-actions">
