@@ -50,9 +50,14 @@ export default function CourseDetail({params}:{params:{slug:string}}){
    finally{setBusy(false);}
  }
 
- function chooseLesson(l:Lesson){
+ async function chooseLesson(l:Lesson){
    setSelected(l);setMessage("");setError("");
-   if(l.id) fetch("/api/v1/lessons/"+l.id+"/progress",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({progress:Math.max(l.progress||0,1)})}).catch(()=>{});
+   if(!l.id||!data?.enrolled||l.completed||l.progress>0)return;
+   try{
+    const r=await fetch("/api/v1/lessons/"+l.id+"/progress",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({progress:1})});
+    if(r.status===401){window.location.href="/connexion";return;}
+    if(r.ok){const j=await r.json();if(j.success)setData(prev=>prev?{...prev,progress:j.data.courseProgress}:prev);}
+   }catch{}
  }
 
  if(loading)return <main className="page"><div className="empty-state">Chargement du parcours…</div></main>;
