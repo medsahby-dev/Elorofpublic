@@ -101,6 +101,18 @@ export default function Home(){
       <div className="v2-price-grid">{plans.map((p,i)=><article className={"v2-price "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="v2-popular">Le plus populaire</div>}<div className="v2-plan-icon"><Image src={"/reference/"+p.icon} alt="" width={38} height={38}/></div><h3>{p.name}</h3><p>{p.desc}</p><div className="v2-price-value"><strong>{p.price}</strong><small>DT / mois</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"v2-price-btn "+(p.featured?"fill":"outline")}>Choisir cette offre</Link></article>)}</div>
     </section>
 
+    <section className="v2-teacher" id="a-propos">
+      <div className="v2-teacher-copy">
+        <span>L’ACCOMPAGNEMENT EL PROF</span>
+        <h2>Apprendre avec<br/><em>un professeur</em></h2>
+        <p>Une pédagogie claire, structurée et proche de l’apprenant. Cours, méthodes, exercices et accompagnement sont réunis dans une même expérience pour avancer avec confiance.</p>
+        <Link href="/cours" className="v2-btn v2-btn-primary">Découvrir les cours <Arrow/></Link>
+      </div>
+      <div className="v2-teacher-photo">
+        <Image src="/reference/professor.webp" alt="Professeur EL PROF" fill sizes="(max-width: 1050px) 80vw, 420px"/>
+      </div>
+    </section>
+
     <section className="v2-section v2-testimonials">
       <div className="v2-section-head"><div><h2>Ils nous font <span>confiance</span></h2></div></div>
       <div className="v2-testimonial-grid">
