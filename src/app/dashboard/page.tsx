@@ -27,8 +27,10 @@ export default function Dashboard(){
  const isFamily=["premium","premium_famille","family"].includes(String(data.user.subscription||"").toLowerCase());
  const progressPct=resume?Math.max(0,Math.min(100,Number(resume.progress)||0)):0;
  const nextClassTime=nextClass?new Date(nextClass.starts_at):null;
+ const hasResume=Boolean(resume);
  return <main className="student-shell"><div className="student-container">
   <div className="student-hero"><div><span className="eyebrow">ESPACE ÉLÈVE</span><h1>Bonjour {name} 👋</h1><p>{data.user.level?`Niveau ${data.user.level} · `:""}{data.user.objective||"Continue ton parcours et progresse à ton rythme."}</p></div><div className="student-xp-card"><small>TON EXPÉRIENCE</small><strong>⭐ {data.user.xp} XP</strong></div></div>
+  <div className="student-welcome-strip"><div><span className="eyebrow">TON PARCOURS AUJOURD’HUI</span><b>{hasResume?"Reprends exactement où tu t’es arrêté.":"Choisis ton premier parcours et commence à progresser."}</b></div><Link href={hasResume?"/cours/"+resume.slug:"/cours"} className="btn btn-yellow">{hasResume?"Reprendre maintenant":"Choisir un cours"} →</Link></div>
   <div className="student-command-grid">
    <div className="student-command-card primary"><span className="command-icon">▶</span><div><small>PROCHAINE ACTION</small><b>{resume?progressPct>0?"Continue ton dernier cours":"Commence ton premier cours":"Choisis ton premier parcours"}</b><p>{resume?resume.title:"Découvre les parcours adaptés à ton niveau."}</p></div><Link href={resume?"/cours/"+resume.slug:"/cours"} className="command-arrow">→</Link></div>
    <div className="student-command-card"><span className="command-icon">🎯</span><div><small>OBJECTIF</small><b>{data.stats.quizAttempts>0?"Continue à t’entraîner":"Fais ton premier quiz"}</b><p>{data.stats.quizAttempts} quiz réalisés · {data.stats.averageQuizScore}% de moyenne</p></div><Link href="/quiz" className="command-arrow">→</Link></div>
