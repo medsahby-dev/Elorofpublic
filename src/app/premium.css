@@ -330,3 +330,100 @@ body{background:var(--ep-v13-bg)}
     background:rgba(255,255,255,.045);
   }
 }
+
+
+/* V1.4 — teacher story / editorial brand block */
+.teacher-story{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:0;
+  padding-top:70px;
+  padding-bottom:70px;
+  max-width:1240px;
+  align-items:stretch;
+}
+.teacher-story-media{
+  min-height:540px;
+  border-radius:30px 0 0 30px;
+  background:
+    linear-gradient(180deg,rgba(6,27,70,.04),rgba(6,27,70,.18)),
+    url("/reference/teacher-hero.webp") center/cover no-repeat,
+    linear-gradient(145deg,#dce9fa,#8fb5eb);
+  box-shadow:0 28px 80px rgba(6,27,70,.13);
+  position:relative;
+  overflow:hidden;
+}
+.teacher-story-media:after{
+  content:"EL PROF";
+  position:absolute;
+  left:25px;
+  bottom:23px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(6,27,70,.78);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.4px;
+  backdrop-filter:blur(10px);
+}
+.teacher-story-copy{
+  margin:34px 0 34px -1px;
+  padding:55px 55px 50px;
+  border:1px solid var(--u-line);
+  border-left:0;
+  border-radius:0 30px 30px 0;
+  background:#fff;
+  box-shadow:0 28px 80px rgba(6,27,70,.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.teacher-story-copy h2{
+  font-size:clamp(42px,4.8vw,65px);
+  line-height:.96;
+  letter-spacing:-3.2px;
+  margin:15px 0 22px;
+}
+.teacher-story-copy h2 em{
+  font-style:normal;
+  color:var(--u-blue);
+}
+.teacher-story-copy>p{
+  max-width:520px;
+  color:var(--u-muted);
+  line-height:1.8;
+  font-size:14px;
+}
+.teacher-story-points{
+  display:grid;
+  gap:10px;
+  margin:24px 0 28px;
+}
+.teacher-story-points span{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:12px;
+  font-weight:800;
+}
+.teacher-story-points b{
+  width:31px;
+  height:31px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:#eef4ff;
+  color:var(--u-blue);
+  font-size:9px;
+}
+@media(max-width:850px){
+  .teacher-story{grid-template-columns:1fr;padding-top:55px;padding-bottom:55px}
+  .teacher-story-media{min-height:430px;border-radius:24px 24px 0 0}
+  .teacher-story-copy{margin:-1px 0 0;border-left:1px solid var(--u-line);border-top:0;border-radius:0 0 24px 24px;padding:38px 30px}
+}
+@media(max-width:560px){
+  .teacher-story-media{min-height:350px}
+  .teacher-story-copy h2{font-size:42px;letter-spacing:-2.3px}
+  .teacher-story-copy{padding:32px 24px}
+}
