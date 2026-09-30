@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { courses, levels } from "@/lib/data";
 
@@ -99,7 +100,7 @@ export default function Home(){
 
   <section className="v2-section v2-teacher">
     <div className="v2-teacher-copy"><span>VOTRE RÉUSSITE EST NOTRE MISSION</span><h2>Apprendre.<br/><em>Transmettre.</em><br/>Réussir ensemble.</h2><p>EL PROF vous accompagne avec des contenus de qualité, des outils interactifs et une méthode pensée pour progresser sereinement.</p><Link href="/cours" className="v2-btn v2-btn-white">Découvrir EL PROF <Arrow/></Link></div>
-    <div className="v2-teacher-photo"><span>PHOTO PROFESSEUR</span><small>Asset maître à intégrer</small></div>
+    <div className="v2-teacher-photo"><Image src="/reference/professor.webp" alt="Professeur EL PROF" fill sizes="(max-width: 900px) 100vw, 48vw" /></div>
   </section>
 
   <section className="v2-section v2-testimonials">
