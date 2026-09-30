@@ -21,11 +21,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <BrandLogo />
           <nav aria-label="Navigation principale">
+            <Link href="/">Accueil</Link>
             <Link href="/cours">Cours</Link>
-            <Link href="/#offres">Offres</Link>
-            <Link href="/classes">Classes en direct</Link>
-            <Link href="/#niveaux">Niveaux</Link>
-            <Link href="/#apropos">Méthode</Link>
+            <Link href="/quiz">Exercices</Link>
+            <Link href="/classes">Examens</Link>
+            <Link href="/#offres">Tarifs</Link>
+            <Link href="/#enseignant">À propos</Link>
+            <Link href="/#contact">Contact</Link>
           </nav>
           <div className="header-actions">
             <Link href="/connexion" className="login-link">Connexion</Link>
