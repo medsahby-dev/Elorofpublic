@@ -87,6 +87,21 @@ export default function Home(){
     <div className="ultra-course-grid">{courses.slice(0,6).map((c,i)=><Link href={"/cours/"+c.slug} className="ultra-course" key={c.id}><span className="course-index">0{i+1}</span><span className="course-level-label">{c.level}</span><h3>{c.title}</h3><p>{c.description}</p><div><span>{c.lessons} leçons</span><Arrow/></div></Link>)}</div>
   </section>
 
+  <section className="ultra-section teacher-story" id="enseignant">
+    <div className="teacher-story-media" role="img" aria-label="Portrait du professeur EL PROF"></div>
+    <div className="teacher-story-copy">
+      <div className="section-kicker">L’HUMAIN DERRIÈRE EL PROF</div>
+      <h2>Apprendre.<br/><em>Transmettre.</em><br/>Réussir ensemble.</h2>
+      <p>Une plateforme éducative pensée par un pédagogue, avec une conviction simple : le numérique doit rendre l’apprentissage plus clair, plus humain et plus motivant.</p>
+      <div className="teacher-story-points">
+        <span><b>01</b> Une pédagogie structurée</span>
+        <span><b>02</b> Des contenus conçus pour les élèves</span>
+        <span><b>03</b> Une progression visible</span>
+      </div>
+      <Link href="/cours" className="text-link">Découvrir l’approche EL PROF <Arrow/></Link>
+    </div>
+  </section>
+
   <section className="ultra-section final-section">
     <div className="final-card"><div><div className="section-kicker">PRÊT À COMMENCER ?</div><h2>Ton parcours commence ici.</h2><p>Crée ton compte gratuitement et découvre l’expérience EL PROF.</p></div><Link href="/connexion?signup=1" className="ultra-btn ultra-btn-yellow">Créer mon compte <Arrow/></Link></div>
   </section>
