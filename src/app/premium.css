@@ -812,3 +812,79 @@ body{background:var(--ep-v13-bg)}
   .footer>div:first-child{grid-column:1/-1}
   .footer-bottom{grid-column:1/-1!important}
 }
+
+
+/* =========================================================
+   EL PROF V2.1 — catalog / levels / pricing polish
+   ========================================================= */
+.courses-hero,.levels-hero,.pricing-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}
+.courses-hero h1,.levels-hero h1,.pricing-hero h1{max-width:850px}
+.courses-hero h1 span,.levels-hero h1 span,.pricing-hero h1 span{color:var(--v2-blue)}
+.course-toolbar{max-width:1280px;margin:0 auto 22px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.course-toolbar .filter-row{margin:0}
+.course-count{font-size:11px;color:var(--v2-muted);font-weight:800;white-space:nowrap}
+.course-card-v2{padding:0!important;overflow:hidden!important}
+.course-card-v2:after{display:none!important}
+.course-cover{height:175px;position:relative;background:#edf4ff;overflow:hidden}
+.course-cover img{object-fit:cover}
+.course-cover>span{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.94);color:var(--v2-blue);font-size:9px;font-weight:900;padding:7px 10px;border-radius:999px;box-shadow:0 6px 18px rgba(9,44,88,.08)}
+.course-card-body{padding:19px 20px 20px}
+.course-card-kicker{font-size:9px;font-weight:900;color:var(--v2-blue);text-transform:uppercase;letter-spacing:1px}
+.course-card-v2 h2{font-size:18px!important;margin:7px 0!important}
+.course-card-v2 p{min-height:44px}
+.course-card-v2 .course-meta{display:flex;gap:14px;flex-wrap:wrap;margin:15px 0}
+.course-card-v2 .btn{margin-top:2px}
+
+.levels-group{max-width:1280px;margin:0 auto 34px}
+.levels-group>.eyebrow{display:block;margin-bottom:12px}
+.levels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.level-card-v2{display:grid;grid-template-columns:74px 1fr 20px;align-items:center;gap:14px;background:#fff;border:1px solid var(--v2-line);border-radius:20px;padding:16px;box-shadow:0 9px 28px rgba(9,44,88,.04);transition:.2s}
+.level-card-v2:hover{transform:translateY(-3px);border-color:#cfe0f6;box-shadow:0 18px 38px rgba(9,44,88,.09)}
+.level-card-art{width:74px;height:74px;border-radius:18px;background:#eef5ff;display:grid;place-items:center}
+.level-card-v2 small{font-size:9px;color:var(--v2-blue);font-weight:900;text-transform:uppercase;letter-spacing:.8px}
+.level-card-v2 h2{font-size:18px;color:var(--v2-ink);margin:3px 0}
+.level-card-v2 p{font-size:11px;color:var(--v2-muted);line-height:1.45;margin:0}
+.level-card-v2>span{color:var(--v2-blue);font-size:18px;font-weight:900}
+.levels-special{max-width:1280px;margin:10px auto 0}
+
+.pricing-note{background:#fff;border:1px solid var(--v2-line);padding:10px 14px;border-radius:999px;font-size:10px;font-weight:900;color:var(--v2-blue);white-space:nowrap}
+.pricing-page-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pricing-page-card{background:#fff;border:1px solid var(--v2-line);border-radius:24px;padding:27px;position:relative;box-shadow:0 12px 35px rgba(9,44,88,.05);display:flex;flex-direction:column}
+.pricing-page-card.featured{background:linear-gradient(145deg,#073675,#1769ff);color:#fff;border:0;box-shadow:0 24px 55px rgba(23,105,255,.2);transform:translateY(-8px)}
+.pricing-popular{position:absolute;right:18px;top:18px;background:var(--v2-yellow);color:#0b2146;font-size:8px;font-weight:900;padding:7px 9px;border-radius:999px}
+.pricing-page-icon{width:50px;height:50px;border-radius:15px;background:#eef5ff;display:grid;place-items:center}
+.pricing-page-card.featured .pricing-page-icon{background:rgba(255,255,255,.15)}
+.pricing-page-card h2{font-size:25px;margin:15px 0 6px;color:var(--v2-ink)}
+.pricing-page-card.featured h2{color:#fff}
+.pricing-page-card>p{font-size:12px;color:var(--v2-muted);min-height:36px;line-height:1.5}
+.pricing-page-card.featured>p{color:#dce9ff}
+.pricing-page-price{display:flex;align-items:baseline;gap:6px;margin:18px 0}
+.pricing-page-price strong{font-size:48px;letter-spacing:-2px;color:var(--v2-ink)}
+.pricing-page-card.featured .pricing-page-price strong{color:#fff}
+.pricing-page-price span{font-size:10px;color:var(--v2-muted)}
+.pricing-page-card.featured .pricing-page-price span{color:#dce9ff}
+.pricing-page-card ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:11px;flex:1}
+.pricing-page-card li{font-size:11px;color:#52657f}
+.pricing-page-card.featured li{color:#eef5ff}
+.pricing-page-card .btn{border-radius:12px}
+.pricing-bottom{max-width:1180px;margin:42px auto 0;padding:30px 34px;border-radius:22px;background:#f1f6fd;border:1px solid #dfeaf7;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.pricing-bottom h2{font-size:25px;letter-spacing:-1px;color:var(--v2-ink);margin:7px 0}
+.pricing-bottom p{font-size:11px;color:var(--v2-muted);margin:0}
+
+@media(max-width:900px){
+ .courses-hero,.levels-hero,.pricing-hero{display:block}
+ .courses-hero .btn,.levels-hero .btn{margin-top:15px}
+ .levels-grid{grid-template-columns:1fr 1fr}
+ .pricing-page-grid{grid-template-columns:1fr 1fr}
+ .pricing-page-card.featured{transform:none}
+}
+@media(max-width:650px){
+ .course-toolbar{display:block}
+ .course-count{display:block;margin:12px 0}
+ .levels-grid,.pricing-page-grid{grid-template-columns:1fr}
+ .level-card-v2{grid-template-columns:62px 1fr 18px}
+ .level-card-art{width:62px;height:62px}
+ .pricing-note{display:inline-block;margin-top:15px}
+ .pricing-bottom{display:block;padding:25px 20px}
+ .pricing-bottom .btn{width:100%;margin-top:18px}
+}
