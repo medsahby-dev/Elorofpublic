@@ -43,7 +43,7 @@ export default function CourseDetail({params}:{params:{slug:string}}){
     const j=await r.json();
     if(r.status===401){window.location.href="/connexion";return;}
     if(!r.ok||!j.success)throw new Error(j.error?.message||"Impossible d'enregistrer.");
-    setMessage(j.data?.certificate?"🎓 Parcours terminé : ton certificat est disponible.":"✓ Étape validée. Progression enregistrée.");
+    setMessage(j.data?.certificate ? "🎓 Parcours terminé : ton certificat est disponible." : "✓ Étape validée. Progression enregistrée.");
     setData(prev=>{if(!prev)return prev;return {...prev,progress:j.data.courseProgress,modules:prev.modules.map(m=>({...m,lessons:m.lessons.map(l=>l.id===selected.id?{...l,completed:true,progress:100,progressStatus:"completed"}:l)}))};});
     setSelected(prev=>prev?{...prev,completed:true,progress:100,progressStatus:"completed"}:prev);
    }catch(e:any){setError(e.message||"Une erreur est survenue.");}
