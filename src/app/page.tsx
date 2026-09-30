@@ -97,7 +97,7 @@ export default function Home(){
     <div className="v2-price-grid">{plans.map((p,i)=><article className={"v2-price "+(p.featured?"featured":"")} key={p.name}>{p.featured&&<div className="v2-popular">Le plus populaire</div><div className="v2-plan-icon"><Image src={"/reference/"+(i===0?"price-essential":i===1?"price-plus":"price-family")+".svg"} alt="" width={42} height={42}/></div>}<h3>{p.name}</h3><p>{p.desc}</p><div className="v2-price-value"><strong>{p.price}</strong><small>{p.suffix}</small></div><ul>{p.features.map(f=><li key={f}><Check/>{f}</li>)}</ul><Link href="/connexion?signup=1" className={"v2-price-btn "+(p.featured?"fill":"outline")}>Choisir cette formule <Arrow/></Link></article>)}</div>
   </section>
 
-  <section className="v2-section v2-teacher">
+  <section className="v2-section v2-teacher" id="enseignant">
     <div className="v2-teacher-copy"><span>VOTRE RÉUSSITE EST NOTRE MISSION</span><h2>Apprendre.<br/><em>Transmettre.</em><br/>Réussir ensemble.</h2><p>EL PROF vous accompagne avec des contenus de qualité, des outils interactifs et une méthode pensée pour progresser sereinement.</p><Link href="/cours" className="v2-btn v2-btn-white">Découvrir EL PROF <Arrow/></Link></div>
     <div className="v2-teacher-photo"><Image src="/reference/professor.webp" alt="Professeur EL PROF" fill sizes="(max-width: 900px) 100vw, 48vw" /></div>
   </section>
