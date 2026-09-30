@@ -954,3 +954,16 @@ body{background:var(--ep-v13-bg)}
 .v2-level-grid.compact .v2-level-icon img{width:32px;height:32px}
 @media(max-width:1050px){.v2-level-grid.compact{grid-template-columns:repeat(4,1fr)}.v2-level-grid.compact a:nth-child(4n){border-right:0}.v2-level-grid.compact a:nth-child(n+5){border-top:1px solid #e3eaf3}}
 @media(max-width:650px){.v2-level-grid.compact{grid-template-columns:1fr 1fr}.v2-level-grid.compact a:nth-child(2n){border-right:0}.v2-level-grid.compact a:nth-child(n+3){border-top:1px solid #e3eaf3}.v2-level-grid.compact a{min-height:140px;padding:15px 12px}}
+
+/* V2.3 — course discovery toolbar */
+.course-toolbar-v2{max-width:1280px;margin:0 auto 22px;display:grid;grid-template-columns:minmax(260px,1.5fr) 190px auto auto;gap:10px;align-items:center}
+.course-search-wrap{height:44px;display:flex;align-items:center;gap:9px;padding:0 13px;background:#fff;border:1px solid var(--v2-line);border-radius:12px;box-shadow:0 7px 22px rgba(9,44,88,.035)}
+.course-search-wrap span{font-size:20px;color:#7d8ca3;line-height:1}
+.course-search-wrap input{width:100%;border:0;outline:0;background:transparent;font:inherit;font-size:11px;color:var(--v2-ink)}
+.course-search-wrap input::placeholder{color:#9aa9bc}
+.course-toolbar-v2 select{height:44px;border:1px solid var(--v2-line);border-radius:12px;background:#fff;color:var(--v2-ink);padding:0 12px;font-size:11px;font-weight:800;outline:0}
+.course-toolbar-v2 .filter-row{display:flex;gap:6px;flex-wrap:wrap}
+.course-toolbar-v2 .filter{white-space:nowrap}
+.course-toolbar-v2 .course-count{justify-self:end}
+@media(max-width:1050px){.course-toolbar-v2{grid-template-columns:1fr 190px}.course-toolbar-v2 .filter-row{grid-column:1/-1}.course-toolbar-v2 .course-count{grid-column:1/-1;justify-self:start}}
+@media(max-width:650px){.course-toolbar-v2{grid-template-columns:1fr;margin-left:20px;margin-right:20px}.course-toolbar-v2 select{width:100%}.course-toolbar-v2 .filter-row{overflow:auto;flex-wrap:nowrap;padding-bottom:3px}.course-toolbar-v2 .filter{flex:0 0 auto}.course-toolbar-v2 .course-count{justify-self:start}}
