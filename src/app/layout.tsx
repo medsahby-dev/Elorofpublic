@@ -23,10 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <nav aria-label="Navigation principale">
             <Link href="/">Accueil</Link>
             <Link href="/cours">Cours</Link>
-            <Link href="/quiz">Exercices</Link>
-            <Link href="/classes">Examens</Link>
+            <Link href="/#niveaux">Niveaux</Link>
+            
             <Link href="/#offres">Tarifs</Link>
-            <Link href="/#enseignant">À propos</Link>
+            <Link href="/#plateforme">À propos</Link>
             <Link href="/#contact">Contact</Link>
           </nav>
           <div className="header-actions">
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BrandLogo />
             <p>Le français plus simple, plus proche de toi.</p>
           </div>
-          <div><strong>Explorer</strong><Link href="/cours">Cours</Link><Link href="/classes">Classes en direct</Link><Link href="/#offres">Offres</Link><Link href="/connexion">Connexion</Link></div>
+          <div><strong>Explorer</strong><Link href="/cours">Cours</Link><Link href="/classes">Classes en direct</Link><Link href="/#offres">Tarifs</Link><Link href="/connexion">Connexion</Link></div>
           <div><strong>Apprendre</strong><span>Grammaire</span><span>Conjugaison</span><span>Expression écrite</span><span>Préparation Bac</span></div>
           <div><strong>Famille</strong><span>Suivi parental</span><span>Progression</span><span>Résultats</span><span>Rapports</span></div>
           <div className="footer-bottom">© 2026 EL PROF — Tous droits réservés.</div>
