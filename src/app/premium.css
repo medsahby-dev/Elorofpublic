@@ -1352,3 +1352,35 @@ body{background:var(--ep-v13-bg)}
   .v2-hero-dot.dot-two{left:20%;top:4%}
 }
 
+
+/* EL PROF V2 — mobile header correction */
+@media(max-width:700px){
+  .site-header{
+    height:64px!important;
+    min-height:64px!important;
+    padding:0 16px!important;
+    gap:8px!important;
+    position:sticky!important;
+    top:0!important;
+    z-index:50!important;
+  }
+  .site-header .ep-logo{
+    height:44px!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+  .site-header .ep-logo-symbol{
+    width:42px!important;
+    height:42px!important;
+    border-radius:0!important;
+    overflow:visible!important;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+  .site-header .ep-logo-symbol img{
+    width:42px!important;
+    height:42px!important;
+    object-fit:contain!important;
+    display:block!important;
+  }
+}
