@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1413">
+<defs>
+<clipPath id="subject" clipPathUnits="userSpaceOnUse">
+<path d="M 585 5 C 500 18 435 80 410 155 C 395 205 405 255 430 300 C 405 350 395 410 420 455 C 395 500 350 550 300 600 C 240 660 190 730 165 820 C 135 930 145 1050 185 1160 C 210 1240 270 1330 340 1413 L 1510 1413 C 1530 1320 1495 1210 1450 1110 C 1400 1000 1360 900 1305 820 C 1260 755 1210 690 1150 635 C 1090 580 1035 550 980 525 C 950 510 930 490 920 465 C 960 420 990 365 1000 300 C 1010 230 995 150 950 95 C 900 35 825 5 760 0 Z"/>
+</clipPath>
+</defs>
+<image href="/reference/hero-v2.webp" width="1600" height="1413" preserveAspectRatio="none" clip-path="url(#subject)"/>
+</svg>
