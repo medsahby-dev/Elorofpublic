@@ -53,19 +53,27 @@ export default function Home(){
         </div>
       </div>
       <div className="v2-hero-art">
-        <div className="v2-hero-slogan left">Le français,<br/>plus simple,<br/>plus proche<br/>de toi !</div>
-        <div className="v2-hero-slogan right">Apprendre<br/>Réussir<br/>Grandir</div>
-        <div className="v2-asset-frame v2-student-asset">
+        <div className="v2-hero-glow"/>
+        <div className="v2-art-blob blob-blue"/>
+        <div className="v2-art-blob blob-yellow"/>
+        <div className="v2-student-stage">
           <img
             src="/reference/hero-v2.webp"
             alt="Élève EL PROF"
             className="v2-student-image"
           />
         </div>
-        <div className="v2-art-blob blob-blue"/>
-        <div className="v2-art-blob blob-yellow"/>
-        <div className="v2-hero-doodle crown">♛</div>
-        <div className="v2-hero-doodle heart">♡</div>
+        <div className="v2-floating-card v2-floating-course">
+          <span>📖</span><div><b>Cours complets</b><small>et structurés</small></div>
+        </div>
+        <div className="v2-floating-card v2-floating-progress">
+          <span>▮</span><div><b>Ta progression</b><small>75% cette semaine</small></div>
+        </div>
+        <div className="v2-floating-card v2-floating-community">
+          <span>●</span><div><b>Communauté</b><small>Apprends ensemble</small></div>
+        </div>
+        <div className="v2-hero-dot dot-one"/>
+        <div className="v2-hero-dot dot-two"/>
       </div>
     </section>
 
