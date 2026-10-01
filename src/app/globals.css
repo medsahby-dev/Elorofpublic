@@ -416,3 +416,29 @@ body{background:var(--ux-bg)}
 button:disabled,.btn:disabled{cursor:not-allowed!important;opacity:.58!important;transform:none!important}
 img{max-width:100%}
 @media(prefers-reduced-motion:reduce){.loading-skeleton:after{animation:none}}
+
+
+/* BRAND — display the supplied EL PROF logo exactly, without a recreated badge */
+.ep-logo-image{
+  width:44px!important;
+  height:44px!important;
+  border-radius:0!important;
+  overflow:visible!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  border:0!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.ep-logo-image img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+@media(max-width:700px){
+  .ep-logo-image{width:40px!important;height:40px!important}
+}
