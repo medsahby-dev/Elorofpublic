@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./premium.css";
+import "./brand-v13.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
@@ -20,11 +21,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <BrandLogo />
           <nav aria-label="Navigation principale">
+            <Link href="/">Accueil</Link>
             <Link href="/cours">Cours</Link>
-            <Link href="/#offres">Offres</Link>
-            <Link href="/classes">Classes en direct</Link>
-            <Link href="/#niveaux">Niveaux</Link>
-            <Link href="/#apropos">Méthode</Link>
+            <Link href="/niveaux">Niveaux</Link>
+            
+            <Link href="/tarifs">Tarifs</Link>
+            <Link href="/#a-propos">À propos</Link>
+            <Link href="/#contact">Contact</Link>
           </nav>
           <div className="header-actions">
             <Link href="/connexion" className="login-link">Connexion</Link>
@@ -39,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BrandLogo />
             <p>Le français plus simple, plus proche de toi.</p>
           </div>
-          <div><strong>Explorer</strong><Link href="/cours">Cours</Link><Link href="/classes">Classes en direct</Link><Link href="/#offres">Offres</Link><Link href="/connexion">Connexion</Link></div>
+          <div><strong>Explorer</strong><Link href="/cours">Cours</Link><Link href="/classes">Classes en direct</Link><Link href="/tarifs">Tarifs</Link><Link href="/connexion">Connexion</Link></div>
           <div><strong>Apprendre</strong><span>Grammaire</span><span>Conjugaison</span><span>Expression écrite</span><span>Préparation Bac</span></div>
           <div><strong>Famille</strong><span>Suivi parental</span><span>Progression</span><span>Résultats</span><span>Rapports</span></div>
           <div className="footer-bottom">© 2026 EL PROF — Tous droits réservés.</div>

@@ -37,13 +37,16 @@ export async function POST(request: Request, { params }: { params: Promise<{ qui
     }
 
     const questions = await db.query(
-      `SELECT id, question_type, points FROM quiz_questions WHERE quiz_id=$1 ORDER BY position`, [id]
+      `SELECT id, question, question_type, explanation, points, position
+       FROM quiz_questions WHERE quiz_id=$1 ORDER BY position`, [id]
     );
     if (!questions.rowCount) return Response.json({ success: false, error: { code: "EMPTY_QUIZ", message: "Ce quiz ne contient aucune question." } }, { status: 422 });
 
     const answerRows = await db.query(
-      `SELECT qa.id, qa.question_id, qa.is_correct FROM quiz_answers qa
-       JOIN quiz_questions qq ON qq.id=qa.question_id WHERE qq.quiz_id=$1`, [id]
+      `SELECT qa.id, qa.question_id, qa.answer, qa.position, qa.is_correct
+       FROM quiz_answers qa
+       JOIN quiz_questions qq ON qq.id=qa.question_id WHERE qq.quiz_id=$1
+       ORDER BY qa.position`, [id]
     );
     const correctByQuestion = new Map<number, number[]>();
     for (const row of answerRows.rows) {
@@ -70,6 +73,30 @@ export async function POST(request: Request, { params }: { params: Promise<{ qui
     const passed = percentage >= Number(q.passing_score);
     const xp = passed ? Math.max(10, Math.round(percentage * 1.5)) : Math.max(5, Math.round(percentage));
 
+    const corrections = questions.rows.map((question: any) => {
+      const qid = Number(question.id);
+      const selectedIds = normalizedAnswers[String(qid)] || [];
+      const choices = answerRows.rows
+        .filter((row: any) => Number(row.question_id) === qid)
+        .map((row: any) => ({
+          id: Number(row.id),
+          answer: row.answer,
+          isCorrect: Boolean(row.is_correct),
+          selected: selectedIds.includes(Number(row.id)),
+        }));
+      const correctIds = choices.filter((choice: any) => choice.isCorrect).map((choice: any) => choice.id).sort((a:number,b:number)=>a-b);
+      const selectedSorted = [...selectedIds].sort((a,b)=>a-b);
+      const correct = correctIds.length === selectedSorted.length && correctIds.every((value:number,index:number)=>value===selectedSorted[index]);
+      return {
+        id: qid,
+        question: question.question,
+        explanation: question.explanation,
+        points: Number(question.points),
+        correct,
+        choices,
+      };
+    });
+
     const client = await db.connect();
     try {
       await client.query("BEGIN");
@@ -81,7 +108,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ qui
       );
       await client.query(`UPDATE users SET xp=xp+$1, updated_at=NOW() WHERE id=$2`, [xp, user.id]);
       await client.query("COMMIT");
-      return Response.json({ success: true, data: { ...attempt.rows[0], percentage, passed, xpGained: xp } });
+      return Response.json({ success: true, data: { ...attempt.rows[0], percentage, passed, xpGained: xp, corrections } });
     } catch (error) {
       await client.query("ROLLBACK");
       throw error;
