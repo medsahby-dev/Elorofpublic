@@ -1078,3 +1078,88 @@ body{background:var(--ep-v13-bg)}
  .quiz-correction-title small{grid-column:2}
  .quiz-correction-choices,.quiz-explanation{margin-left:0}
 }
+
+
+/* HERO — seamless student integration */
+.v2-hero-art{
+  isolation:isolate;
+  overflow:visible;
+}
+.v2-asset-frame.v2-student-asset{
+  width:min(570px,100%);
+  height:535px;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  overflow:visible;
+  display:grid;
+  place-items:center;
+  z-index:3;
+  transform:translateX(2%);
+}
+.v2-asset-frame.v2-student-asset::before{
+  content:"";
+  position:absolute;
+  width:82%;
+  height:82%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(197,226,255,.72) 0%,rgba(225,240,255,.38) 48%,rgba(255,255,255,0) 74%);
+  z-index:-1;
+}
+.v2-student-image{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  object-position:center;
+  -webkit-mask-image:radial-gradient(ellipse 69% 78% at 50% 51%,#000 48%,rgba(0,0,0,.98) 65%,rgba(0,0,0,.45) 82%,transparent 100%);
+  mask-image:radial-gradient(ellipse 69% 78% at 50% 51%,#000 48%,rgba(0,0,0,.98) 65%,rgba(0,0,0,.45) 82%,transparent 100%);
+  filter:drop-shadow(0 28px 38px rgba(20,72,145,.13));
+}
+.v2-art-blob.blob-blue{
+  z-index:1;
+  opacity:.72;
+  right:10%;
+  top:25%;
+}
+.v2-art-blob.blob-yellow{
+  z-index:1;
+  left:16%;
+  bottom:8%;
+  opacity:.82;
+}
+.v2-hero-slogan{
+  z-index:4;
+  text-shadow:0 1px 0 rgba(255,255,255,.55);
+}
+.v2-hero-slogan.left{
+  left:1%;
+  top:18%;
+}
+.v2-hero-slogan.right{
+  right:1%;
+  top:20%;
+}
+@media(max-width:1050px){
+  .v2-asset-frame.v2-student-asset{
+    width:min(570px,94vw);
+    height:500px;
+    transform:none;
+  }
+}
+@media(max-width:700px){
+  .v2-asset-frame.v2-student-asset{
+    width:100%;
+    height:370px;
+  }
+  .v2-student-image{
+    -webkit-mask-image:radial-gradient(ellipse 74% 80% at 50% 50%,#000 48%,rgba(0,0,0,.98) 68%,rgba(0,0,0,.38) 86%,transparent 100%);
+    mask-image:radial-gradient(ellipse 74% 80% at 50% 50%,#000 48%,rgba(0,0,0,.98) 68%,rgba(0,0,0,.38) 86%,transparent 100%);
+  }
+  .v2-hero-slogan{
+    font-size:15px;
+  }
+  .v2-hero-slogan.left{left:0;top:10%}
+  .v2-hero-slogan.right{right:0;top:12%}
+}
